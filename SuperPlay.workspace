@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeLite_Workspace Name="SuperPlay" Database="/home/cdoty/SuperPlay/.codelite/SuperPlay.tags">
+  <Environment>
+    <![CDATA[]]>
+  </Environment>
+  <Project Name="Platform" Path="PlatformLib/Linux/Platform.project" Active="No"/>
+  <Project Name="Audio" Path="Examples/Audio/Audio.project" Active="No"/>
+  <Project Name="SuperPlay" Path="SuperPlayLib/SuperPlay.project"/>
+  <Project Name="ExpansionLib" Path="ExpansionLib/ExpansionLib.project"/>
+  <Project Name="HDMA" Path="Examples/HDMA/HDMA.project" Active="No"/>
+  <Project Name="Sound" Path="SoundLib/irrKlang/Sound.project" Active="No"/>
+  <Project Name="Tilemap" Path="Examples/Tilemap/Tilemap.project" Active="No"/>
+  <Project Name="BLT" Path="Examples/BLT/BLT.project" Active="Yes"/>
+  <Project Name="Display" Path="DisplayLib/SDL/Display.project" Active="No"/>
+  <BuildMatrix>
+    <WorkspaceConfiguration Name="Debug" Selected="yes">
+      <Project Name="DisplayLib" ConfigName="Debug"/>
+      <Project Name="Platform" ConfigName="Debug"/>
+      <Project Name="Audio" ConfigName="Debug"/>
+      <Project Name="SuperPlay" ConfigName="Debug"/>
+      <Project Name="ExpansionLib" ConfigName="Debug"/>
+      <Project Name="HDMA" ConfigName="Debug"/>
+      <Project Name="Sound" ConfigName="Debug"/>
+      <Project Name="Tilemap" ConfigName="Debug"/>
+      <Project Name="Tilemap" ConfigName="Debug"/>
+      <Project Name="BLT" ConfigName="Debug"/>
+      <Project Name="Display" ConfigName="Debug"/>
+    </WorkspaceConfiguration>
+    <WorkspaceConfiguration Name="Release" Selected="no">
+      <Project Name="DisplayLib" ConfigName="Release"/>
+      <Project Name="Platform" ConfigName="Release"/>
+      <Project Name="Audio" ConfigName="Release"/>
+      <Project Name="SuperPlay" ConfigName="Release"/>
+      <Project Name="ExpansionLib" ConfigName="Release"/>
+      <Project Name="HDMA" ConfigName="Release"/>
+      <Project Name="Sound" ConfigName="Release"/>
+      <Project Name="Tilemap" ConfigName="Release"/>
+      <Project Name="Tilemap" ConfigName="Release"/>
+      <Project Name="BLT" ConfigName="Release"/>
+      <Project Name="Display" ConfigName="Release"/>
+    </WorkspaceConfiguration>
+  </BuildMatrix>
+</CodeLite_Workspace>

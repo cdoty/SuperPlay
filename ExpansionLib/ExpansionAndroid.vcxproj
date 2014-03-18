@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="NsightTegraProject">
+    <NsightTegraProjectRevisionNumber>5</NsightTegraProjectRevisionNumber>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Tegra-Android">
+      <Configuration>Debug</Configuration>
+      <Platform>Tegra-Android</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Tegra-Android">
+      <Configuration>Release</Configuration>
+      <Platform>Tegra-Android</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Profile|Tegra-Android">
+      <Configuration>Profile</Configuration>
+      <Platform>Tegra-Android</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Include\Expansion\AudioLoader.h" />
+    <ClInclude Include="..\Include\Expansion\FontLoader.h" />
+    <ClInclude Include="..\Include\Expansion\HDMALoader.h" />
+    <ClInclude Include="..\Include\Expansion\MapLoader.h" />
+    <ClInclude Include="..\Include\Expansion\SpriteLoader.h" />
+    <ClInclude Include="FontLoader\yspng\yspng.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AudioLoader\AudioLoader.cpp" />
+    <ClCompile Include="FontLoader\FontLoader.cpp" />
+    <ClCompile Include="FontLoader\yspng\yspng.cpp" />
+    <ClCompile Include="HDMALoader\HDMALoader.cpp" />
+    <ClCompile Include="MapLoader\MapLoader.cpp" />
+    <ClCompile Include="SpriteLoader\SpriteLoader.cpp" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{6BFA5397-60F5-4F2D-9BA6-50BB24E1D806}</ProjectGuid>
+    <RootNamespace>ExpansionAndroid</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|Tegra-Android'">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <AndroidTargetAPI>android-16</AndroidTargetAPI>
+    <AndroidStlType>system</AndroidStlType>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Release|Tegra-Android'">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <AndroidTargetAPI>android-15</AndroidTargetAPI>
+    <AndroidStlType>stlport_static</AndroidStlType>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Profile|Tegra-Android'">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <AndroidTargetAPI>android-15</AndroidTargetAPI>
+    <AndroidStlType>stlport_static</AndroidStlType>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Tegra-Android'">
+    <OutDir>..\Lib\Android\</OutDir>
+    <TargetName>libExpansion_d</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Tegra-Android'">
+    <OutDir>..\Lib\Android\</OutDir>
+    <TargetName>libExpansion</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Profile|Tegra-Android'">
+    <OutDir>..\Lib\Android\</OutDir>
+    <TargetName>libExpansion</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Tegra-Android'">
+    <ClCompile>
+      <PreprocessorDefinitions>DISABLE_IMPORTGL</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../Include;../Include/Expansion;../SuperPlayLib/Include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalOptions>-lGLESv1_CM %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Tegra-Android'">
+    <ClCompile>
+      <PreprocessorDefinitions>DISABLE_IMPORTGL</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../Include;../Include/Expansion;../SuperPlayLib/Include</AdditionalIncludeDirectories>
+      <FloatAbi>softfp</FloatAbi>
+    </ClCompile>
+    <Link>
+      <AdditionalOptions>-lGLESv1_CM %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Profile|Tegra-Android'">
+    <ClCompile>
+      <PreprocessorDefinitions>DISABLE_IMPORTGL</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../Include;../Include/Expansion;../SuperPlayLib/Include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalOptions>-lGLESv1_CM %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

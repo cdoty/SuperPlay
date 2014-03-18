@@ -1,0 +1,1 @@
+adb shell am start -n com.PixlGames.SuperPlay.Joypad/android.app.NativeActivity

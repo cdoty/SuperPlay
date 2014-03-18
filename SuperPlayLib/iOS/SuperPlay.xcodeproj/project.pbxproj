@@ -1,0 +1,414 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		04CD3E37189595C70080440C /* tinyxml2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04CD3E36189595C70080440C /* tinyxml2.cpp */; };
+		04F4472D1875969E003830E9 /* Image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04F447271875969E003830E9 /* Image.cpp */; };
+		04F4472E1875969E003830E9 /* ResourceManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04F447281875969E003830E9 /* ResourceManager.cpp */; };
+		04F4472F1875969E003830E9 /* System.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04F447291875969E003830E9 /* System.cpp */; };
+		04F447311875969E003830E9 /* Utilities.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04F4472B1875969E003830E9 /* Utilities.cpp */; };
+		04F44746187596A8003830E9 /* BG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04F44734187596A8003830E9 /* BG.cpp */; };
+		04F44747187596A8003830E9 /* BGManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04F44735187596A8003830E9 /* BGManager.cpp */; };
+		04F44748187596A8003830E9 /* BGManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 04F44736187596A8003830E9 /* BGManager.h */; };
+		04F44749187596A8003830E9 /* BGVRAM.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04F44737187596A8003830E9 /* BGVRAM.cpp */; };
+		04F4474A187596A9003830E9 /* CRC32.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04F44738187596A8003830E9 /* CRC32.cpp */; };
+		04F4474B187596A9003830E9 /* CRC32.h in Headers */ = {isa = PBXBuildFile; fileRef = 04F44739187596A8003830E9 /* CRC32.h */; };
+		04F4474C187596A9003830E9 /* DMA.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04F4473A187596A8003830E9 /* DMA.cpp */; };
+		04F4474D187596A9003830E9 /* Hardware.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04F4473B187596A8003830E9 /* Hardware.cpp */; };
+		04F4474E187596A9003830E9 /* HDMA.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04F4473C187596A8003830E9 /* HDMA.cpp */; };
+		04F4474F187596A9003830E9 /* Joypad.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04F4473D187596A8003830E9 /* Joypad.cpp */; };
+		04F44750187596A9003830E9 /* OAM.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04F4473E187596A8003830E9 /* OAM.cpp */; };
+		04F44751187596A9003830E9 /* Obj.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04F4473F187596A8003830E9 /* Obj.cpp */; };
+		04F44752187596A9003830E9 /* ObjVRAM.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04F44740187596A8003830E9 /* ObjVRAM.cpp */; };
+		04F44753187596A9003830E9 /* ShadowOAM.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04F44741187596A8003830E9 /* ShadowOAM.cpp */; };
+		04F44754187596A9003830E9 /* ShadowOAM.h in Headers */ = {isa = PBXBuildFile; fileRef = 04F44742187596A8003830E9 /* ShadowOAM.h */; };
+		04F44755187596A9003830E9 /* SPC.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04F44743187596A8003830E9 /* SPC.cpp */; };
+		04F44756187596A9003830E9 /* SRAM.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04F44744187596A8003830E9 /* SRAM.cpp */; };
+		04F44757187596A9003830E9 /* Text.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04F44745187596A8003830E9 /* Text.cpp */; };
+		04F44762187596B9003830E9 /* mtrand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04F4475C187596B9003830E9 /* mtrand.cpp */; };
+		04F44763187596B9003830E9 /* mtrand.h in Headers */ = {isa = PBXBuildFile; fileRef = 04F4475D187596B9003830E9 /* mtrand.h */; };
+		04F44764187596B9003830E9 /* stb_image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04F4475F187596B9003830E9 /* stb_image.cpp */; };
+		04F44765187596B9003830E9 /* stb_image.h in Headers */ = {isa = PBXBuildFile; fileRef = 04F44760187596B9003830E9 /* stb_image.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		04CD3E36189595C70080440C /* tinyxml2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxml2.cpp; sourceTree = "<group>"; };
+		04F4471F18759683003830E9 /* libSuperPlay_d.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSuperPlay_d.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		04F447271875969E003830E9 /* Image.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Image.cpp; sourceTree = "<group>"; };
+		04F447281875969E003830E9 /* ResourceManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ResourceManager.cpp; sourceTree = "<group>"; };
+		04F447291875969E003830E9 /* System.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = System.cpp; sourceTree = "<group>"; };
+		04F4472B1875969E003830E9 /* Utilities.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Utilities.cpp; sourceTree = "<group>"; };
+		04F44734187596A8003830E9 /* BG.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BG.cpp; sourceTree = "<group>"; };
+		04F44735187596A8003830E9 /* BGManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BGManager.cpp; sourceTree = "<group>"; };
+		04F44736187596A8003830E9 /* BGManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGManager.h; sourceTree = "<group>"; };
+		04F44737187596A8003830E9 /* BGVRAM.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BGVRAM.cpp; sourceTree = "<group>"; };
+		04F44738187596A8003830E9 /* CRC32.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CRC32.cpp; sourceTree = "<group>"; };
+		04F44739187596A8003830E9 /* CRC32.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRC32.h; sourceTree = "<group>"; };
+		04F4473A187596A8003830E9 /* DMA.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DMA.cpp; sourceTree = "<group>"; };
+		04F4473B187596A8003830E9 /* Hardware.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Hardware.cpp; sourceTree = "<group>"; };
+		04F4473C187596A8003830E9 /* HDMA.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HDMA.cpp; sourceTree = "<group>"; };
+		04F4473D187596A8003830E9 /* Joypad.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Joypad.cpp; sourceTree = "<group>"; };
+		04F4473E187596A8003830E9 /* OAM.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OAM.cpp; sourceTree = "<group>"; };
+		04F4473F187596A8003830E9 /* Obj.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Obj.cpp; sourceTree = "<group>"; };
+		04F44740187596A8003830E9 /* ObjVRAM.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ObjVRAM.cpp; sourceTree = "<group>"; };
+		04F44741187596A8003830E9 /* ShadowOAM.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ShadowOAM.cpp; sourceTree = "<group>"; };
+		04F44742187596A8003830E9 /* ShadowOAM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShadowOAM.h; sourceTree = "<group>"; };
+		04F44743187596A8003830E9 /* SPC.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SPC.cpp; sourceTree = "<group>"; };
+		04F44744187596A8003830E9 /* SRAM.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SRAM.cpp; sourceTree = "<group>"; };
+		04F44745187596A8003830E9 /* Text.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Text.cpp; sourceTree = "<group>"; };
+		04F4475C187596B9003830E9 /* mtrand.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mtrand.cpp; sourceTree = "<group>"; };
+		04F4475D187596B9003830E9 /* mtrand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mtrand.h; sourceTree = "<group>"; };
+		04F4475F187596B9003830E9 /* stb_image.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = stb_image.cpp; sourceTree = "<group>"; };
+		04F44760187596B9003830E9 /* stb_image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_image.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		04F4471C18759683003830E9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		04CD3E35189595C70080440C /* TinyXML2 */ = {
+			isa = PBXGroup;
+			children = (
+				04CD3E36189595C70080440C /* tinyxml2.cpp */,
+			);
+			path = TinyXML2;
+			sourceTree = "<group>";
+		};
+		04F4471418759683003830E9 = {
+			isa = PBXGroup;
+			children = (
+				04F44758187596B9003830E9 /* Libraries */,
+				04F4472018759683003830E9 /* Products */,
+				04F44733187596A8003830E9 /* Hardware */,
+				04F447261875969E003830E9 /* Engine */,
+			);
+			sourceTree = "<group>";
+			usesTabs = 1;
+			wrapsLines = 0;
+		};
+		04F4472018759683003830E9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				04F4471F18759683003830E9 /* libSuperPlay_d.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		04F447261875969E003830E9 /* Engine */ = {
+			isa = PBXGroup;
+			children = (
+				04F447271875969E003830E9 /* Image.cpp */,
+				04F447281875969E003830E9 /* ResourceManager.cpp */,
+				04F447291875969E003830E9 /* System.cpp */,
+				04F4472B1875969E003830E9 /* Utilities.cpp */,
+			);
+			name = Engine;
+			path = ../Engine;
+			sourceTree = "<group>";
+		};
+		04F44733187596A8003830E9 /* Hardware */ = {
+			isa = PBXGroup;
+			children = (
+				04F44734187596A8003830E9 /* BG.cpp */,
+				04F44735187596A8003830E9 /* BGManager.cpp */,
+				04F44736187596A8003830E9 /* BGManager.h */,
+				04F44737187596A8003830E9 /* BGVRAM.cpp */,
+				04F44738187596A8003830E9 /* CRC32.cpp */,
+				04F44739187596A8003830E9 /* CRC32.h */,
+				04F4473A187596A8003830E9 /* DMA.cpp */,
+				04F4473B187596A8003830E9 /* Hardware.cpp */,
+				04F4473C187596A8003830E9 /* HDMA.cpp */,
+				04F4473D187596A8003830E9 /* Joypad.cpp */,
+				04F4473E187596A8003830E9 /* OAM.cpp */,
+				04F4473F187596A8003830E9 /* Obj.cpp */,
+				04F44740187596A8003830E9 /* ObjVRAM.cpp */,
+				04F44741187596A8003830E9 /* ShadowOAM.cpp */,
+				04F44742187596A8003830E9 /* ShadowOAM.h */,
+				04F44743187596A8003830E9 /* SPC.cpp */,
+				04F44744187596A8003830E9 /* SRAM.cpp */,
+				04F44745187596A8003830E9 /* Text.cpp */,
+			);
+			name = Hardware;
+			path = ../Hardware;
+			sourceTree = "<group>";
+		};
+		04F44758187596B9003830E9 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				04CD3E35189595C70080440C /* TinyXML2 */,
+				04F4475B187596B9003830E9 /* mtrand */,
+				04F4475E187596B9003830E9 /* stb_image */,
+			);
+			name = Libraries;
+			path = ../Libraries;
+			sourceTree = "<group>";
+		};
+		04F4475B187596B9003830E9 /* mtrand */ = {
+			isa = PBXGroup;
+			children = (
+				04F4475C187596B9003830E9 /* mtrand.cpp */,
+				04F4475D187596B9003830E9 /* mtrand.h */,
+			);
+			path = mtrand;
+			sourceTree = "<group>";
+		};
+		04F4475E187596B9003830E9 /* stb_image */ = {
+			isa = PBXGroup;
+			children = (
+				04F4475F187596B9003830E9 /* stb_image.cpp */,
+				04F44760187596B9003830E9 /* stb_image.h */,
+			);
+			path = stb_image;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		04F4471D18759683003830E9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04F44748187596A8003830E9 /* BGManager.h in Headers */,
+				04F4474B187596A9003830E9 /* CRC32.h in Headers */,
+				04F44754187596A9003830E9 /* ShadowOAM.h in Headers */,
+				04F44763187596B9003830E9 /* mtrand.h in Headers */,
+				04F44765187596B9003830E9 /* stb_image.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		04F4471E18759683003830E9 /* SuperPlay */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04F4472318759683003830E9 /* Build configuration list for PBXNativeTarget "SuperPlay" */;
+			buildPhases = (
+				04F4471B18759683003830E9 /* Sources */,
+				04F4471C18759683003830E9 /* Frameworks */,
+				04F4471D18759683003830E9 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SuperPlay;
+			productName = SuperPlay;
+			productReference = 04F4471F18759683003830E9 /* libSuperPlay_d.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		04F4471618759683003830E9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+			};
+			buildConfigurationList = 04F4471918759683003830E9 /* Build configuration list for PBXProject "SuperPlay" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 04F4471418759683003830E9;
+			productRefGroup = 04F4472018759683003830E9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				04F4471E18759683003830E9 /* SuperPlay */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		04F4471B18759683003830E9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04F4472D1875969E003830E9 /* Image.cpp in Sources */,
+				04F4472E1875969E003830E9 /* ResourceManager.cpp in Sources */,
+				04F4472F1875969E003830E9 /* System.cpp in Sources */,
+				04F447311875969E003830E9 /* Utilities.cpp in Sources */,
+				04F44746187596A8003830E9 /* BG.cpp in Sources */,
+				04F44747187596A8003830E9 /* BGManager.cpp in Sources */,
+				04F44749187596A8003830E9 /* BGVRAM.cpp in Sources */,
+				04F4474A187596A9003830E9 /* CRC32.cpp in Sources */,
+				04F4474C187596A9003830E9 /* DMA.cpp in Sources */,
+				04F4474D187596A9003830E9 /* Hardware.cpp in Sources */,
+				04F4474E187596A9003830E9 /* HDMA.cpp in Sources */,
+				04F4474F187596A9003830E9 /* Joypad.cpp in Sources */,
+				04F44750187596A9003830E9 /* OAM.cpp in Sources */,
+				04F44751187596A9003830E9 /* Obj.cpp in Sources */,
+				04F44752187596A9003830E9 /* ObjVRAM.cpp in Sources */,
+				04F44753187596A9003830E9 /* ShadowOAM.cpp in Sources */,
+				04F44755187596A9003830E9 /* SPC.cpp in Sources */,
+				04F44756187596A9003830E9 /* SRAM.cpp in Sources */,
+				04F44757187596A9003830E9 /* Text.cpp in Sources */,
+				04F44762187596B9003830E9 /* mtrand.cpp in Sources */,
+				04F44764187596B9003830E9 /* stb_image.cpp in Sources */,
+				04CD3E37189595C70080440C /* tinyxml2.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		04F4472118759683003830E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SYMROOT = ../../Lib/iOS;
+			};
+			name = Debug;
+		};
+		04F4472218759683003830E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				SDKROOT = iphoneos;
+				SYMROOT = ../../Lib/iOS;
+			};
+			name = Release;
+		};
+		04F4472418759683003830E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "*.nib *.lproj *.framework *.gch (*) .DS_Store CVS .svn .git .hg *.xcodeproj *.xcode *.pbproj *.pbxproj";
+				EXECUTABLE_PREFIX = lib;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
+				GCC_WARN_CHECK_SWITCH_STATEMENTS = NO;
+				GCC_WARN_UNKNOWN_PRAGMAS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					../Include,
+					../Libraries,
+					../../Include,
+					../../DisplayLib/Include,
+					../../PlatformLib/Include,
+					../../SoundLib/Include,
+				);
+				INCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "";
+				INSTALL_PATH = ../Lib/iOS;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				OBJROOT = "$(SYMROOT)";
+				OTHER_CFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)_d";
+				SDKROOT = iphoneos;
+				SYMROOT = ../../Lib/iOS;
+			};
+			name = Debug;
+		};
+		04F4472518759683003830E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "*.nib *.lproj *.framework *.gch (*) .DS_Store CVS .svn .git .hg *.xcodeproj *.xcode *.pbproj *.pbxproj";
+				EXECUTABLE_PREFIX = lib;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
+				GCC_WARN_CHECK_SWITCH_STATEMENTS = NO;
+				GCC_WARN_UNKNOWN_PRAGMAS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					../Include,
+					../Libraries,
+					../../Include,
+					../../DisplayLib/Include,
+					../../PlatformLib/Include,
+					../../SoundLib/Include,
+				);
+				INCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "";
+				INSTALL_PATH = ../Lib/iOS;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				OBJROOT = "$(SYMROOT)";
+				OTHER_CFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SYMROOT = ../../Lib/iOS;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		04F4471918759683003830E9 /* Build configuration list for PBXProject "SuperPlay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04F4472118759683003830E9 /* Debug */,
+				04F4472218759683003830E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04F4472318759683003830E9 /* Build configuration list for PBXNativeTarget "SuperPlay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04F4472418759683003830E9 /* Debug */,
+				04F4472518759683003830E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 04F4471618759683003830E9 /* Project object */;
+}

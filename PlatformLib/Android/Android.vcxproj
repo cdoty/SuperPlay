@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="NsightTegraProject">
+    <NsightTegraProjectRevisionNumber>5</NsightTegraProjectRevisionNumber>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Tegra-Android">
+      <Configuration>Debug</Configuration>
+      <Platform>Tegra-Android</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Tegra-Android">
+      <Configuration>Release</Configuration>
+      <Platform>Tegra-Android</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Profile|Tegra-Android">
+      <Configuration>Profile</Configuration>
+      <Platform>Tegra-Android</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Include\IInput.h" />
+    <ClInclude Include="..\Include\JoystickGUIDs.h" />
+    <ClInclude Include="..\Include\PlatformLib.h" />
+    <ClInclude Include="..\Include\StoragePath.h" />
+    <ClInclude Include="controller.h" />
+    <ClInclude Include="Input.h" />
+    <ClInclude Include="Platform.h" />
+    <ClInclude Include="PlatformDefines.h" />
+    <ClInclude Include="SystemDefines.h" />
+    <ClInclude Include="Timer.h" />
+    <ClInclude Include="Window.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="android_native_app_glue.c" />
+    <ClCompile Include="controller.cpp" />
+    <ClCompile Include="File.cpp" />
+    <ClCompile Include="Input.cpp" />
+    <ClCompile Include="Log.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Platform.cpp" />
+    <ClCompile Include="StoragePath.cpp" />
+    <ClCompile Include="Timer.cpp" />
+    <ClCompile Include="Window.cpp" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{69B35B63-6917-4CAE-8AB9-E7130920A049}</ProjectGuid>
+    <RootNamespace>Android</RootNamespace>
+    <ProjectName>Platform</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|Tegra-Android'">
+    <AndroidTargetAPI>android-16</AndroidTargetAPI>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <AndroidStlType>system</AndroidStlType>
+    <AndroidArch>armv7-a</AndroidArch>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Release|Tegra-Android'">
+    <AndroidTargetAPI>android-16</AndroidTargetAPI>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <AndroidStlType>system</AndroidStlType>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Profile|Tegra-Android'">
+    <AndroidTargetAPI>android-16</AndroidTargetAPI>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <AndroidStlType>system</AndroidStlType>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Tegra-Android'">
+    <OutDir>..\..\Lib\Android\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Tegra-Android'">
+    <TargetName>lib$(ProjectName)_d</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Tegra-Android'">
+    <OutDir>..\..\Lib\Android\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Profile|Tegra-Android'">
+    <OutDir>..\..\Lib\Android\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Tegra-Android'">
+    <ClCompile>
+      <PreprocessorDefinitions>DISABLE_IMPORTGL</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../Include;../../DisplayLib/Include;../../Include;../../SoundLib/Include;../../SuperPlayLib/Include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalOptions>-lGLESv1_CM %(AdditionalOptions)</AdditionalOptions>
+      <AndroidSystemLibs>c;m;log;gcc;z</AndroidSystemLibs>
+    </Link>
+    <AntBuild>
+      <AntBuildPath>$(ProjectDir)\</AntBuildPath>
+    </AntBuild>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Tegra-Android'">
+    <ClCompile>
+      <PreprocessorDefinitions>DISABLE_IMPORTGL</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../Include;../../DisplayLib/Include;../../Include;../../SoundLib/Include;../../SuperPlayLib/Include</AdditionalIncludeDirectories>
+      <FloatAbi>softfp</FloatAbi>
+    </ClCompile>
+    <Link>
+      <AdditionalOptions>-lGLESv1_CM %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+    <AntBuild>
+      <AntBuildPath>$(ProjectDir)\</AntBuildPath>
+    </AntBuild>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Profile|Tegra-Android'">
+    <ClCompile>
+      <PreprocessorDefinitions>DISABLE_IMPORTGL</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../Include;../../DisplayLib/Include;../../Include;../../SoundLib/Include;../../SuperPlayLib/Include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalOptions>-lGLESv1_CM %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+    <AntBuild>
+      <AntBuildPath>$(ProjectDir)\</AntBuildPath>
+    </AntBuild>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

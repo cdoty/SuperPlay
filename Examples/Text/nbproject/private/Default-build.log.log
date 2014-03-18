@@ -1,0 +1,8 @@
+mkdir -p Release
+g++ -O3 -I../../Include -O3 -c Game.cpp -o Release/Game.o
+mkdir -p Release
+g++ -O3 -I../../Include -O3 -c GameHeader.cpp -o Release/GameHeader.o
+g++ -O3 -pthread -L../../Lib/Linux -L../../Lib/Linux/irrKlang -L../../External/irrKlang-1.4.0b/Lib/Linux -o Environment/Text.exe Release/Game.o Release/GameHeader.o -lExpansionLib -lSuperPlay -lPlatform -lSound -lDisplay -lIrrKlang -lSDL2 -lX11 -lGLU -lGL -lXext 
+/usr/bin/ld: cannot find -lIrrKlang
+collect2: ld returned 1 exit status
+make: *** [Environment/Text.exe] Error 1

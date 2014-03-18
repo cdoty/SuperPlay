@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Shared">
+      <UniqueIdentifier>{b0408f46-43d7-476f-b08c-c91181a6faa4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shared\Source Files">
+      <UniqueIdentifier>{2f8ef01e-f8ff-4f70-b0fe-e480c2a6cd6b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shared\Header Files">
+      <UniqueIdentifier>{4b05bef7-ae19-4f76-8a29-38760b9aa264}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shared\Libraries">
+      <UniqueIdentifier>{4ec0976a-0482-4382-ae4a-92dd5e022516}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Skin">
+      <UniqueIdentifier>{97c2cdad-547d-4e33-934a-a24603805da8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Skin\Source Files">
+      <UniqueIdentifier>{d4b54ba6-2b3d-4af9-b628-27f4442bf0e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Skin\Header Files">
+      <UniqueIdentifier>{a7c11b7c-4614-4769-bb70-cb6904494fbf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shared\Libraries\TinyXML2">
+      <UniqueIdentifier>{a9a27b2b-e296-4408-96ca-787c43657d76}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Config.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DuiUtilities.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Shared\File.cpp">
+      <Filter>Shared\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Shared\Log.cpp">
+      <Filter>Shared\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Input.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Skin\Skin.cpp">
+      <Filter>Skin\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Skin\Window.cpp">
+      <Filter>Skin\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Shared\Libraries\TinyXML2\tinyxml2.cpp">
+      <Filter>Shared\Libraries\TinyXML2</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Config.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DuiUtilities.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Shared\File.h">
+      <Filter>Shared\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Shared\AssertLog.h">
+      <Filter>Shared\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Shared\Log.h">
+      <Filter>Shared\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Shared\Macros.h">
+      <Filter>Shared\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Input.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Skin\Window.h">
+      <Filter>Skin\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Skin\Skin.h">
+      <Filter>Skin\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\PlatformLib\Win32\JoystickGUIDs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Shared\Libraries\TinyXML2\tinyxml2.h">
+      <Filter>Shared\Libraries\TinyXML2</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Application.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\SceneEdit\Resource\Application.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\Icon.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\Skin.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\Skin.rgn">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+</Project>

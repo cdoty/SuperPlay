@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ReleaseGL|Win32">
+      <Configuration>ReleaseGL</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Engine\Image.cpp" />
+    <ClCompile Include="Engine\ResourceManager.cpp" />
+    <ClCompile Include="Engine\System.cpp" />
+    <ClCompile Include="Engine\Utilities.cpp" />
+    <ClCompile Include="Hardware\BG.cpp" />
+    <ClCompile Include="Hardware\BGManager.cpp" />
+    <ClCompile Include="Hardware\CRC32.cpp" />
+    <ClCompile Include="Hardware\DMA.cpp" />
+    <ClCompile Include="Hardware\Hardware.cpp" />
+    <ClCompile Include="Hardware\HDMA.cpp" />
+    <ClCompile Include="Hardware\Joypad.cpp" />
+    <ClCompile Include="Hardware\OAM.cpp" />
+    <ClCompile Include="Hardware\Obj.cpp" />
+    <ClCompile Include="Hardware\ObjVRAM.cpp" />
+    <ClCompile Include="Hardware\BGVRAM.cpp" />
+    <ClCompile Include="Hardware\ShadowOAM.cpp" />
+    <ClCompile Include="Hardware\SPC.cpp" />
+    <ClCompile Include="Hardware\SRAM.cpp" />
+    <ClCompile Include="Hardware\Text.cpp" />
+    <ClCompile Include="Libraries\mtrand\mtrand.cpp" />
+    <ClCompile Include="Libraries\stb_image\stb_image.cpp" />
+    <ClCompile Include="Libraries\TinyXML2\tinyxml2.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Include\AssertLog.h" />
+    <ClInclude Include="..\Include\BG.h" />
+    <ClInclude Include="..\Include\BGVRAM.h" />
+    <ClInclude Include="..\Include\DMA.h" />
+    <ClInclude Include="..\Include\File.h" />
+    <ClInclude Include="..\Include\GameHeader.h" />
+    <ClInclude Include="..\Include\Hardware.h" />
+    <ClInclude Include="..\Include\HardwareDefines.h" />
+    <ClInclude Include="..\Include\HDMA.h" />
+    <ClInclude Include="..\Include\IGame.h" />
+    <ClInclude Include="..\Include\Image.h" />
+    <ClInclude Include="..\Include\IVRAM.h" />
+    <ClInclude Include="..\Include\Joypad.h" />
+    <ClInclude Include="..\Include\Log.h" />
+    <ClInclude Include="..\Include\Macros.h" />
+    <ClInclude Include="..\Include\OAM.h" />
+    <ClInclude Include="..\Include\Obj.h" />
+    <ClInclude Include="..\Include\ObjVRAM.h" />
+    <ClInclude Include="..\Include\PathDefines.h" />
+    <ClInclude Include="..\Include\Point.h" />
+    <ClInclude Include="..\Include\Rect.h" />
+    <ClInclude Include="..\Include\RenderParams.h" />
+    <ClInclude Include="..\Include\ResourceManager.h" />
+    <ClInclude Include="..\Include\SPC.h" />
+    <ClInclude Include="..\Include\SRAM.h" />
+    <ClInclude Include="..\Include\STLMacros.h" />
+    <ClInclude Include="..\Include\Text.h" />
+    <ClInclude Include="..\Include\TinySTL\allocator.h" />
+    <ClInclude Include="..\Include\TinySTL\buffer.h" />
+    <ClInclude Include="..\Include\TinySTL\hash.h" />
+    <ClInclude Include="..\Include\TinySTL\hash_base.h" />
+    <ClInclude Include="..\Include\TinySTL\new.h" />
+    <ClInclude Include="..\Include\TinySTL\stddef.h" />
+    <ClInclude Include="..\Include\TinySTL\stdint.h" />
+    <ClInclude Include="..\Include\TinySTL\string.h" />
+    <ClInclude Include="..\Include\TinySTL\traits.h" />
+    <ClInclude Include="..\Include\TinySTL\unordered_map.h" />
+    <ClInclude Include="..\Include\TinySTL\unordered_set.h" />
+    <ClInclude Include="..\Include\TinySTL\vector.h" />
+    <ClInclude Include="..\Include\TinyXML2\tinyxml2.h" />
+    <ClInclude Include="..\Include\Types.h" />
+    <ClInclude Include="Hardware\BGManager.h" />
+    <ClInclude Include="Hardware\CRC32.h" />
+    <ClInclude Include="Hardware\ShadowOAM.h" />
+    <ClInclude Include="Include\System.h" />
+    <ClInclude Include="Include\Utilities.h" />
+    <ClInclude Include="Libraries\mtrand\mtrand.h" />
+    <ClInclude Include="Libraries\stb_image\stb_image.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Todo.txt" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{0D186371-E32C-4F5E-91B6-565CD12503E0}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>SNStyle</RootNamespace>
+    <ProjectName>SuperPlayLib</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseGL|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseGL|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>..\Lib\VS2010\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <TargetName>SuperPlay_d</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>..\Lib\VS2010\</OutDir>
+    <TargetName>SuperPlay</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseGL|Win32'">
+    <OutDir>..\Lib\VS2010\</OutDir>
+    <TargetName>SuperPlay</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>Include;Hardware;Libraries;..\Include;..\DisplayLib\Include;..\PlatformLib\Include;..\SoundLib\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <Lib>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
+      <AdditionalLibraryDirectories>
+      </AdditionalLibraryDirectories>
+    </Lib>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>Include;Hardware;Libraries;..\Include;..\DisplayLib\Include;..\PlatformLib\Include;..\SoundLib\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseGL|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>Include;Hardware;Libraries;..\Include;..\DisplayLib\Include;..\PlatformLib\Include;..\SoundLib\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

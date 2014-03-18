@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SuperPlayEmscripten", "SuperPlayEmscripten.vcxproj", "{5EF5026A-0D5F-4322-AD5C-1396C2227333}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Emscripten = Debug|Emscripten
+		Debug|Win32 = Debug|Win32
+		Release|Emscripten = Release|Emscripten
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5EF5026A-0D5F-4322-AD5C-1396C2227333}.Debug|Emscripten.ActiveCfg = Debug|Emscripten
+		{5EF5026A-0D5F-4322-AD5C-1396C2227333}.Debug|Emscripten.Build.0 = Debug|Emscripten
+		{5EF5026A-0D5F-4322-AD5C-1396C2227333}.Debug|Win32.ActiveCfg = Debug|Win32
+		{5EF5026A-0D5F-4322-AD5C-1396C2227333}.Debug|Win32.Build.0 = Debug|Win32
+		{5EF5026A-0D5F-4322-AD5C-1396C2227333}.Release|Emscripten.ActiveCfg = Release|Emscripten
+		{5EF5026A-0D5F-4322-AD5C-1396C2227333}.Release|Emscripten.Build.0 = Release|Emscripten
+		{5EF5026A-0D5F-4322-AD5C-1396C2227333}.Release|Win32.ActiveCfg = Release|Win32
+		{5EF5026A-0D5F-4322-AD5C-1396C2227333}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

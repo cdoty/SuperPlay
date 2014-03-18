@@ -1,0 +1,9 @@
+<MapInfo>
+	<ImageName>Scroll.png</ImageName>
+	<MapName>Scroll.map</MapName>
+	<TileWidth>32</TileWidth>
+	<TileHeight>32</TileHeight>
+	<MapWidth>20</MapWidth>
+	<MapHeight>15</MapHeight>
+	<TileCount>80</TileCount>
+</MapInfo>

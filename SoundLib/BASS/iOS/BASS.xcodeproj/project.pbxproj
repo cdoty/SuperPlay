@@ -1,0 +1,256 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CE98F0C218AE173A003FBD9E /* Sound.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE98F0BF18AE173A003FBD9E /* Sound.cpp */; };
+		CE98F0C318AE173A003FBD9E /* SoundSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE98F0C018AE173A003FBD9E /* SoundSystem.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CE98F0A118AE1490003FBD9E /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/${PRODUCT_NAME}";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		CE98F0A318AE1490003FBD9E /* libSound_d.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSound_d.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE98F0BF18AE173A003FBD9E /* Sound.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Sound.cpp; path = ../Sound.cpp; sourceTree = "<group>"; };
+		CE98F0C018AE173A003FBD9E /* SoundSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SoundSystem.cpp; path = ../SoundSystem.cpp; sourceTree = "<group>"; };
+		CE98F0C118AE173A003FBD9E /* SoundSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SoundSystem.h; path = ../SoundSystem.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CE98F0A018AE1490003FBD9E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CE98F09A18AE1490003FBD9E = {
+			isa = PBXGroup;
+			children = (
+				CE98F0BF18AE173A003FBD9E /* Sound.cpp */,
+				CE98F0C018AE173A003FBD9E /* SoundSystem.cpp */,
+				CE98F0C118AE173A003FBD9E /* SoundSystem.h */,
+				CE98F0A418AE1490003FBD9E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CE98F0A418AE1490003FBD9E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CE98F0A318AE1490003FBD9E /* libSound_d.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CE98F0A218AE1490003FBD9E /* BASS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE98F0B118AE1490003FBD9E /* Build configuration list for PBXNativeTarget "BASS" */;
+			buildPhases = (
+				CE98F09F18AE1490003FBD9E /* Sources */,
+				CE98F0A018AE1490003FBD9E /* Frameworks */,
+				CE98F0A118AE1490003FBD9E /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BASS;
+			productName = BASS;
+			productReference = CE98F0A318AE1490003FBD9E /* libSound_d.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CE98F09B18AE1490003FBD9E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Pixl Games";
+			};
+			buildConfigurationList = CE98F09E18AE1490003FBD9E /* Build configuration list for PBXProject "BASS" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = CE98F09A18AE1490003FBD9E;
+			productRefGroup = CE98F0A418AE1490003FBD9E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CE98F0A218AE1490003FBD9E /* BASS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CE98F09F18AE1490003FBD9E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE98F0C218AE173A003FBD9E /* Sound.cpp in Sources */,
+				CE98F0C318AE173A003FBD9E /* SoundSystem.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		CE98F0AF18AE1490003FBD9E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CONFIGURATION_BUILD_DIR = ../../../Lib/iOS/Bass;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SYMROOT = ../../../Lib/iOS/Bass;
+			};
+			name = Debug;
+		};
+		CE98F0B018AE1490003FBD9E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CONFIGURATION_BUILD_DIR = ../../../Lib/iOS/Bass;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				SDKROOT = iphoneos;
+				SYMROOT = ../../../Lib/iOS/Bass;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CE98F0B218AE1490003FBD9E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "compiler-default";
+				CONFIGURATION_BUILD_DIR = ../../../Lib/iOS/Bass;
+				DSTROOT = /tmp/BASS.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
+				HEADER_SEARCH_PATHS = (
+					../../Include,
+					../../../Include,
+					../../../PlatformLib/iOS,
+					../../../SuperPlayLib/Include,
+					../../../External/BASS/Include,
+				);
+				INSTALL_PATH = ../../../Lib/iOS/Bass;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = Sound_d;
+				SKIP_INSTALL = NO;
+				SYMROOT = ../../../Lib/iOS/Bass;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CE98F0B318AE1490003FBD9E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "compiler-default";
+				CONFIGURATION_BUILD_DIR = ../../../Lib/iOS/Bass;
+				DSTROOT = /tmp/BASS.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
+				HEADER_SEARCH_PATHS = (
+					../../Include,
+					../../../Include,
+					../../../PlatformLib/iOS,
+					../../../SuperPlayLib/Include,
+					../../../External/BASS/Include,
+				);
+				INSTALL_PATH = ../../../Lib/iOS/Bass;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = Sound;
+				SKIP_INSTALL = NO;
+				SYMROOT = ../../../Lib/iOS/Bass;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CE98F09E18AE1490003FBD9E /* Build configuration list for PBXProject "BASS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE98F0AF18AE1490003FBD9E /* Debug */,
+				CE98F0B018AE1490003FBD9E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE98F0B118AE1490003FBD9E /* Build configuration list for PBXNativeTarget "BASS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE98F0B218AE1490003FBD9E /* Debug */,
+				CE98F0B318AE1490003FBD9E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CE98F09B18AE1490003FBD9E /* Project object */;
+}

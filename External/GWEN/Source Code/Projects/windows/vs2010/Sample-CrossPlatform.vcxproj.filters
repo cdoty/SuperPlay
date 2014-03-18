@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Samples">
+      <UniqueIdentifier>{541E403C-5691-DF4D-8FEB-A386CB1F36E6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Samples\CrossPlatform">
+      <UniqueIdentifier>{84EB9DF3-FB8D-B74F-B97A-5AD3E2F7241C}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\Samples\CrossPlatform\CrossPlatform.cpp">
+      <Filter>Samples\CrossPlatform</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

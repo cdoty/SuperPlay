@@ -1,0 +1,17 @@
+The font used in this demo was downloaded from:
+http://opengameart.org/content/a-package-of-8-bit-fonts-for-grafx2-and-linux
+
+The explosion sound used in this demo was downloaded from:
+http://opengameart.org/content/platformer-sounds-terminal-interaction-door-shots-bang-and-footsteps
+
+It was created by yd, and released under a CC0 license.
+
+The shot sound was downloaded from:
+http://opengameart.org/content/gunloop-8bit
+
+It was created by Luke.RUSTLTD, and released under a CC0 license.
+
+The mod file was downloaded from:
+http://modarchive.org/index.php?request=view_by_moduleid&query=53296
+
+It was created by m0d, and released under a public domain license

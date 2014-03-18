@@ -1,0 +1,14 @@
+The UI elements used in the controller config utility were downloaded from:
+http://www.webappers.com/2013/09/24/free-download-flat-rounded-square-ui-kit
+
+They were designed by Freepik, and released License Free.
+
+The close button was downloaded from:
+http://opengameart.org/content/mini-icons
+
+It was created by Mark James and released under a CC0 license.
+
+The controller icon was downloaded from:
+http://kevinvanderven.deviantart.com/art/free-avatar-snes-controller-161383658
+
+It was designed by kevinvanderven, and may be used as long as credit is given.

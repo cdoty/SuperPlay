@@ -1,0 +1,4 @@
+The tiles used in this demo were downloaded from:
+http://opengameart.org/content/generic-platformer-tiles
+
+They were created by surt, and released under a CC BY 3.0 license.

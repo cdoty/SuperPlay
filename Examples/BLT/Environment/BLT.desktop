@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=BLT
+Comment=Super Play Example
+Exec=/home/pi/SuperPlay/Examples/BLT/Environment/BLT.exe
+Path=/home/pi/SuperPlay/Examples/BLT/Environment/
+Icon=/home/pi/SuperPlay/Examples/BLT/Environment/icon.png
+Terminal=false
+Type=Application
+Categories=Game

@@ -1,0 +1,5 @@
+mkdir -p Debug
+g++ -O3 -I../../Include -mfpu=vfp -DDEBUG -O0 -c Game.cpp -o Debug/Game.o
+mkdir -p Debug
+g++ -O3 -I../../Include -mfpu=vfp -DDEBUG -O0 -c GameHeader.cpp -o Debug/GameHeader.o
+g++ -mfpu=vfp -DDEBUG -O0 -pthread -L../../Lib/RaspberryPi -L../../Lib/Linux -L../../Lib/Linux/BASS -L../../External/BASS/Lib/ARM -L/opt/vc/lib -o Environment/Tilemap.exe Debug/Game.o Debug/GameHeader.o -lExpansionLib_d -lSuperPlay_d -lPlatform_d -lSound_d -lDisplay_d -lbass -lGLESv2 -lEGL -lopenmaxil -lbcm_host -lvcos -lvchiq_arm -lpthread -lrt

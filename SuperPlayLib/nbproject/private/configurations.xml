@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="90">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <df root="." name="0">
+      <df name="Debug">
+        <df name="Engine">
+        </df>
+        <df name="Hardware">
+        </df>
+        <df name="Libraries">
+          <df name="FastXML">
+          </df>
+          <df name="mtrand">
+          </df>
+          <df name="stb_image">
+          </df>
+          <df name="TinyXML2">
+          </df>
+        </df>
+      </df>
+      <df name="Engine">
+        <in>Image.cpp</in>
+        <in>ResourceManager.cpp</in>
+        <in>System.cpp</in>
+        <in>Utilities.cpp</in>
+      </df>
+      <df name="Hardware">
+        <df name="Archive">
+          <in>ShadowOAM.cpp</in>
+          <in>ShadowOAM.h</in>
+        </df>
+        <in>BG.cpp</in>
+        <in>BGManager.cpp</in>
+        <in>BGManager.h</in>
+        <in>BGVRAM.cpp</in>
+        <in>CRC32.cpp</in>
+        <in>CRC32.h</in>
+        <in>DMA.cpp</in>
+        <in>HDMA.cpp</in>
+        <in>Hardware.cpp</in>
+        <in>Joypad.cpp</in>
+        <in>OAM.cpp</in>
+        <in>Obj.cpp</in>
+        <in>ObjVRAM.cpp</in>
+        <in>SPC.cpp</in>
+        <in>SRAM.cpp</in>
+        <in>ShadowOAM.cpp</in>
+        <in>ShadowOAM.h</in>
+        <in>Text.cpp</in>
+      </df>
+      <df name="Include">
+        <in>System.h</in>
+        <in>Utilities.h</in>
+      </df>
+      <df name="Libraries">
+        <df name="mtrand">
+          <in>mtrand.cpp</in>
+          <in>mtrand.h</in>
+        </df>
+        <df name="stb_image">
+          <in>stb_image.cpp</in>
+          <in>stb_image.h</in>
+        </df>
+        <df name="TinyXML2">
+          <in>tinyxml2.cpp</in>
+        </df>
+      </df>
+      <df name="Release">
+        <df name="Engine">
+        </df>
+        <df name="Hardware">
+        </df>
+        <df name="Libraries">
+          <df name="FastXML">
+          </df>
+          <df name="mtrand">
+          </df>
+          <df name="stb_image">
+          </df>
+          <df name="TinyXML2">
+          </df>
+        </df>
+      </df>
+      <df name="SuperPlay">
+        <df name="SuperPlay.xcodeproj">
+          <df name="xcuserdata">
+            <df name="mac.xcuserdatad">
+              <df name="xcschemes">
+              </df>
+            </df>
+          </df>
+        </df>
+      </df>
+    </df>
+  </logicalFolder>
+  <projectmakefile>makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="0">
+      <toolsSet>
+        <developmentServer>pi@192.168.1.131:22</developmentServer>
+        <platform>2</platform>
+      </toolsSet>
+      <compile>
+        <compiledirpicklist>
+          <compiledirpicklistitem>.</compiledirpicklistitem>
+          <compiledirpicklistitem>${AUTO_FOLDER}</compiledirpicklistitem>
+        </compiledirpicklist>
+        <compiledir>${AUTO_FOLDER}</compiledir>
+        <compilecommandpicklist>
+          <compilecommandpicklistitem>${MAKE} ${ITEM_NAME}.o</compilecommandpicklistitem>
+          <compilecommandpicklistitem>${AUTO_COMPILE}</compilecommandpicklistitem>
+        </compilecommandpicklist>
+        <compilecommand>${AUTO_COMPILE}</compilecommand>
+      </compile>
+      <dbx_gdbdebugger version="1">
+        <gdb_pathmaps>
+        </gdb_pathmaps>
+        <gdb_interceptlist>
+          <gdbinterceptoptions gdb_all="false" gdb_unhandled="true" gdb_unexpected="true"/>
+        </gdb_interceptlist>
+        <gdb_options>
+          <DebugOptions>
+          </DebugOptions>
+        </gdb_options>
+        <gdb_buildfirst gdb_buildfirst_overriden="false" gdb_buildfirst_old="false"/>
+      </dbx_gdbdebugger>
+      <nativedebugger version="1">
+        <engine>gdb</engine>
+      </nativedebugger>
+      <runprofile version="9">
+        <runcommandpicklist>
+          <runcommandpicklistitem>"${OUTPUT_PATH}"</runcommandpicklistitem>
+        </runcommandpicklist>
+        <runcommand>"${OUTPUT_PATH}"</runcommand>
+        <rundir>.</rundir>
+        <buildfirst>false</buildfirst>
+        <terminal-type>0</terminal-type>
+        <remove-instrumentation>0</remove-instrumentation>
+        <environment>
+        </environment>
+      </runprofile>
+    </conf>
+    <conf name="Release" type="0">
+      <toolsSet>
+        <developmentServer>pi@192.168.1.131:22</developmentServer>
+        <platform>2</platform>
+      </toolsSet>
+      <compile>
+        <compiledirpicklist>
+          <compiledirpicklistitem>.</compiledirpicklistitem>
+          <compiledirpicklistitem>${AUTO_FOLDER}</compiledirpicklistitem>
+        </compiledirpicklist>
+        <compiledir>${AUTO_FOLDER}</compiledir>
+        <compilecommandpicklist>
+          <compilecommandpicklistitem>${MAKE} ${ITEM_NAME}.o</compilecommandpicklistitem>
+          <compilecommandpicklistitem>${AUTO_COMPILE}</compilecommandpicklistitem>
+        </compilecommandpicklist>
+        <compilecommand>${AUTO_COMPILE}</compilecommand>
+      </compile>
+      <dbx_gdbdebugger version="1">
+        <gdb_pathmaps>
+        </gdb_pathmaps>
+        <gdb_interceptlist>
+          <gdbinterceptoptions gdb_all="false" gdb_unhandled="true" gdb_unexpected="true"/>
+        </gdb_interceptlist>
+        <gdb_options>
+          <DebugOptions>
+          </DebugOptions>
+        </gdb_options>
+        <gdb_buildfirst gdb_buildfirst_overriden="false" gdb_buildfirst_old="false"/>
+      </dbx_gdbdebugger>
+      <nativedebugger version="1">
+        <engine>gdb</engine>
+      </nativedebugger>
+      <runprofile version="9">
+        <runcommandpicklist>
+          <runcommandpicklistitem>"${OUTPUT_PATH}"</runcommandpicklistitem>
+        </runcommandpicklist>
+        <runcommand>"${OUTPUT_PATH}"</runcommand>
+        <rundir>.</rundir>
+        <buildfirst>false</buildfirst>
+        <terminal-type>0</terminal-type>
+        <remove-instrumentation>0</remove-instrumentation>
+        <environment>
+        </environment>
+      </runprofile>
+    </conf>
+  </confs>
+</configurationDescriptor>

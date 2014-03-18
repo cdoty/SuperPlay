@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="90">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <df root="." name="0">
+      <in>File.cpp</in>
+      <in>Input.cpp</in>
+      <in>Input.h</in>
+      <in>Log.cpp</in>
+      <in>Main.cpp</in>
+      <in>Platform.cpp</in>
+      <in>Platform.h</in>
+      <in>PlatformDefines.h</in>
+      <in>StoragePath.cpp</in>
+      <in>Timer.cpp</in>
+      <in>Timer.h</in>
+      <in>Window.cpp</in>
+      <in>Window.h</in>
+    </df>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceFolderFilter>^(nbproject)$</sourceFolderFilter>
+  <sourceRootList>
+    <Elem>.</Elem>
+  </sourceRootList>
+  <projectmakefile>makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="0">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>false</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <codeAssistance>
+      </codeAssistance>
+      <makefileType>
+        <makeTool>
+          <buildCommandWorkingDir>.</buildCommandWorkingDir>
+          <buildCommand>${MAKE} -f makefile DEBUG=1</buildCommand>
+          <cleanCommand>${MAKE} -f makefile clean DEBUG=1</cleanCommand>
+          <executablePath></executablePath>
+        </makeTool>
+      </makefileType>
+      <item path="File.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Input.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Input.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Log.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Platform.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Platform.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="PlatformDefines.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="StoragePath.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Timer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Timer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Window.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Window.h" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+    <conf name="Release" type="0">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>false</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <codeAssistance>
+      </codeAssistance>
+      <makefileType>
+        <makeTool>
+          <buildCommandWorkingDir>.</buildCommandWorkingDir>
+          <buildCommand>${MAKE} -f makefile</buildCommand>
+          <cleanCommand>${MAKE} -f makefile clean</cleanCommand>
+          <executablePath></executablePath>
+        </makeTool>
+      </makefileType>
+      <item path="File.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Input.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Input.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Log.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Platform.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Platform.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="PlatformDefines.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="StoragePath.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Timer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Timer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Window.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Window.h" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>

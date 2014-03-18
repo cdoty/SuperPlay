@@ -1,0 +1,4 @@
+The sprites used in this demo were downloaded from:
+http://opengameart.org/content/16x16-16x24-32x32-rpg-enemies-updated
+
+They were created by Stephen "Redshrike" Challener, and released under a CC BY 3.0 license.

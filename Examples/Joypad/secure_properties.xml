@@ -1,0 +1,6 @@
+<project name="secure_properties">
+  <property name="key.store" value="C:\SuperPlay\Examples\Joypad\release.keystore" />
+  <property name="key.store.password" value="chaos1024" />
+  <property name="key.alias" value="releasekey" />
+  <property name="key.alias.password" value="chaos1024" />
+</project>
