@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="NsightTegraProject">
+    <NsightTegraProjectRevisionNumber>5</NsightTegraProjectRevisionNumber>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Tegra-Android">
+      <Configuration>Debug</Configuration>
+      <Platform>Tegra-Android</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Tegra-Android">
+      <Configuration>Release</Configuration>
+      <Platform>Tegra-Android</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Profile|Tegra-Android">
+      <Configuration>Profile</Configuration>
+      <Platform>Tegra-Android</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AndroidManifest.xml" />
+    <None Include="build.xml" />
+    <None Include="project.properties" />
+    <None Include="proguard.cfg" />
+    <None Include="res\values\strings.xml" />
+    <JCompile Include="src\com\PixlGames\SuperPlay\NativeActivity.java">
+      <FileType>Document</FileType>
+    </JCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="FPS.cpp" />
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GameHeader.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="FPS.h" />
+    <ClInclude Include="Game.h" />
+    <ClInclude Include="GameDefines.h" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{19CFE265-747E-4118-AE93-5E719888D02D}</ProjectGuid>
+    <RootNamespace>TextAndroid</RootNamespace>
+    <ProjectName>Text</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|Tegra-Android'">
+    <AndroidTargetAPI>android-16</AndroidTargetAPI>
+    <AndroidStlType>system</AndroidStlType>
+    <AndroidArch>armv7-a</AndroidArch>
+    <NdkToolchainVersion>Default</NdkToolchainVersion>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Release|Tegra-Android'">
+    <AndroidTargetAPI>android-16</AndroidTargetAPI>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Profile|Tegra-Android'">
+    <AndroidTargetAPI>android-16</AndroidTargetAPI>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Tegra-Android'">
+    <OutDir>Android\</OutDir>
+    <TargetName>libSuperPlay</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Tegra-Android'">
+    <OutDir>Android\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Profile|Tegra-Android'">
+    <OutDir>Android\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Tegra-Android'">
+    <ClCompile>
+      <PreprocessorDefinitions>DISABLE_IMPORTGL</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../../Include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalOptions>-lGLESv1_CM %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalLibraryDirectories>..\..\Lib\Android;..\..\Lib\Android\Hekkus;..\..\External\Hekkus\lib\android\armeabi-v7a</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Expansion_d;SuperPlay_d;Platform_d;Sound_d;Display_d;hss;oafile;zip</AdditionalDependencies>
+      <AndroidSystemLibs>c;m;log;gcc;android;z;egl</AndroidSystemLibs>
+    </Link>
+    <AntBuild>
+      <AntBuildPath>$(ProjectDir)\</AntBuildPath>
+      <JarDirectories>
+      </JarDirectories>
+      <JarDependencies>
+      </JarDependencies>
+    </AntBuild>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Tegra-Android'">
+    <ClCompile>
+      <PreprocessorDefinitions>DISABLE_IMPORTGL</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../../Include</AdditionalIncludeDirectories>
+      <FloatAbi>softfp</FloatAbi>
+    </ClCompile>
+    <Link>
+      <AdditionalOptions>-lGLESv1_CM %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalLibraryDirectories>..\..\Lib\Android;..\..\Lib\Android\BASS</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Expansion;SuperPlay;Platform;Sound;Display</AdditionalDependencies>
+      <AndroidSystemLibs>c;m;log;gcc;android;z;egl</AndroidSystemLibs>
+    </Link>
+    <AntBuild>
+      <AntBuildPath>$(ProjectDir)\</AntBuildPath>
+      <SecurePropertiesLocation>secure_properties.xml</SecurePropertiesLocation>
+      <JarDirectories>
+      </JarDirectories>
+      <JarDependencies>
+      </JarDependencies>
+    </AntBuild>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Profile|Tegra-Android'">
+    <ClCompile>
+      <PreprocessorDefinitions>DISABLE_IMPORTGL</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../../Include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalOptions>-lGLESv1_CM %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalLibraryDirectories>..\..\Lib\Android;..\..\Lib\Android\Hekkus;..\..\External\Hekkus\lib\android\armeabi-v7a</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Expansion;SuperPlay;Platform;Sound;Display</AdditionalDependencies>
+      <AndroidSystemLibs>c;m;log;gcc;android;z;egl</AndroidSystemLibs>
+    </Link>
+    <AntBuild>
+      <AntBuildPath>$(ProjectDir)\</AntBuildPath>
+      <JarDirectories>
+      </JarDirectories>
+      <JarDependencies>
+      </JarDependencies>
+    </AntBuild>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

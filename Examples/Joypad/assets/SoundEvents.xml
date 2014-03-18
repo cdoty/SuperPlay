@@ -1,0 +1,12 @@
+<Sound>
+	<SoundName>kill_shoot.ogg</SoundName>
+	<EventID>KillShot</EventID>
+</Sound>
+<Sound>
+	<SoundName>explode.wav</SoundName>
+	<EventID>Explode</EventID>
+</Sound>
+<Music>
+	<MusicName>musix-pointless.mod</MusicName>
+	<EventID>Title</EventID>
+</Music>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:SoundLib/BASS/iOS/BASS.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Examples/BLT/iOS/BLT.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Examples/Text/iOS/Text.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:PlatformLib/iOS/Platform/Platform.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:SuperPlayLib/iOS/SuperPlay.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:DisplayLib/OpenGL/iOS/Display.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:SoundLib/irrKlang/iOS/Sound.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:ExpansionLib/iOS/Expansion.xcodeproj">
+   </FileRef>
+</Workspace>

@@ -1,0 +1,10 @@
+The tiles used in this demo were downloaded from:
+http://opengameart.org/content/turfwars-pixel-city-tile-set
+
+They were created by David Baumgart, commissioned by jnamobile.com,
+and released under a CC BY 3.0 license.
+
+The font used in this demo was downloaded from:
+http://opengameart.org/content/a-package-of-8-bit-fonts-for-grafx2-and-linux
+
+It was created by usr_share, and released under a CC0 license.

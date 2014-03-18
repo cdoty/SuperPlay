@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="NsightTegraProject">
+    <NsightTegraProjectRevisionNumber>5</NsightTegraProjectRevisionNumber>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Tegra-Android">
+      <Configuration>Debug</Configuration>
+      <Platform>Tegra-Android</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Tegra-Android">
+      <Configuration>Release</Configuration>
+      <Platform>Tegra-Android</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Profile|Tegra-Android">
+      <Configuration>Profile</Configuration>
+      <Platform>Tegra-Android</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Engine\Image.cpp" />
+    <ClCompile Include="Engine\ResourceManager.cpp" />
+    <ClCompile Include="Engine\System.cpp" />
+    <ClCompile Include="Engine\Utilities.cpp" />
+    <ClCompile Include="Hardware\BG.cpp" />
+    <ClCompile Include="Hardware\BGManager.cpp" />
+    <ClCompile Include="Hardware\BGVRAM.cpp" />
+    <ClCompile Include="Hardware\CRC32.cpp" />
+    <ClCompile Include="Hardware\DMA.cpp" />
+    <ClCompile Include="Hardware\Hardware.cpp" />
+    <ClCompile Include="Hardware\HDMA.cpp" />
+    <ClCompile Include="Hardware\Joypad.cpp" />
+    <ClCompile Include="Hardware\OAM.cpp" />
+    <ClCompile Include="Hardware\Obj.cpp" />
+    <ClCompile Include="Hardware\ObjVRAM.cpp" />
+    <ClCompile Include="Hardware\ShadowOAM.cpp" />
+    <ClCompile Include="Hardware\SPC.cpp" />
+    <ClCompile Include="Hardware\SRAM.cpp" />
+    <ClCompile Include="Hardware\Text.cpp" />
+    <ClCompile Include="Libraries\mtrand\mtrand.cpp" />
+    <ClCompile Include="Libraries\stb_image\stb_image.cpp" />
+    <ClCompile Include="Libraries\TinyXML2\tinyxml2.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Include\AssertLog.h" />
+    <ClInclude Include="..\Include\BG.h" />
+    <ClInclude Include="..\Include\BGVRAM.h" />
+    <ClInclude Include="..\Include\DMA.h" />
+    <ClInclude Include="..\Include\Expansion\AudioLoader.h" />
+    <ClInclude Include="..\Include\Expansion\FontLoader.h" />
+    <ClInclude Include="..\Include\Expansion\HDMALoader.h" />
+    <ClInclude Include="..\Include\Expansion\MapLoader.h" />
+    <ClInclude Include="..\Include\Expansion\SpriteLoader.h" />
+    <ClInclude Include="..\Include\File.h" />
+    <ClInclude Include="..\Include\GameHeader.h" />
+    <ClInclude Include="..\Include\Hardware.h" />
+    <ClInclude Include="..\Include\HardwareDefines.h" />
+    <ClInclude Include="..\Include\HDMA.h" />
+    <ClInclude Include="..\Include\IGame.h" />
+    <ClInclude Include="..\Include\Image.h" />
+    <ClInclude Include="..\Include\IVRAM.h" />
+    <ClInclude Include="..\Include\Joypad.h" />
+    <ClInclude Include="..\Include\Log.h" />
+    <ClInclude Include="..\Include\Macros.h" />
+    <ClInclude Include="..\Include\OAM.h" />
+    <ClInclude Include="..\Include\Obj.h" />
+    <ClInclude Include="..\Include\ObjVRAM.h" />
+    <ClInclude Include="..\Include\PathDefines.h" />
+    <ClInclude Include="..\Include\Point.h" />
+    <ClInclude Include="..\Include\Rect.h" />
+    <ClInclude Include="..\Include\RenderParams.h" />
+    <ClInclude Include="..\Include\ResourceManager.h" />
+    <ClInclude Include="..\Include\SPC.h" />
+    <ClInclude Include="..\Include\SRAM.h" />
+    <ClInclude Include="..\Include\STLMacros.h" />
+    <ClInclude Include="..\Include\Text.h" />
+    <ClInclude Include="..\Include\TinySTL\allocator.h" />
+    <ClInclude Include="..\Include\TinySTL\buffer.h" />
+    <ClInclude Include="..\Include\TinySTL\hash.h" />
+    <ClInclude Include="..\Include\TinySTL\hash_base.h" />
+    <ClInclude Include="..\Include\TinySTL\new.h" />
+    <ClInclude Include="..\Include\TinySTL\stddef.h" />
+    <ClInclude Include="..\Include\TinySTL\stdint.h" />
+    <ClInclude Include="..\Include\TinySTL\string.h" />
+    <ClInclude Include="..\Include\TinySTL\traits.h" />
+    <ClInclude Include="..\Include\TinySTL\unordered_map.h" />
+    <ClInclude Include="..\Include\TinySTL\unordered_set.h" />
+    <ClInclude Include="..\Include\TinySTL\vector.h" />
+    <ClInclude Include="..\Include\TinyXML2\tinyxml2.h" />
+    <ClInclude Include="..\Include\Types.h" />
+    <ClInclude Include="Hardware\BGManager.h" />
+    <ClInclude Include="Hardware\CRC32.h" />
+    <ClInclude Include="Hardware\ShadowOAM.h" />
+    <ClInclude Include="Include\System.h" />
+    <ClInclude Include="Include\Utilities.h" />
+    <ClInclude Include="Libraries\mtrand\mtrand.h" />
+    <ClInclude Include="Libraries\stb_image\stb_image.h" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{FB4F82B4-BAC7-431D-BD3C-F4DBDAFE6C22}</ProjectGuid>
+    <RootNamespace>SuperPlayAndroid</RootNamespace>
+    <ProjectName>SuperPlayLib</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|Tegra-Android'">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <AndroidTargetAPI>android-16</AndroidTargetAPI>
+    <AndroidStlType>system</AndroidStlType>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Release|Tegra-Android'">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <AndroidTargetAPI>android-15</AndroidTargetAPI>
+    <AndroidStlType>system</AndroidStlType>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Profile|Tegra-Android'">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <AndroidTargetAPI>android-15</AndroidTargetAPI>
+    <AndroidStlType>system</AndroidStlType>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Tegra-Android'">
+    <OutDir>..\Lib\Android\</OutDir>
+    <TargetName>libSuperPlay_d</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Profile|Tegra-Android'">
+    <OutDir>..\Lib\Android\</OutDir>
+    <TargetName>libSuperPlay</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Tegra-Android'">
+    <OutDir>..\Lib\Android\</OutDir>
+    <TargetName>libSuperPlay</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Tegra-Android'">
+    <ClCompile>
+      <PreprocessorDefinitions>DISABLE_IMPORTGL</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>Include;Libraries;../Include;../DisplayLib/Include;../PlatformLib/Include;../SoundLib/Include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalOptions>-lGLESv1_CM %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Tegra-Android'">
+    <ClCompile>
+      <PreprocessorDefinitions>DISABLE_IMPORTGL</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>Include;Libraries;../Include;../DisplayLib/Include;../PlatformLib/Include;../SoundLib/Include</AdditionalIncludeDirectories>
+      <FloatAbi>softfp</FloatAbi>
+    </ClCompile>
+    <Link>
+      <AdditionalOptions>-lGLESv1_CM %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Profile|Tegra-Android'">
+    <ClCompile>
+      <PreprocessorDefinitions>DISABLE_IMPORTGL</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>Include;Libraries;../Include;../DisplayLib/Include;../PlatformLib/Include;../SoundLib/Include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalOptions>-lGLESv1_CM %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

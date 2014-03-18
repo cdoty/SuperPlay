@@ -1,0 +1,50 @@
+mkdir -p Release
+mkdir -p Release/AudioLoader
+mkdir -p Release/FontLoader
+mkdir -p Release/FontLoader/yspng
+mkdir -p Release/HDMALoader
+mkdir -p Release/MapLoader
+mkdir -p Release/SpriteLoader
+g++ -I../Include -I../Include/Expansion -I../PlatformLib/Linux -I../SuperPlayLib/Include -O3  -c AudioLoader/AudioLoader.cpp -o Release/AudioLoader/AudioLoader.o
+mkdir -p Release
+mkdir -p Release/AudioLoader
+mkdir -p Release/FontLoader
+mkdir -p Release/FontLoader/yspng
+mkdir -p Release/HDMALoader
+mkdir -p Release/MapLoader
+mkdir -p Release/SpriteLoader
+g++ -I../Include -I../Include/Expansion -I../PlatformLib/Linux -I../SuperPlayLib/Include -O3  -c FontLoader/FontLoader.cpp -o Release/FontLoader/FontLoader.o
+mkdir -p Release
+mkdir -p Release/AudioLoader
+mkdir -p Release/FontLoader
+mkdir -p Release/FontLoader/yspng
+mkdir -p Release/HDMALoader
+mkdir -p Release/MapLoader
+mkdir -p Release/SpriteLoader
+g++ -I../Include -I../Include/Expansion -I../PlatformLib/Linux -I../SuperPlayLib/Include -O3  -c FontLoader/yspng/yspng.cpp -o Release/FontLoader/yspng/yspng.o
+mkdir -p Release
+mkdir -p Release/AudioLoader
+mkdir -p Release/FontLoader
+mkdir -p Release/FontLoader/yspng
+mkdir -p Release/HDMALoader
+mkdir -p Release/MapLoader
+mkdir -p Release/SpriteLoader
+g++ -I../Include -I../Include/Expansion -I../PlatformLib/Linux -I../SuperPlayLib/Include -O3  -c HDMALoader/HDMALoader.cpp -o Release/HDMALoader/HDMALoader.o
+mkdir -p Release
+mkdir -p Release/AudioLoader
+mkdir -p Release/FontLoader
+mkdir -p Release/FontLoader/yspng
+mkdir -p Release/HDMALoader
+mkdir -p Release/MapLoader
+mkdir -p Release/SpriteLoader
+g++ -I../Include -I../Include/Expansion -I../PlatformLib/Linux -I../SuperPlayLib/Include -O3  -c MapLoader/MapLoader.cpp -o Release/MapLoader/MapLoader.o
+mkdir -p Release
+mkdir -p Release/AudioLoader
+mkdir -p Release/FontLoader
+mkdir -p Release/FontLoader/yspng
+mkdir -p Release/HDMALoader
+mkdir -p Release/MapLoader
+mkdir -p Release/SpriteLoader
+g++ -I../Include -I../Include/Expansion -I../PlatformLib/Linux -I../SuperPlayLib/Include -O3  -c SpriteLoader/SpriteLoader.cpp -o Release/SpriteLoader/SpriteLoader.o
+mkdir -p ../Lib/Linux/
+ar rcus ../Lib/Linux/libExpansionLib.a Release/AudioLoader/AudioLoader.o Release/FontLoader/FontLoader.o Release/FontLoader/yspng/yspng.o Release/HDMALoader/HDMALoader.o Release/MapLoader/MapLoader.o Release/SpriteLoader/SpriteLoader.o

@@ -1,0 +1,12 @@
+<Sound>
+	<SoundName>8bit_gunloop_explosion.wav</SoundName>
+	<EventID>Shot</EventID>
+</Sound>
+<Sound>
+	<SoundName>explode.wav</SoundName>
+	<EventID>Explode</EventID>
+</Sound>
+<Music>
+	<MusicName>musix-omg-plz-help.mod</MusicName>
+	<EventID>Title</EventID>
+</Music>

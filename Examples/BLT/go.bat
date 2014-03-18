@@ -1,0 +1,1 @@
+adb shell am start -n com.PixlGames.SuperPlay.BLT/android.app.NativeActivity

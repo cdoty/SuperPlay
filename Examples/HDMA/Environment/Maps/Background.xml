@@ -1,0 +1,9 @@
+<MapInfo>
+	<ImageName>Background.png</ImageName>
+	<MapName>Background.map</MapName>
+	<TileWidth>16</TileWidth>
+	<TileHeight>16</TileHeight>
+	<MapWidth>81</MapWidth>
+	<MapHeight>24</MapHeight>
+	<TileCount>504</TileCount>
+</MapInfo>

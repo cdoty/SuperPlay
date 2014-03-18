@@ -1,0 +1,79 @@
+#!/usr/bin/env mkb
+define MARMALADE
+debug_define _DEBUG
+
+files
+{
+	Background.cpp
+	Background.h
+	BaseSprite.cpp
+	BaseSprite.h
+	BulletManager.cpp
+	BulletManager.h
+	BulletSprite.cpp
+	BulletSprite.h
+	EnemyManager.cpp
+	EnemyManager.h
+	EnemySprite.cpp
+	EnemySprite.h
+	FPS.cpp
+	FPS.h
+	Game.cpp
+	Game.h
+	GameDefines.h
+	GameHeader.cpp
+	PlayerSprite.cpp
+	PlayerSprite.h
+	ResourceManager.cpp
+	ResourceManager.h
+	ScoreBar.cpp
+	ScoreBar.h
+}
+
+includepaths
+{
+	../../Include
+}
+
+librarypaths
+{
+	../../Lib/Marmalade
+	../../Lib/Marmalade/Hekkus
+}
+
+if {{ not defined _DEBUG }}
+{
+	librarys
+	{
+		Display.lib
+		Expansion.lib
+		Platform.lib
+		Sound.lib
+		SuperPlay.lib
+	}
+}
+else
+{
+	librarys
+	{
+		Display_d.lib
+		Expansion_d.lib
+		Platform_d.lib
+		Sound_d.lib
+		SuperPlay_d.lib
+	}
+}
+
+subprojects
+{
+    iwutil
+    iwgl
+}
+
+options
+{
+}
+
+deployment
+{
+}

@@ -1,0 +1,9 @@
+The controller resources used in this demo was downloaded from:
+http://dribbble.com/shots/1056753-Super-Nintendo-Controller
+
+It was created by Rebecca Machamer
+
+The font used in this demo was downloaded from:
+http://opengameart.org/content/the-collection-of-8-bit-fonts-for-grafx2-r2
+
+It was created by usr_share, and released under a CC0 license.

@@ -1,0 +1,56 @@
+#!/usr/bin/env mkb
+define MARMALADE
+debug_define _DEBUG
+
+options
+{
+	lib
+	output-name=../Lib/Marmalade/SuperPlay.lib
+	output-name-debug=../Lib/Marmalade/SuperPlay_d.lib
+}
+
+includepaths
+{
+	Include
+	Libraries
+	../Include
+	../DisplayLib/Include
+	../PlatformLib/Include
+	../SoundLib/Include
+}
+
+files
+{
+	(Engine)
+	Image.cpp
+	ResourceManager.cpp
+	System.cpp
+	Utilities.cpp
+	(Hardware)
+	BG.cpp
+	BGManager.cpp
+	BGManager.h
+	BGVRAM.cpp
+	CRC32.cpp
+	CRC32.h
+	DMA.cpp
+	HDMA.cpp
+	Hardware.cpp
+	Joypad.cpp
+	OAM.cpp
+	Obj.cpp
+	ObjVRAM.cpp
+	SPC.cpp
+	SRAM.cpp
+	ShadowOAM.cpp
+	ShadowOAM.h
+	Text.cpp
+	(Libraries/mtrand)
+	mtrand.cpp
+	mtrand.h
+	(Libraries/stb_image)
+	stb_image.cpp
+	stb_image.h
+	(Libraries/TinyXML2)
+	tinyxml2.cpp
+}

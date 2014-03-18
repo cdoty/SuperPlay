@@ -1,0 +1,34 @@
+#!/usr/bin/env mkb
+define MARMALADE
+debug_define _DEBUG
+
+options
+{
+	lib
+	output-name=../Lib/Marmalade/Expansion.lib
+	output-name-debug=../Lib/Marmalade/Expansion_d.lib
+}
+
+includepaths
+{
+	../Include
+	../Include/Expansion
+	../SuperPlayLib/Include
+}
+
+files
+{
+	(AudioLoader)
+	AudioLoader.cpp
+	(FontLoader)
+	FontLoader.cpp
+	(FontLoader/yspng)
+	yspng.cpp
+	yspng.h
+	(MapLoader)
+	MapLoader.cpp
+	(HDMALoader)
+	HDMALoader.cpp
+	(SpriteLoader)
+	SpriteLoader.cpp
+}

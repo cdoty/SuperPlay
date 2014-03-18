@@ -1,0 +1,14 @@
+mkdir -p Release
+g++ -O3 -I../Include -I../../Include -I../../PlatformLib/RaspberryPi -I../../SuperPlayLib/Include -I/opt/vc/include -I/opt/vc/include/interface/vcos/pthreads -mfpu=vfp -O2  -c Display.cpp -o Release/Display.o
+mkdir -p Release
+g++ -O3 -I../Include -I../../Include -I../../PlatformLib/RaspberryPi -I../../SuperPlayLib/Include -I/opt/vc/include -I/opt/vc/include/interface/vcos/pthreads -mfpu=vfp -O2  -c GLPlatform.cpp -o Release/GLPlatform.o
+mkdir -p Release
+g++ -O3 -I../Include -I../../Include -I../../PlatformLib/RaspberryPi -I../../SuperPlayLib/Include -I/opt/vc/include -I/opt/vc/include/interface/vcos/pthreads -mfpu=vfp -O2  -c IndexBuffer.cpp -o Release/IndexBuffer.o
+mkdir -p Release
+g++ -O3 -I../Include -I../../Include -I../../PlatformLib/RaspberryPi -I../../SuperPlayLib/Include -I/opt/vc/include -I/opt/vc/include/interface/vcos/pthreads -mfpu=vfp -O2  -c SpriteBatch.cpp -o Release/SpriteBatch.o
+mkdir -p Release
+g++ -O3 -I../Include -I../../Include -I../../PlatformLib/RaspberryPi -I../../SuperPlayLib/Include -I/opt/vc/include -I/opt/vc/include/interface/vcos/pthreads -mfpu=vfp -O2  -c Texture.cpp -o Release/Texture.o
+mkdir -p Release
+g++ -O3 -I../Include -I../../Include -I../../PlatformLib/RaspberryPi -I../../SuperPlayLib/Include -I/opt/vc/include -I/opt/vc/include/interface/vcos/pthreads -mfpu=vfp -O2  -c VertexBuffer.cpp -o Release/VertexBuffer.o
+mkdir -p ../../Lib/RaspberryPi/
+ar rcus ../../Lib/RaspberryPi/libDisplay.a Release/Display.o Release/GLPlatform.o Release/IndexBuffer.o Release/SpriteBatch.o Release/Texture.o Release/VertexBuffer.o

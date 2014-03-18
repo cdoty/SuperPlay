@@ -1,0 +1,654 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CE3EAB6118AE28A80048FE2D /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE3EAB6018AE28A80048FE2D /* AudioToolbox.framework */; };
+		CE3EAB6318AE28EC0048FE2D /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE3EAB6218AE28EC0048FE2D /* CFNetwork.framework */; };
+		CECABFD418A1B0CE00DE6A7F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CECABFD318A1B0CE00DE6A7F /* UIKit.framework */; };
+		CECABFD618A1B0CE00DE6A7F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CECABFD518A1B0CE00DE6A7F /* Foundation.framework */; };
+		CECABFD818A1B0CE00DE6A7F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CECABFD718A1B0CE00DE6A7F /* CoreGraphics.framework */; };
+		CECABFDE18A1B0CE00DE6A7F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CECABFDC18A1B0CE00DE6A7F /* InfoPlist.strings */; };
+		CECAC03E18A1B79E00DE6A7F /* Background.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CECAC02618A1B79E00DE6A7F /* Background.cpp */; };
+		CECAC03F18A1B79E00DE6A7F /* BaseSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CECAC02818A1B79E00DE6A7F /* BaseSprite.cpp */; };
+		CECAC04018A1B79E00DE6A7F /* BulletManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CECAC02A18A1B79E00DE6A7F /* BulletManager.cpp */; };
+		CECAC04118A1B79E00DE6A7F /* BulletSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CECAC02C18A1B79E00DE6A7F /* BulletSprite.cpp */; };
+		CECAC04218A1B79E00DE6A7F /* EnemyManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CECAC02E18A1B79E00DE6A7F /* EnemyManager.cpp */; };
+		CECAC04318A1B79E00DE6A7F /* EnemySprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CECAC03018A1B79E00DE6A7F /* EnemySprite.cpp */; };
+		CECAC04418A1B79E00DE6A7F /* FPS.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CECAC03218A1B79E00DE6A7F /* FPS.cpp */; };
+		CECAC04518A1B79E00DE6A7F /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CECAC03418A1B79E00DE6A7F /* Game.cpp */; };
+		CECAC04618A1B79E00DE6A7F /* GameHeader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CECAC03718A1B79E00DE6A7F /* GameHeader.cpp */; };
+		CECAC04718A1B79E00DE6A7F /* PlayerSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CECAC03818A1B79E00DE6A7F /* PlayerSprite.cpp */; };
+		CECAC04818A1B79E00DE6A7F /* ResourceManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CECAC03A18A1B79E00DE6A7F /* ResourceManager.cpp */; };
+		CECAC04918A1B79E00DE6A7F /* ScoreBar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CECAC03C18A1B79E00DE6A7F /* ScoreBar.cpp */; };
+		CECAC06918A1BABB00DE6A7F /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CECAC06818A1BABB00DE6A7F /* OpenGLES.framework */; };
+		CECAC06B18A1BACD00DE6A7F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CECAC06A18A1BACD00DE6A7F /* QuartzCore.framework */; };
+		CECAC07218A1BB2D00DE6A7F /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = CECAC06C18A1BB2D00DE6A7F /* Fonts */; };
+		CECAC07318A1BB2D00DE6A7F /* Maps in Resources */ = {isa = PBXBuildFile; fileRef = CECAC06D18A1BB2D00DE6A7F /* Maps */; };
+		CECAC07418A1BB2D00DE6A7F /* Music in Resources */ = {isa = PBXBuildFile; fileRef = CECAC06E18A1BB2D00DE6A7F /* Music */; };
+		CECAC07518A1BB2D00DE6A7F /* SoundEvents.xml in Resources */ = {isa = PBXBuildFile; fileRef = CECAC06F18A1BB2D00DE6A7F /* SoundEvents.xml */; };
+		CECAC07618A1BB2D00DE6A7F /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = CECAC07018A1BB2D00DE6A7F /* Sounds */; };
+		CECAC07718A1BB2D00DE6A7F /* Sprites in Resources */ = {isa = PBXBuildFile; fileRef = CECAC07118A1BB2D00DE6A7F /* Sprites */; };
+		CECAC07918A1BDF400DE6A7F /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = CECAC07818A1BDF400DE6A7F /* Default.png */; };
+		CECAC09A18A1F96B00DE6A7F /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CECAC07A18A1BFE800DE6A7F /* Icon.png */; };
+		CED90F2118A9928500D525EB /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CED90F2018A9928500D525EB /* ExternalAccessory.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CE98F0BD18AE1699003FBD9E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE98F0B918AE1698003FBD9E /* BASS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = CE98F0A318AE1490003FBD9E;
+			remoteInfo = BASS;
+		};
+		CE98F0C818AE1E1B003FBD9E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE98F0B918AE1698003FBD9E /* BASS.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = CE98F0A218AE1490003FBD9E;
+			remoteInfo = BASS;
+		};
+		CECAC08C18A1C36900DE6A7F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CECAC08818A1C36800DE6A7F /* Display.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 04F447B11875CD74003830E9;
+			remoteInfo = Display;
+		};
+		CECAC08F18A1C36900DE6A7F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CECAC08518A1C36800DE6A7F /* Expansion.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 04F4478B1875A044003830E9;
+			remoteInfo = Expansion;
+		};
+		CECAC09218A1C36900DE6A7F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CECAC08218A1C36800DE6A7F /* Platform.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 04F446EE18758A6E003830E9;
+			remoteInfo = Platform;
+		};
+		CECAC09818A1C36900DE6A7F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CECAC07C18A1C36800DE6A7F /* SuperPlay.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 04F4471F18759683003830E9;
+			remoteInfo = SuperPlay;
+		};
+		CEF0587C18A213C2001068C7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CECAC08518A1C36800DE6A7F /* Expansion.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 04F4478A1875A044003830E9;
+			remoteInfo = Expansion;
+		};
+		CEF0588018A213C2001068C7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CECAC07C18A1C36800DE6A7F /* SuperPlay.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 04F4471E18759683003830E9;
+			remoteInfo = SuperPlay;
+		};
+		CEF0588218A213C2001068C7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CECAC08818A1C36800DE6A7F /* Display.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 04F447B01875CD74003830E9;
+			remoteInfo = Display;
+		};
+		CEF0588418A213C2001068C7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CECAC08218A1C36800DE6A7F /* Platform.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 04F446ED18758A6E003830E9;
+			remoteInfo = Platform;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CE3EAB6018AE28A80048FE2D /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		CE3EAB6218AE28EC0048FE2D /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		CE98F0B918AE1698003FBD9E /* BASS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BASS.xcodeproj; path = ../../../SoundLib/BASS/iOS/BASS.xcodeproj; sourceTree = "<group>"; };
+		CECABFD018A1B0CE00DE6A7F /* BLT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BLT.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CECABFD318A1B0CE00DE6A7F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		CECABFD518A1B0CE00DE6A7F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		CECABFD718A1B0CE00DE6A7F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		CECABFDD18A1B0CE00DE6A7F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CECAC02618A1B79E00DE6A7F /* Background.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Background.cpp; path = ../../Background.cpp; sourceTree = "<group>"; };
+		CECAC02718A1B79E00DE6A7F /* Background.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Background.h; path = ../../Background.h; sourceTree = "<group>"; };
+		CECAC02818A1B79E00DE6A7F /* BaseSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BaseSprite.cpp; path = ../../BaseSprite.cpp; sourceTree = "<group>"; };
+		CECAC02918A1B79E00DE6A7F /* BaseSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseSprite.h; path = ../../BaseSprite.h; sourceTree = "<group>"; };
+		CECAC02A18A1B79E00DE6A7F /* BulletManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BulletManager.cpp; path = ../../BulletManager.cpp; sourceTree = "<group>"; };
+		CECAC02B18A1B79E00DE6A7F /* BulletManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BulletManager.h; path = ../../BulletManager.h; sourceTree = "<group>"; };
+		CECAC02C18A1B79E00DE6A7F /* BulletSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BulletSprite.cpp; path = ../../BulletSprite.cpp; sourceTree = "<group>"; };
+		CECAC02D18A1B79E00DE6A7F /* BulletSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BulletSprite.h; path = ../../BulletSprite.h; sourceTree = "<group>"; };
+		CECAC02E18A1B79E00DE6A7F /* EnemyManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = EnemyManager.cpp; path = ../../EnemyManager.cpp; sourceTree = "<group>"; };
+		CECAC02F18A1B79E00DE6A7F /* EnemyManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EnemyManager.h; path = ../../EnemyManager.h; sourceTree = "<group>"; };
+		CECAC03018A1B79E00DE6A7F /* EnemySprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = EnemySprite.cpp; path = ../../EnemySprite.cpp; sourceTree = "<group>"; };
+		CECAC03118A1B79E00DE6A7F /* EnemySprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EnemySprite.h; path = ../../EnemySprite.h; sourceTree = "<group>"; };
+		CECAC03218A1B79E00DE6A7F /* FPS.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FPS.cpp; path = ../../FPS.cpp; sourceTree = "<group>"; };
+		CECAC03318A1B79E00DE6A7F /* FPS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FPS.h; path = ../../FPS.h; sourceTree = "<group>"; };
+		CECAC03418A1B79E00DE6A7F /* Game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Game.cpp; path = ../../Game.cpp; sourceTree = "<group>"; };
+		CECAC03518A1B79E00DE6A7F /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Game.h; path = ../../Game.h; sourceTree = "<group>"; };
+		CECAC03618A1B79E00DE6A7F /* GameDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameDefines.h; path = ../../GameDefines.h; sourceTree = "<group>"; };
+		CECAC03718A1B79E00DE6A7F /* GameHeader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameHeader.cpp; path = ../../GameHeader.cpp; sourceTree = "<group>"; };
+		CECAC03818A1B79E00DE6A7F /* PlayerSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PlayerSprite.cpp; path = ../../PlayerSprite.cpp; sourceTree = "<group>"; };
+		CECAC03918A1B79E00DE6A7F /* PlayerSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayerSprite.h; path = ../../PlayerSprite.h; sourceTree = "<group>"; };
+		CECAC03A18A1B79E00DE6A7F /* ResourceManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ResourceManager.cpp; path = ../../ResourceManager.cpp; sourceTree = "<group>"; };
+		CECAC03B18A1B79E00DE6A7F /* ResourceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResourceManager.h; path = ../../ResourceManager.h; sourceTree = "<group>"; };
+		CECAC03C18A1B79E00DE6A7F /* ScoreBar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ScoreBar.cpp; path = ../../ScoreBar.cpp; sourceTree = "<group>"; };
+		CECAC03D18A1B79E00DE6A7F /* ScoreBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScoreBar.h; path = ../../ScoreBar.h; sourceTree = "<group>"; };
+		CECAC05818A1B7D600DE6A7F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CECAC06818A1BABB00DE6A7F /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		CECAC06A18A1BACD00DE6A7F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		CECAC06C18A1BB2D00DE6A7F /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Fonts; path = ../Environment/Fonts; sourceTree = "<group>"; };
+		CECAC06D18A1BB2D00DE6A7F /* Maps */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Maps; path = ../Environment/Maps; sourceTree = "<group>"; };
+		CECAC06E18A1BB2D00DE6A7F /* Music */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Music; path = ../Environment/Music; sourceTree = "<group>"; };
+		CECAC06F18A1BB2D00DE6A7F /* SoundEvents.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = SoundEvents.xml; path = ../Environment/SoundEvents.xml; sourceTree = "<group>"; };
+		CECAC07018A1BB2D00DE6A7F /* Sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Sounds; path = ../Environment/Sounds; sourceTree = "<group>"; };
+		CECAC07118A1BB2D00DE6A7F /* Sprites */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Sprites; path = ../Environment/Sprites; sourceTree = "<group>"; };
+		CECAC07818A1BDF400DE6A7F /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		CECAC07A18A1BFE800DE6A7F /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		CECAC07C18A1C36800DE6A7F /* SuperPlay.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SuperPlay.xcodeproj; path = /Users/User/SuperPlay/Examples/Text/iOS/../../../SuperPlayLib/iOS/SuperPlay.xcodeproj; sourceTree = "<absolute>"; };
+		CECAC08218A1C36800DE6A7F /* Platform.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Platform.xcodeproj; path = /Users/User/SuperPlay/Examples/Text/iOS/../../../PlatformLib/iOS/Platform/Platform.xcodeproj; sourceTree = "<absolute>"; };
+		CECAC08518A1C36800DE6A7F /* Expansion.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Expansion.xcodeproj; path = /Users/User/SuperPlay/Examples/Text/iOS/../../../ExpansionLib/iOS/Expansion.xcodeproj; sourceTree = "<absolute>"; };
+		CECAC08818A1C36800DE6A7F /* Display.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Display.xcodeproj; path = /Users/User/SuperPlay/Examples/Text/iOS/../../../DisplayLib/OpenGL/iOS/Display.xcodeproj; sourceTree = "<absolute>"; };
+		CED90F2018A9928500D525EB /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CECABFCD18A1B0CE00DE6A7F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE3EAB6318AE28EC0048FE2D /* CFNetwork.framework in Frameworks */,
+				CE3EAB6118AE28A80048FE2D /* AudioToolbox.framework in Frameworks */,
+				CED90F2118A9928500D525EB /* ExternalAccessory.framework in Frameworks */,
+				CECAC06B18A1BACD00DE6A7F /* QuartzCore.framework in Frameworks */,
+				CECAC06918A1BABB00DE6A7F /* OpenGLES.framework in Frameworks */,
+				CECABFD418A1B0CE00DE6A7F /* UIKit.framework in Frameworks */,
+				CECABFD618A1B0CE00DE6A7F /* Foundation.framework in Frameworks */,
+				CECABFD818A1B0CE00DE6A7F /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CE98F0BA18AE1698003FBD9E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CE98F0BE18AE1699003FBD9E /* libSound_d.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CECABFC718A1B0CE00DE6A7F = {
+			isa = PBXGroup;
+			children = (
+				CE3EAB6218AE28EC0048FE2D /* CFNetwork.framework */,
+				CE3EAB6018AE28A80048FE2D /* AudioToolbox.framework */,
+				CE98F0B918AE1698003FBD9E /* BASS.xcodeproj */,
+				CECAC07C18A1C36800DE6A7F /* SuperPlay.xcodeproj */,
+				CECAC08218A1C36800DE6A7F /* Platform.xcodeproj */,
+				CECAC08518A1C36800DE6A7F /* Expansion.xcodeproj */,
+				CECAC08818A1C36800DE6A7F /* Display.xcodeproj */,
+				CECAC07A18A1BFE800DE6A7F /* Icon.png */,
+				CECAC01418A1B37C00DE6A7F /* Resources */,
+				CECABFD918A1B0CE00DE6A7F /* BLT */,
+				CECABFD218A1B0CE00DE6A7F /* Frameworks */,
+				CECABFD118A1B0CE00DE6A7F /* Products */,
+			);
+			sourceTree = "<group>";
+			usesTabs = 1;
+			wrapsLines = 0;
+		};
+		CECABFD118A1B0CE00DE6A7F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CECABFD018A1B0CE00DE6A7F /* BLT.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CECABFD218A1B0CE00DE6A7F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CED90F2018A9928500D525EB /* ExternalAccessory.framework */,
+				CECAC06A18A1BACD00DE6A7F /* QuartzCore.framework */,
+				CECAC06818A1BABB00DE6A7F /* OpenGLES.framework */,
+				CECABFD318A1B0CE00DE6A7F /* UIKit.framework */,
+				CECABFD518A1B0CE00DE6A7F /* Foundation.framework */,
+				CECABFD718A1B0CE00DE6A7F /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CECABFD918A1B0CE00DE6A7F /* BLT */ = {
+			isa = PBXGroup;
+			children = (
+				CECAC02618A1B79E00DE6A7F /* Background.cpp */,
+				CECAC02718A1B79E00DE6A7F /* Background.h */,
+				CECAC02818A1B79E00DE6A7F /* BaseSprite.cpp */,
+				CECAC02918A1B79E00DE6A7F /* BaseSprite.h */,
+				CECAC02A18A1B79E00DE6A7F /* BulletManager.cpp */,
+				CECAC02B18A1B79E00DE6A7F /* BulletManager.h */,
+				CECAC02C18A1B79E00DE6A7F /* BulletSprite.cpp */,
+				CECAC02D18A1B79E00DE6A7F /* BulletSprite.h */,
+				CECAC02E18A1B79E00DE6A7F /* EnemyManager.cpp */,
+				CECAC02F18A1B79E00DE6A7F /* EnemyManager.h */,
+				CECAC03018A1B79E00DE6A7F /* EnemySprite.cpp */,
+				CECAC03118A1B79E00DE6A7F /* EnemySprite.h */,
+				CECAC03218A1B79E00DE6A7F /* FPS.cpp */,
+				CECAC03318A1B79E00DE6A7F /* FPS.h */,
+				CECAC03418A1B79E00DE6A7F /* Game.cpp */,
+				CECAC03518A1B79E00DE6A7F /* Game.h */,
+				CECAC03618A1B79E00DE6A7F /* GameDefines.h */,
+				CECAC03718A1B79E00DE6A7F /* GameHeader.cpp */,
+				CECAC03818A1B79E00DE6A7F /* PlayerSprite.cpp */,
+				CECAC03918A1B79E00DE6A7F /* PlayerSprite.h */,
+				CECAC03A18A1B79E00DE6A7F /* ResourceManager.cpp */,
+				CECAC03B18A1B79E00DE6A7F /* ResourceManager.h */,
+				CECAC03C18A1B79E00DE6A7F /* ScoreBar.cpp */,
+				CECAC03D18A1B79E00DE6A7F /* ScoreBar.h */,
+				CECABFDA18A1B0CE00DE6A7F /* Supporting Files */,
+			);
+			path = BLT;
+			sourceTree = "<group>";
+		};
+		CECABFDA18A1B0CE00DE6A7F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CECAC07818A1BDF400DE6A7F /* Default.png */,
+				CECAC05818A1B7D600DE6A7F /* Info.plist */,
+				CECABFDC18A1B0CE00DE6A7F /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CECAC01418A1B37C00DE6A7F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CECAC06C18A1BB2D00DE6A7F /* Fonts */,
+				CECAC06D18A1BB2D00DE6A7F /* Maps */,
+				CECAC06E18A1BB2D00DE6A7F /* Music */,
+				CECAC06F18A1BB2D00DE6A7F /* SoundEvents.xml */,
+				CECAC07018A1BB2D00DE6A7F /* Sounds */,
+				CECAC07118A1BB2D00DE6A7F /* Sprites */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		CECAC07D18A1C36800DE6A7F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CECAC09918A1C36900DE6A7F /* libSuperPlay_d.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CECAC08318A1C36800DE6A7F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CECAC09318A1C36900DE6A7F /* libPlatform_d.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CECAC08618A1C36800DE6A7F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CECAC09018A1C36900DE6A7F /* libExpansion_d.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CECAC08918A1C36800DE6A7F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CECAC08D18A1C36900DE6A7F /* libDisplay_d.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CECABFCF18A1B0CE00DE6A7F /* BLT */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CECABFED18A1B0CE00DE6A7F /* Build configuration list for PBXNativeTarget "BLT" */;
+			buildPhases = (
+				CECABFCC18A1B0CE00DE6A7F /* Sources */,
+				CECABFCD18A1B0CE00DE6A7F /* Frameworks */,
+				CECABFCE18A1B0CE00DE6A7F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CE98F0C918AE1E1B003FBD9E /* PBXTargetDependency */,
+				CEF0587D18A213C2001068C7 /* PBXTargetDependency */,
+				CEF0588118A213C2001068C7 /* PBXTargetDependency */,
+				CEF0588318A213C2001068C7 /* PBXTargetDependency */,
+				CEF0588518A213C2001068C7 /* PBXTargetDependency */,
+			);
+			name = BLT;
+			productName = BLT;
+			productReference = CECABFD018A1B0CE00DE6A7F /* BLT.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CECABFC818A1B0CE00DE6A7F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Pixl Games";
+			};
+			buildConfigurationList = CECABFCB18A1B0CE00DE6A7F /* Build configuration list for PBXProject "BLT" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = CECABFC718A1B0CE00DE6A7F;
+			productRefGroup = CECABFD118A1B0CE00DE6A7F /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = CE98F0BA18AE1698003FBD9E /* Products */;
+					ProjectRef = CE98F0B918AE1698003FBD9E /* BASS.xcodeproj */;
+				},
+				{
+					ProductGroup = CECAC08918A1C36800DE6A7F /* Products */;
+					ProjectRef = CECAC08818A1C36800DE6A7F /* Display.xcodeproj */;
+				},
+				{
+					ProductGroup = CECAC08618A1C36800DE6A7F /* Products */;
+					ProjectRef = CECAC08518A1C36800DE6A7F /* Expansion.xcodeproj */;
+				},
+				{
+					ProductGroup = CECAC08318A1C36800DE6A7F /* Products */;
+					ProjectRef = CECAC08218A1C36800DE6A7F /* Platform.xcodeproj */;
+				},
+				{
+					ProductGroup = CECAC07D18A1C36800DE6A7F /* Products */;
+					ProjectRef = CECAC07C18A1C36800DE6A7F /* SuperPlay.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				CECABFCF18A1B0CE00DE6A7F /* BLT */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		CE98F0BE18AE1699003FBD9E /* libSound_d.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSound_d.a;
+			remoteRef = CE98F0BD18AE1699003FBD9E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CECAC08D18A1C36900DE6A7F /* libDisplay_d.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libDisplay_d.a;
+			remoteRef = CECAC08C18A1C36900DE6A7F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CECAC09018A1C36900DE6A7F /* libExpansion_d.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libExpansion_d.a;
+			remoteRef = CECAC08F18A1C36900DE6A7F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CECAC09318A1C36900DE6A7F /* libPlatform_d.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libPlatform_d.a;
+			remoteRef = CECAC09218A1C36900DE6A7F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CECAC09918A1C36900DE6A7F /* libSuperPlay_d.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSuperPlay_d.a;
+			remoteRef = CECAC09818A1C36900DE6A7F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CECABFCE18A1B0CE00DE6A7F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CECABFDE18A1B0CE00DE6A7F /* InfoPlist.strings in Resources */,
+				CECAC07218A1BB2D00DE6A7F /* Fonts in Resources */,
+				CECAC07318A1BB2D00DE6A7F /* Maps in Resources */,
+				CECAC07418A1BB2D00DE6A7F /* Music in Resources */,
+				CECAC07518A1BB2D00DE6A7F /* SoundEvents.xml in Resources */,
+				CECAC07618A1BB2D00DE6A7F /* Sounds in Resources */,
+				CECAC07718A1BB2D00DE6A7F /* Sprites in Resources */,
+				CECAC07918A1BDF400DE6A7F /* Default.png in Resources */,
+				CECAC09A18A1F96B00DE6A7F /* Icon.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CECABFCC18A1B0CE00DE6A7F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CECAC03E18A1B79E00DE6A7F /* Background.cpp in Sources */,
+				CECAC03F18A1B79E00DE6A7F /* BaseSprite.cpp in Sources */,
+				CECAC04018A1B79E00DE6A7F /* BulletManager.cpp in Sources */,
+				CECAC04118A1B79E00DE6A7F /* BulletSprite.cpp in Sources */,
+				CECAC04218A1B79E00DE6A7F /* EnemyManager.cpp in Sources */,
+				CECAC04318A1B79E00DE6A7F /* EnemySprite.cpp in Sources */,
+				CECAC04418A1B79E00DE6A7F /* FPS.cpp in Sources */,
+				CECAC04518A1B79E00DE6A7F /* Game.cpp in Sources */,
+				CECAC04618A1B79E00DE6A7F /* GameHeader.cpp in Sources */,
+				CECAC04718A1B79E00DE6A7F /* PlayerSprite.cpp in Sources */,
+				CECAC04818A1B79E00DE6A7F /* ResourceManager.cpp in Sources */,
+				CECAC04918A1B79E00DE6A7F /* ScoreBar.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CE98F0C918AE1E1B003FBD9E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = BASS;
+			targetProxy = CE98F0C818AE1E1B003FBD9E /* PBXContainerItemProxy */;
+		};
+		CEF0587D18A213C2001068C7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Expansion;
+			targetProxy = CEF0587C18A213C2001068C7 /* PBXContainerItemProxy */;
+		};
+		CEF0588118A213C2001068C7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SuperPlay;
+			targetProxy = CEF0588018A213C2001068C7 /* PBXContainerItemProxy */;
+		};
+		CEF0588318A213C2001068C7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Display;
+			targetProxy = CEF0588218A213C2001068C7 /* PBXContainerItemProxy */;
+		};
+		CEF0588518A213C2001068C7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Platform;
+			targetProxy = CEF0588418A213C2001068C7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CECABFDC18A1B0CE00DE6A7F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CECABFDD18A1B0CE00DE6A7F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CECABFEB18A1B0CE00DE6A7F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		CECABFEC18A1B0CE00DE6A7F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CECABFEE18A1B0CE00DE6A7F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Christian Kerhin (2LD594GG57)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Christian Kerhin (2LD594GG57)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BLT/BLT-Prefix.pch";
+				HEADER_SEARCH_PATHS = ../../../Include;
+				INFOPLIST_FILE = BLT/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				LIBRARY_SEARCH_PATHS = (
+					../../../Lib/iOS/BASS,
+					../../../Lib/iOS,
+					../../../External/BASS/Lib/iOS,
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lExpansion_d",
+					"-lSuperPlay_d",
+					"-lPlatform_d",
+					"-lSound_d",
+					"-lDisplay_d",
+					"-lbass",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "417083BD-71DD-480E-88E0-71E499B930D0";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "417083BD-71DD-480E-88E0-71E499B930D0";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		CECABFEF18A1B0CE00DE6A7F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Christian Kerhin (2LD594GG57)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Christian Kerhin (2LD594GG57)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BLT/BLT-Prefix.pch";
+				HEADER_SEARCH_PATHS = ../../../Include;
+				INFOPLIST_FILE = BLT/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				LIBRARY_SEARCH_PATHS = (
+					../../../Lib/iOS/BASS,
+					../../../Lib/iOS,
+					../../../External/BASS/Lib/iOS,
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lExpansion",
+					"-lSuperPlay",
+					"-lPlatform",
+					"-lSound",
+					"-lDisplay",
+					"-lbass",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "417083BD-71DD-480E-88E0-71E499B930D0";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "417083BD-71DD-480E-88E0-71E499B930D0";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CECABFCB18A1B0CE00DE6A7F /* Build configuration list for PBXProject "BLT" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CECABFEB18A1B0CE00DE6A7F /* Debug */,
+				CECABFEC18A1B0CE00DE6A7F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CECABFED18A1B0CE00DE6A7F /* Build configuration list for PBXNativeTarget "BLT" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CECABFEE18A1B0CE00DE6A7F /* Debug */,
+				CECABFEF18A1B0CE00DE6A7F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CECABFC818A1B0CE00DE6A7F /* Project object */;
+}

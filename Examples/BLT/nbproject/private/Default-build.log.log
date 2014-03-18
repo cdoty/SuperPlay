@@ -1,0 +1,23 @@
+mkdir -p Release
+g++ -O3 -I../../Include -mfpu=vfp -O3 -c Background.cpp -o Release/Background.o
+mkdir -p Release
+g++ -O3 -I../../Include -mfpu=vfp -O3 -c BaseSprite.cpp -o Release/BaseSprite.o
+mkdir -p Release
+g++ -O3 -I../../Include -mfpu=vfp -O3 -c BulletManager.cpp -o Release/BulletManager.o
+mkdir -p Release
+g++ -O3 -I../../Include -mfpu=vfp -O3 -c BulletSprite.cpp -o Release/BulletSprite.o
+mkdir -p Release
+g++ -O3 -I../../Include -mfpu=vfp -O3 -c EnemyManager.cpp -o Release/EnemyManager.o
+mkdir -p Release
+g++ -O3 -I../../Include -mfpu=vfp -O3 -c EnemySprite.cpp -o Release/EnemySprite.o
+mkdir -p Release
+g++ -O3 -I../../Include -mfpu=vfp -O3 -c Game.cpp -o Release/Game.o
+mkdir -p Release
+g++ -O3 -I../../Include -mfpu=vfp -O3 -c GameHeader.cpp -o Release/GameHeader.o
+mkdir -p Release
+g++ -O3 -I../../Include -mfpu=vfp -O3 -c PlayerSprite.cpp -o Release/PlayerSprite.o
+mkdir -p Release
+g++ -O3 -I../../Include -mfpu=vfp -O3 -c ResourceManager.cpp -o Release/ResourceManager.o
+mkdir -p Release
+g++ -O3 -I../../Include -mfpu=vfp -O3 -c ScoreBar.cpp -o Release/ScoreBar.o
+g++ -mfpu=vfp -O3 -pthread -L../../Lib/RaspberryPi -L../../Lib/Linux -L../../Lib/Linux/BASS -L../../External/BASS/Lib/ARM -L/opt/vc/lib -o Environment/BLT.exe Release/Background.o Release/BaseSprite.o Release/BulletManager.o Release/BulletSprite.o Release/EnemyManager.o Release/EnemySprite.o Release/Game.o Release/GameHeader.o Release/PlayerSprite.o Release/ResourceManager.o Release/ScoreBar.o -lExpansionLib -lSuperPlay -lPlatform -lSound -lDisplay -lbass -lGLESv2 -lEGL -lopenmaxil -lbcm_host -lvcos -lvchiq_arm -lpthread -lrt

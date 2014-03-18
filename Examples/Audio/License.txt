@@ -1,0 +1,14 @@
+The font used in this demo was downloaded from:
+http://opengameart.org/content/a-package-of-8-bit-fonts-for-grafx2-and-linux
+
+It was created by usr_share, and released under a CC0 license.
+
+The sounds used in this demo were downloaded from:
+http://opengameart.org/content/platformer-sounds-terminal-interaction-door-shots-bang-and-footsteps
+
+They were created by yd, and released under a CC0 license.
+
+The mod file was downloaded from:
+http://modarchive.org/index.php?request=view_by_moduleid&query=53301
+
+It was created by greg tuby, and released under a public domain license

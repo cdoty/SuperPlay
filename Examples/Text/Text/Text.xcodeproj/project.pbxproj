@@ -1,0 +1,342 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0422799A1895B31800D8DF09 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 042279991895B31800D8DF09 /* Cocoa.framework */; };
+		042279A41895B31800D8DF09 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 042279A21895B31800D8DF09 /* InfoPlist.strings */; };
+		042279BC1895B35C00D8DF09 /* FPS.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 042279B61895B35C00D8DF09 /* FPS.cpp */; };
+		042279BD1895B35C00D8DF09 /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 042279B81895B35C00D8DF09 /* Game.cpp */; };
+		042279BE1895B35C00D8DF09 /* GameHeader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 042279BB1895B35C00D8DF09 /* GameHeader.cpp */; };
+		042279CC1895BAB300D8DF09 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 042279CB1895BAB300D8DF09 /* OpenGL.framework */; };
+		042279DE1895BD2C00D8DF09 /* libSuperPlay_d.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 042279DD1895BD2C00D8DF09 /* libSuperPlay_d.a */; };
+		042279E01895BD3500D8DF09 /* libPlatform_d.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 042279DF1895BD3500D8DF09 /* libPlatform_d.a */; };
+		042279E21895BD3A00D8DF09 /* libExpansion_d.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 042279E11895BD3A00D8DF09 /* libExpansion_d.a */; };
+		042279E41895BD3F00D8DF09 /* libDisplay_d.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 042279E31895BD3F00D8DF09 /* libDisplay_d.a */; };
+		042279E61895BD5B00D8DF09 /* libSound_d.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 042279E51895BD5B00D8DF09 /* libSound_d.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		042279951895B31800D8DF09 /* Text.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Text.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		042279991895B31800D8DF09 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		0422799C1895B31800D8DF09 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		0422799D1895B31800D8DF09 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		0422799E1895B31800D8DF09 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		042279A11895B31800D8DF09 /* Text-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Text-Info.plist"; sourceTree = "<group>"; };
+		042279A31895B31800D8DF09 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		042279A71895B31800D8DF09 /* Text-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Text-Prefix.pch"; sourceTree = "<group>"; };
+		042279B61895B35C00D8DF09 /* FPS.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FPS.cpp; path = ../../FPS.cpp; sourceTree = "<group>"; };
+		042279B71895B35C00D8DF09 /* FPS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FPS.h; path = ../../FPS.h; sourceTree = "<group>"; };
+		042279B81895B35C00D8DF09 /* Game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Game.cpp; path = ../../Game.cpp; sourceTree = "<group>"; };
+		042279B91895B35C00D8DF09 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Game.h; path = ../../Game.h; sourceTree = "<group>"; };
+		042279BA1895B35C00D8DF09 /* GameDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameDefines.h; path = ../../GameDefines.h; sourceTree = "<group>"; };
+		042279BB1895B35C00D8DF09 /* GameHeader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameHeader.cpp; path = ../../GameHeader.cpp; sourceTree = "<group>"; };
+		042279CB1895BAB300D8DF09 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		042279DD1895BD2C00D8DF09 /* libSuperPlay_d.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSuperPlay_d.a; path = ../../../Lib/MacOSX/libSuperPlay_d.a; sourceTree = "<group>"; };
+		042279DF1895BD3500D8DF09 /* libPlatform_d.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPlatform_d.a; path = ../../../Lib/MacOSX/libPlatform_d.a; sourceTree = "<group>"; };
+		042279E11895BD3A00D8DF09 /* libExpansion_d.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libExpansion_d.a; path = ../../../Lib/MacOSX/libExpansion_d.a; sourceTree = "<group>"; };
+		042279E31895BD3F00D8DF09 /* libDisplay_d.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libDisplay_d.a; path = ../../../Lib/MacOSX/libDisplay_d.a; sourceTree = "<group>"; };
+		042279E51895BD5B00D8DF09 /* libSound_d.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSound_d.a; path = ../../../Lib/MacOSX/irrKlang/libSound_d.a; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		042279921895B31800D8DF09 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				042279CC1895BAB300D8DF09 /* OpenGL.framework in Frameworks */,
+				0422799A1895B31800D8DF09 /* Cocoa.framework in Frameworks */,
+				042279DE1895BD2C00D8DF09 /* libSuperPlay_d.a in Frameworks */,
+				042279E21895BD3A00D8DF09 /* libExpansion_d.a in Frameworks */,
+				042279E01895BD3500D8DF09 /* libPlatform_d.a in Frameworks */,
+				042279E41895BD3F00D8DF09 /* libDisplay_d.a in Frameworks */,
+				042279E61895BD5B00D8DF09 /* libSound_d.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0422798A1895B31800D8DF09 = {
+			isa = PBXGroup;
+			children = (
+				0422799F1895B31800D8DF09 /* Text */,
+				042279981895B31800D8DF09 /* Frameworks */,
+				042279961895B31800D8DF09 /* Products */,
+			);
+			sourceTree = "<group>";
+			usesTabs = 1;
+			wrapsLines = 0;
+		};
+		042279961895B31800D8DF09 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				042279951895B31800D8DF09 /* Text.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		042279981895B31800D8DF09 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				042279991895B31800D8DF09 /* Cocoa.framework */,
+				0422799B1895B31800D8DF09 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0422799B1895B31800D8DF09 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				042279DF1895BD3500D8DF09 /* libPlatform_d.a */,
+				042279E51895BD5B00D8DF09 /* libSound_d.a */,
+				042279E31895BD3F00D8DF09 /* libDisplay_d.a */,
+				042279E11895BD3A00D8DF09 /* libExpansion_d.a */,
+				042279DD1895BD2C00D8DF09 /* libSuperPlay_d.a */,
+				042279CB1895BAB300D8DF09 /* OpenGL.framework */,
+				0422799C1895B31800D8DF09 /* AppKit.framework */,
+				0422799D1895B31800D8DF09 /* CoreData.framework */,
+				0422799E1895B31800D8DF09 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		0422799F1895B31800D8DF09 /* Text */ = {
+			isa = PBXGroup;
+			children = (
+				042279E71895BD5F00D8DF09 /* Super Play */,
+				042279B61895B35C00D8DF09 /* FPS.cpp */,
+				042279B71895B35C00D8DF09 /* FPS.h */,
+				042279B81895B35C00D8DF09 /* Game.cpp */,
+				042279B91895B35C00D8DF09 /* Game.h */,
+				042279BA1895B35C00D8DF09 /* GameDefines.h */,
+				042279BB1895B35C00D8DF09 /* GameHeader.cpp */,
+				042279A01895B31800D8DF09 /* Supporting Files */,
+			);
+			path = Text;
+			sourceTree = "<group>";
+		};
+		042279A01895B31800D8DF09 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				042279A11895B31800D8DF09 /* Text-Info.plist */,
+				042279A21895B31800D8DF09 /* InfoPlist.strings */,
+				042279A71895B31800D8DF09 /* Text-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		042279E71895BD5F00D8DF09 /* Super Play */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Super Play";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		042279941895B31800D8DF09 /* Text */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 042279B31895B31800D8DF09 /* Build configuration list for PBXNativeTarget "Text" */;
+			buildPhases = (
+				042279911895B31800D8DF09 /* Sources */,
+				042279921895B31800D8DF09 /* Frameworks */,
+				042279931895B31800D8DF09 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Text;
+			productName = Text;
+			productReference = 042279951895B31800D8DF09 /* Text.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0422798C1895B31800D8DF09 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+			};
+			buildConfigurationList = 0422798F1895B31800D8DF09 /* Build configuration list for PBXProject "Text" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 0422798A1895B31800D8DF09;
+			productRefGroup = 042279961895B31800D8DF09 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				042279941895B31800D8DF09 /* Text */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		042279931895B31800D8DF09 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				042279A41895B31800D8DF09 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		042279911895B31800D8DF09 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				042279BC1895B35C00D8DF09 /* FPS.cpp in Sources */,
+				042279BD1895B35C00D8DF09 /* Game.cpp in Sources */,
+				042279BE1895B35C00D8DF09 /* GameHeader.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		042279A21895B31800D8DF09 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				042279A31895B31800D8DF09 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		042279B11895B31800D8DF09 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		042279B21895B31800D8DF09 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		042279B41895B31800D8DF09 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Text/Text-Prefix.pch";
+				HEADER_SEARCH_PATHS = ../../../Include;
+				INFOPLIST_FILE = "Text/Text-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					../../../Lib/MacOSX,
+					../../../Lib/MacOSX/irrKlang,
+					"\"$(SRCROOT)/../../../Lib/MacOSX\"",
+					"\"$(SRCROOT)/../../../Lib/MacOSX/irrKlang\"",
+				);
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		042279B51895B31800D8DF09 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Text/Text-Prefix.pch";
+				HEADER_SEARCH_PATHS = ../../../Include;
+				INFOPLIST_FILE = "Text/Text-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					../../../Lib/MacOSX,
+					../../../Lib/MacOSX/irrKlang,
+					"\"$(SRCROOT)/../../../Lib/MacOSX\"",
+					"\"$(SRCROOT)/../../../Lib/MacOSX/irrKlang\"",
+				);
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0422798F1895B31800D8DF09 /* Build configuration list for PBXProject "Text" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				042279B11895B31800D8DF09 /* Debug */,
+				042279B21895B31800D8DF09 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		042279B31895B31800D8DF09 /* Build configuration list for PBXNativeTarget "Text" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				042279B41895B31800D8DF09 /* Debug */,
+				042279B51895B31800D8DF09 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0422798C1895B31800D8DF09 /* Project object */;
+}

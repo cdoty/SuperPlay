@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="Shared">
+      <UniqueIdentifier>{b55faba2-f185-478b-a4f1-204002b8d3d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shared\Source Files">
+      <UniqueIdentifier>{d9746502-1a51-49a0-a082-ca36accbe87b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shared\Header Files">
+      <UniqueIdentifier>{d3537e9b-a0b4-4ad3-874b-b5bc1ae17960}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shared\Libraries">
+      <UniqueIdentifier>{df35094f-b605-4648-adfb-ebfe06cd33b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shared\Libraries\LodePNG">
+      <UniqueIdentifier>{5677dd2f-e8ae-48c1-819e-8a758c255749}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Shared\Libraries\LodePNG\lodepng.cpp">
+      <Filter>Shared\Libraries\LodePNG</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Shared\Functions.cpp">
+      <Filter>Shared\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Shared\File.cpp">
+      <Filter>Shared\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Shared\Log.cpp">
+      <Filter>Shared\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ProMotion.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Shared\Libraries\LodePNG\lodepng.h">
+      <Filter>Shared\Libraries\LodePNG</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Shared\Functions.h">
+      <Filter>Shared\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Shared\Log.h">
+      <Filter>Shared\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Shared\File.h">
+      <Filter>Shared\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Shared\AssertMacros.h">
+      <Filter>Shared\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ProMotion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Shared\Icon\Icon.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Application.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,305 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		04F447C41875CDD5003830E9 /* CustomVertex.h in Headers */ = {isa = PBXBuildFile; fileRef = 04F447B81875CDD5003830E9 /* CustomVertex.h */; };
+		04F447C51875CDD5003830E9 /* Display.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04F447B91875CDD5003830E9 /* Display.cpp */; };
+		04F447C61875CDD5003830E9 /* Display.h in Headers */ = {isa = PBXBuildFile; fileRef = 04F447BA1875CDD5003830E9 /* Display.h */; };
+		04F447C81875CDD5003830E9 /* IndexBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04F447BC1875CDD5003830E9 /* IndexBuffer.cpp */; };
+		04F447C91875CDD5003830E9 /* IndexBuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 04F447BD1875CDD5003830E9 /* IndexBuffer.h */; };
+		04F447CA1875CDD5003830E9 /* SpriteBatch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04F447BE1875CDD5003830E9 /* SpriteBatch.cpp */; };
+		04F447CB1875CDD5003830E9 /* SpriteBatch.h in Headers */ = {isa = PBXBuildFile; fileRef = 04F447BF1875CDD5003830E9 /* SpriteBatch.h */; };
+		04F447CC1875CDD5003830E9 /* Texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04F447C01875CDD5003830E9 /* Texture.cpp */; };
+		04F447CD1875CDD5003830E9 /* Texture.h in Headers */ = {isa = PBXBuildFile; fileRef = 04F447C11875CDD5003830E9 /* Texture.h */; };
+		04F447CE1875CDD5003830E9 /* VertexBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04F447C21875CDD5003830E9 /* VertexBuffer.cpp */; };
+		04F447CF1875CDD5003830E9 /* VertexBuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 04F447C31875CDD5003830E9 /* VertexBuffer.h */; };
+		04F447D21875D311003830E9 /* GLiOS.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04F447D01875D311003830E9 /* GLiOS.cpp */; };
+		04F447D31875D311003830E9 /* GLiOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 04F447D11875D311003830E9 /* GLiOS.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		04F447B11875CD74003830E9 /* libDisplay_d.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDisplay_d.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		04F447B81875CDD5003830E9 /* CustomVertex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomVertex.h; path = ../CustomVertex.h; sourceTree = "<group>"; };
+		04F447B91875CDD5003830E9 /* Display.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Display.cpp; path = ../Display.cpp; sourceTree = "<group>"; };
+		04F447BA1875CDD5003830E9 /* Display.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Display.h; path = ../Display.h; sourceTree = "<group>"; };
+		04F447BC1875CDD5003830E9 /* IndexBuffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = IndexBuffer.cpp; path = ../IndexBuffer.cpp; sourceTree = "<group>"; };
+		04F447BD1875CDD5003830E9 /* IndexBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IndexBuffer.h; path = ../IndexBuffer.h; sourceTree = "<group>"; };
+		04F447BE1875CDD5003830E9 /* SpriteBatch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SpriteBatch.cpp; path = ../SpriteBatch.cpp; sourceTree = "<group>"; };
+		04F447BF1875CDD5003830E9 /* SpriteBatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpriteBatch.h; path = ../SpriteBatch.h; sourceTree = "<group>"; };
+		04F447C01875CDD5003830E9 /* Texture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Texture.cpp; path = ../Texture.cpp; sourceTree = "<group>"; };
+		04F447C11875CDD5003830E9 /* Texture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Texture.h; path = ../Texture.h; sourceTree = "<group>"; };
+		04F447C21875CDD5003830E9 /* VertexBuffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = VertexBuffer.cpp; path = ../VertexBuffer.cpp; sourceTree = "<group>"; };
+		04F447C31875CDD5003830E9 /* VertexBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VertexBuffer.h; path = ../VertexBuffer.h; sourceTree = "<group>"; };
+		04F447D01875D311003830E9 /* GLiOS.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GLiOS.cpp; path = ../GLiOS.cpp; sourceTree = "<group>"; };
+		04F447D11875D311003830E9 /* GLiOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GLiOS.h; path = ../GLiOS.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		04F447AE1875CD74003830E9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		04F447A61875CD74003830E9 = {
+			isa = PBXGroup;
+			children = (
+				04F447D01875D311003830E9 /* GLiOS.cpp */,
+				04F447D11875D311003830E9 /* GLiOS.h */,
+				04F447B21875CD74003830E9 /* Products */,
+				04F447B81875CDD5003830E9 /* CustomVertex.h */,
+				04F447B91875CDD5003830E9 /* Display.cpp */,
+				04F447BA1875CDD5003830E9 /* Display.h */,
+				04F447BC1875CDD5003830E9 /* IndexBuffer.cpp */,
+				04F447BD1875CDD5003830E9 /* IndexBuffer.h */,
+				04F447BE1875CDD5003830E9 /* SpriteBatch.cpp */,
+				04F447BF1875CDD5003830E9 /* SpriteBatch.h */,
+				04F447C01875CDD5003830E9 /* Texture.cpp */,
+				04F447C11875CDD5003830E9 /* Texture.h */,
+				04F447C21875CDD5003830E9 /* VertexBuffer.cpp */,
+				04F447C31875CDD5003830E9 /* VertexBuffer.h */,
+			);
+			sourceTree = "<group>";
+			usesTabs = 1;
+			wrapsLines = 0;
+		};
+		04F447B21875CD74003830E9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				04F447B11875CD74003830E9 /* libDisplay_d.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		04F447AF1875CD74003830E9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04F447C41875CDD5003830E9 /* CustomVertex.h in Headers */,
+				04F447C61875CDD5003830E9 /* Display.h in Headers */,
+				04F447C91875CDD5003830E9 /* IndexBuffer.h in Headers */,
+				04F447CB1875CDD5003830E9 /* SpriteBatch.h in Headers */,
+				04F447CD1875CDD5003830E9 /* Texture.h in Headers */,
+				04F447CF1875CDD5003830E9 /* VertexBuffer.h in Headers */,
+				04F447D31875D311003830E9 /* GLiOS.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		04F447B01875CD74003830E9 /* Display */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04F447B51875CD74003830E9 /* Build configuration list for PBXNativeTarget "Display" */;
+			buildPhases = (
+				04F447AD1875CD74003830E9 /* Sources */,
+				04F447AE1875CD74003830E9 /* Frameworks */,
+				04F447AF1875CD74003830E9 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Display;
+			productName = Display;
+			productReference = 04F447B11875CD74003830E9 /* libDisplay_d.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		04F447A81875CD74003830E9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+			};
+			buildConfigurationList = 04F447AB1875CD74003830E9 /* Build configuration list for PBXProject "Display" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 04F447A61875CD74003830E9;
+			productRefGroup = 04F447B21875CD74003830E9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				04F447B01875CD74003830E9 /* Display */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		04F447AD1875CD74003830E9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04F447C51875CDD5003830E9 /* Display.cpp in Sources */,
+				04F447C81875CDD5003830E9 /* IndexBuffer.cpp in Sources */,
+				04F447CA1875CDD5003830E9 /* SpriteBatch.cpp in Sources */,
+				04F447CC1875CDD5003830E9 /* Texture.cpp in Sources */,
+				04F447CE1875CDD5003830E9 /* VertexBuffer.cpp in Sources */,
+				04F447D21875D311003830E9 /* GLiOS.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		04F447B31875CD74003830E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_CHECK_SWITCH_STATEMENTS = NO;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNKNOWN_PRAGMAS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					../../Include,
+					../../../Include,
+					../../../PlatformLib/MacOSX,
+					../../../SuperPlayLib/Include,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SYMROOT = ../../Lib/iOS;
+			};
+			name = Debug;
+		};
+		04F447B41875CD74003830E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_CHECK_SWITCH_STATEMENTS = NO;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNKNOWN_PRAGMAS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					../../Include,
+					../../../Include,
+					../../../PlatformLib/MacOSX,
+					../../../SuperPlayLib/Include,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				SDKROOT = iphoneos;
+				SYMROOT = ../../Lib/iOS;
+			};
+			name = Release;
+		};
+		04F447B61875CD74003830E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)";
+				EXECUTABLE_PREFIX = lib;
+				HEADER_SEARCH_PATHS = (
+					../../Include,
+					../../../Include,
+					../../../PlatformLib/iOS,
+					../../../SuperPlayLib/Include,
+				);
+				INSTALL_PATH = ../../../Lib/iOS;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				PRODUCT_NAME = "$(TARGET_NAME)_d";
+				SDKROOT = iphoneos;
+				SYMROOT = ../../../Lib/iOS;
+			};
+			name = Debug;
+		};
+		04F447B71875CD74003830E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)";
+				EXECUTABLE_PREFIX = lib;
+				HEADER_SEARCH_PATHS = (
+					../../Include,
+					../../../Include,
+					../../../PlatformLib/iOS,
+					../../../SuperPlayLib/Include,
+				);
+				INSTALL_PATH = ../../../Lib/iOS;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SYMROOT = ../../../Lib/iOS;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		04F447AB1875CD74003830E9 /* Build configuration list for PBXProject "Display" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04F447B31875CD74003830E9 /* Debug */,
+				04F447B41875CD74003830E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04F447B51875CD74003830E9 /* Build configuration list for PBXNativeTarget "Display" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04F447B61875CD74003830E9 /* Debug */,
+				04F447B71875CD74003830E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 04F447A81875CD74003830E9 /* Project object */;
+}

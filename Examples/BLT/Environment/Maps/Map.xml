@@ -1,0 +1,9 @@
+<MapInfo>
+	<ImageName>Map.png</ImageName>
+	<MapName>Map.map</MapName>
+	<TileWidth>32</TileWidth>
+	<TileHeight>32</TileHeight>
+	<MapWidth>10</MapWidth>
+	<MapHeight>30</MapHeight>
+	<TileCount>13</TileCount>
+</MapInfo>

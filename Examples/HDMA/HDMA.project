@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeLite_Project Name="HDMA" InternalType="Library">
+  <Plugins>
+    <Plugin Name="qmake">
+      <![CDATA[00020001N0005Debug0000000000000001N0007Release000000000000]]>
+    </Plugin>
+    <Plugin Name="CMakePlugin">
+      <![CDATA[[{
+		"name":	"Debug",
+		"enabled":	false,
+		"buildDirectory":	"build",
+		"sourceDirectory":	"$(ProjectPath)",
+		"generator":	"",
+		"buildType":	"",
+		"arguments":	[],
+		"parentProject":	""
+	}, {
+		"name":	"Release",
+		"enabled":	false,
+		"buildDirectory":	"build",
+		"sourceDirectory":	"$(ProjectPath)",
+		"generator":	"",
+		"buildType":	"",
+		"arguments":	[],
+		"parentProject":	""
+	}]]]>
+    </Plugin>
+  </Plugins>
+  <Description/>
+  <Dependencies/>
+  <VirtualDirectory Name="Source Files">
+    <File Name="Game.cpp"/>
+    <File Name="GameHeader.cpp"/>
+    <File Name="FPS.cpp"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="Header Files">
+    <File Name="Game.h"/>
+    <File Name="GameDefines.h"/>
+    <File Name="FPS.h"/>
+  </VirtualDirectory>
+  <Dependencies Name="Debug">
+    <Project Name="ExpansionLib"/>
+    <Project Name="Platform"/>
+    <Project Name="SuperPlay"/>
+    <Project Name="Sound"/>
+  </Dependencies>
+  <Dependencies Name="Release">
+    <Project Name="ExpansionLib"/>
+    <Project Name="Platform"/>
+    <Project Name="SuperPlay"/>
+  </Dependencies>
+  <Settings Type="Executable">
+    <GlobalSettings>
+      <Compiler Options="" C_Options="" Assembler="">
+        <IncludePath Value="."/>
+      </Compiler>
+      <Linker Options="">
+        <LibraryPath Value="."/>
+      </Linker>
+      <ResourceCompiler Options=""/>
+    </GlobalSettings>
+    <Configuration Name="Debug" CompilerType="gnu g++" DebuggerType="GNU gdb debugger" Type="Executable" BuildCmpWithGlobalSettings="append" BuildLnkWithGlobalSettings="append" BuildResWithGlobalSettings="append">
+      <Compiler Options="-g;-O0" C_Options="-g;-O0" Assembler="" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" UseDifferentPCHFlags="no" PCHFlags="">
+        <IncludePath Value="../../Include"/>
+      </Compiler>
+      <Linker Options="-pthread" Required="yes">
+        <LibraryPath Value="../../Lib/Linux"/>
+        <LibraryPath Value="../../Lib/Linux/irrKlang"/>
+        <LibraryPath Value="../../External/irrKlang-1.4.0b/lib/Linux"/>
+        <Library Value="ExpansionLib_d"/>
+        <Library Value="SuperPlay_d"/>
+        <Library Value="Platform_d"/>
+        <Library Value="Sound_d"/>
+        <Library Value="Display_d"/>
+        <Library Value="IrrKlang"/>
+        <Library Value="SDL2"/>
+        <Library Value="X11"/>
+        <Library Value="GLU"/>
+        <Library Value="GL"/>
+        <Library Value="Xext"/>
+      </Linker>
+      <ResourceCompiler Options="" Required="no"/>
+      <General OutputFile="Environment/$(ProjectName)Demo" IntermediateDirectory="./Debug" Command="/home/cdoty/SuperPlay/Examples/HDMA/Environment/HDMADemo" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="/home/cdoty/SuperPlay/Examples/HDMA/Environment" PauseExecWhenProcTerminates="yes" IsGUIProgram="no" IsEnabled="yes"/>
+      <Environment EnvVarSetName="&lt;Use Defaults&gt;" DbgSetName="&lt;Use Defaults&gt;">
+        <![CDATA[]]>
+      </Environment>
+      <Debugger IsRemote="no" RemoteHostName="" RemoteHostPort="" DebuggerPath="">
+        <DebuggerSearchPaths/>
+        <PostConnectCommands/>
+        <StartupCommands/>
+      </Debugger>
+      <PreBuild/>
+      <PostBuild/>
+      <CustomBuild Enabled="no">
+        <RebuildCommand/>
+        <CleanCommand/>
+        <BuildCommand/>
+        <PreprocessFileCommand/>
+        <SingleFileCommand/>
+        <MakefileGenerationCommand/>
+        <ThirdPartyToolName/>
+        <WorkingDirectory/>
+      </CustomBuild>
+      <AdditionalRules>
+        <CustomPostBuild/>
+        <CustomPreBuild/>
+      </AdditionalRules>
+      <Completion EnableCpp11="no">
+        <ClangCmpFlagsC/>
+        <ClangCmpFlags/>
+        <ClangPP/>
+        <SearchPaths/>
+      </Completion>
+    </Configuration>
+    <Configuration Name="Release" CompilerType="gnu g++" DebuggerType="GNU gdb debugger" Type="Executable" BuildCmpWithGlobalSettings="append" BuildLnkWithGlobalSettings="append" BuildResWithGlobalSettings="append">
+      <Compiler Options="-O2;-Wall" C_Options="-O2;-Wall" Assembler="" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" UseDifferentPCHFlags="no" PCHFlags="">
+        <IncludePath Value="../../Include"/>
+      </Compiler>
+      <Linker Options="" Required="yes">
+        <LibraryPath Value="../../Lib/Linux"/>
+        <LibraryPath Value="../../Lib/Linux/irrKlang"/>
+        <LibraryPath Value="../../External/irrKlang-1.4.0b/lib/Linux"/>
+        <Library Value="ExpansionLib"/>
+        <Library Value="SuperPlay"/>
+        <Library Value="Platform"/>
+        <Library Value="Sound"/>
+        <Library Value="Display"/>
+        <Library Value="IrrKlang"/>
+        <Library Value="SDL2"/>
+        <Library Value="X11"/>
+        <Library Value="GLU"/>
+        <Library Value="GL"/>
+        <Library Value="Xext"/>
+      </Linker>
+      <ResourceCompiler Options="" Required="no"/>
+      <General OutputFile="Environment/$(ProjectName)Demo" IntermediateDirectory="./Release" Command="/home/cdoty/SuperPlay/Examples/HDMA/Environment/HDMADemo" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="/home/cdoty/SuperPlay/Examples/HDMA/Environment/" PauseExecWhenProcTerminates="yes" IsGUIProgram="no" IsEnabled="yes"/>
+      <Environment EnvVarSetName="&lt;Use Defaults&gt;" DbgSetName="&lt;Use Defaults&gt;">
+        <![CDATA[]]>
+      </Environment>
+      <Debugger IsRemote="no" RemoteHostName="" RemoteHostPort="" DebuggerPath="">
+        <DebuggerSearchPaths/>
+        <PostConnectCommands/>
+        <StartupCommands/>
+      </Debugger>
+      <PreBuild/>
+      <PostBuild/>
+      <CustomBuild Enabled="no">
+        <RebuildCommand/>
+        <CleanCommand/>
+        <BuildCommand/>
+        <PreprocessFileCommand/>
+        <SingleFileCommand/>
+        <MakefileGenerationCommand/>
+        <ThirdPartyToolName/>
+        <WorkingDirectory/>
+      </CustomBuild>
+      <AdditionalRules>
+        <CustomPostBuild/>
+        <CustomPreBuild/>
+      </AdditionalRules>
+      <Completion EnableCpp11="no">
+        <ClangCmpFlagsC/>
+        <ClangCmpFlags/>
+        <ClangPP/>
+        <SearchPaths/>
+      </Completion>
+    </Configuration>
+  </Settings>
+</CodeLite_Project>

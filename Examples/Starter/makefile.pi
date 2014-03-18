@@ -1,0 +1,49 @@
+# Project specific settings
+
+NAME	= Environment/Starter
+
+CC := g++
+LD := g++
+
+INCLUDES = -I../../Include
+
+CFLAGS += -mfpu=vfp
+
+ifeq ($(DEBUG), 1)
+CFLAGS += -DDEBUG -O0
+else
+CFLAGS += -O2
+endif
+
+LDFLAGS += -pthread -L../../Lib/RaspberryPi -L../../Lib/Linux -L../../Lib/Linux/BASS -L../../External/BASS/Lib/ARM -L/opt/vc/lib
+
+SRC	= $(wildcard *.cpp)
+
+ifeq ($(DEBUG), 1)
+OBJDIR := Debug
+else
+OBJDIR := Release
+endif
+
+OBJ	= $(addprefix $(OBJDIR)/,$(SRC:.cpp=.o))
+
+ifeq ($(DEBUG), 1)
+LIBS = -lExpansionLib_d -lSuperPlay_d -lPlatform_d -lSound_d -lDisplay_d
+else
+LIBS = -lExpansionLib -lSuperPlay -lPlatform -lSound -lDisplay
+endif
+
+LIBS	+= -lbass -lGLESv2 -lEGL -lSDL2 -lopenmaxil -lbcm_host -lvcos -lvchiq_arm -lpthread -lrt
+
+all: $(NAME)
+	
+$(NAME): $(OBJ)
+	$(LD) $(CFLAGS) $(LDFLAGS) -o $(NAME) $(OBJ) $(LIBS)
+	
+$(OBJDIR)/%.o: %.cpp
+	mkdir -p $(OBJDIR)
+	$(CC) $(INCLUDES) $(CFLAGS) -c $< -o $@
+
+clean:
+	rm -f $(OBJ)
+	rm -f $(NAME)
