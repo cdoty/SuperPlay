@@ -83,7 +83,8 @@ enum GamePads
 	MADCATZ_XBOX360_GAMEPAD	= 0x47160738,
 	XBOX360_WIRELESS_ADAPTER	= 0x02A1045E,
 	SCP_DS3_DRIVER	= 0x028E045E,
-
+	CAPCOM_XBOX360_SF4_FIGHTPAD	= 0xF02E1BAD,
+	
 	// Microsoft SideWinder Freestyle Pro
 	// Button A: B (2)
 	// Button B: A (1)
@@ -216,6 +217,17 @@ enum GamePads
 	// Right port is joystick 1
 	MAYFLASH_DUAL_BOX_WII_ADAPTER	= 0x03011D79,
 
+	// Mayflash Wireless Wii U Controller Adapter
+	// Button A: A (3)
+	// Button B: B (2)
+	// Button X: X (4)
+	// Button Y: Y (1)
+	// Button L: L (5)
+	// Button R: R (6)
+	// Select: '-' (9)
+	// Start: '+' (10)
+	MAYFLASH_WIRELESS_WIIU_ADAPTER	= 402653305,
+
 	// Nyko Playpad
 	// Button A: B (2)
 	// Button B: A (1)
@@ -239,6 +251,9 @@ enum GamePads
 	// Start: Start (10)
 	PIII_CONVERTER_ADAPTER	= 0x00010810,
 	PS3_CONVERTER_ADAPTER	= 0x00030810,
+	CAPCOM_PS3_SF4_FIGHTPAD	= 0x88280738,
+	CAPCOM_PS3_SD_GAMEPAD	= 0x32850738,
+	MAD_CATZ_CTRLR_GAMEPAD	= 0x52630738,
 
 	// XBCD driver v1.07 (http://www.redcl0ud.com/xbcd.html)
 	// Button A: B (2)
@@ -353,6 +368,17 @@ enum GamePads
 	// Start: Start (10)
 	// Right port is joystick 1
 	MAYFLASH_SNES_CONTROLLER_ADAPTER	= 0x30130E8F,
+
+	// Classic SNES Adapter
+	// Button A: A (2)
+	// Button B: B (1)
+	// Button X: X (4)
+	// Button Y: Y (3)
+	// Button L: L (5)
+	// Button R: R (6)
+	// Select: Select (7)
+	// Start: Start (8)
+	CLASSIC_SNES_CONTROLLER_ADAPTER	= 0x88660925,
 
 	// Hyperkin 
 	// Button A: A (1)
@@ -478,6 +504,7 @@ JoystickDefine	gsc_joysticks[]	=
 	{XBOX360_POWER_A_GAMEPAD, 1, 0, 3, 2, 4, 5, 6, 7},
 	{XBOX360_WIRELESS_ADAPTER, 1, 0, 3, 2, 4, 5, 6, 7},
 	{SCP_DS3_DRIVER, 1, 0, 3, 2, 4, 5, 6, 7},
+	{CAPCOM_XBOX360_SF4_FIGHTPAD, 1, 0, 3, 2, 4, 5, 6, 7},
 	{XBOX360_HORI_EX2_JOYSTICK, 1, 0, 3, 2, 4, 5, 6, 7},
 	{XBOX360_ARCADE_GAMESTICK_JOYSTICK, 1, 0, 3, 2, 4, 5, 6, 7},
 	{MADCATZ_XBOX360_GAMEPAD, 1, 0, 3, 2, 4, 5, 6, 7},
@@ -504,13 +531,18 @@ JoystickDefine	gsc_joysticks[]	=
 	{SAITEK_P2500_GAMEPAD, 3, 2, 1, 0, 6, 7, 4, 5},
 	{SPIN_MASTER_GAMEPAD, 1, 2, 0, 3, 6, 7, 8, 9},
 	{MAYFLASH_DUAL_BOX_WII_ADAPTER, 1, 2, 0, 3, 6, 7, 8, 9},
+	{MAYFLASH_WIRELESS_WIIU_ADAPTER, 2, 1, 3, 0, 4, 5, 8, 9},
 	{MAYFLASH_SNES_CONTROLLER_ADAPTER, 1, 2, 0, 3, 6, 7, 8, 9},
+	{CLASSIC_SNES_CONTROLLER_ADAPTER, 1, 0, 3, 2, 4, 5, 6, 7},
 	{HYPERKIN_PIXEL_ART_CONTROLLER, 0, 1, 2, 3, 4, 5, 7, 6},
 	{AXISPAD_GGE900_GAMEPAD, 3, 2, 1, 0, 4, 5, 10, 11},	   
 	{GAME_ELEMENTS_GGE908_GAMEPAD, 1, 2, 0, 3, 4, 5, 8, 9},
 	{PHILIPS_GGE909_GAMEPAD, 1, 2, 0, 3, 4, 5, 8, 9},
 	{PIII_CONVERTER_ADAPTER, 1, 2, 0, 3, 6, 7, 8, 9},
 	{PS3_CONVERTER_ADAPTER, 1, 2, 0, 3, 6, 7, 8, 9},
+	{CAPCOM_PS3_SF4_FIGHTPAD, 2, 1, 3, 0, 4, 6, 8, 9},	
+	{CAPCOM_PS3_SD_GAMEPAD, 2, 1, 3, 0, 4, 6, 8, 9},	
+	{MAD_CATZ_CTRLR_GAMEPAD, 1, 0, 4, 3, 6, 7, -1, 11},	
 	{MOTIONINJOY_PS3_WIRED_GAMEPAD, 1, 2, 0, 3, 4, 5, 8, 9},
 	{LOGIC_3_USB_INTRUDER_GAMEPAD, 3, 2, 1, 0, 4, 6, 5, 7},
 	{DRAGON_RISE_GAMEPAD, 3, 2, 1, 0, 4, 5, 8, 9},
