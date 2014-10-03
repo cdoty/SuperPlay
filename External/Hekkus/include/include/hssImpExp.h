@@ -27,18 +27,6 @@
 #endif
 
 
-#if (defined(ANDROID_NDK) || defined(ANDROID)|| defined(__ANDROID__))
-  #if !defined(ANDROID)
-    #define ANDROID
-  #endif
-#endif
-
-#if defined(__native_client__)
-    #if !defined(__NACL__)
-        #define __NACL__
-    #endif
-#endif
-
 #if defined(HSS_BUILD_STATIC_LIB)
 
   #define HSS_CLS_API
@@ -86,7 +74,7 @@
 #if defined (__SYMBIAN32__) && !defined (__WINS__)
     #define __HSS_PACKSTRUCT__
 #endif
-#if defined (__GP2X__) || defined(__MAC__)
+#if defined (__GP2X__) || defined(__MAC__) || defined(__EMSCRIPTEN__)
     #define __HSS_PACKSTRUCT__
 #endif
 

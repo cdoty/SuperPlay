@@ -5,8 +5,8 @@ debug_define _DEBUG
 options
 {
 	lib
-	output-name=../../Lib/Marmalade/Platform.lib
-	output-name-debug=../../Lib/Marmalade/Platform_d.lib
+	output-name=../../Lib/Marmalade/libPlatform.a
+	output-name-debug=../../Lib/Marmalade/libPlatform_d.a
 }
 
 includepaths

@@ -17,7 +17,7 @@ class Functions
 		// Get filename from path
 		static std::string getFilenameFromPath(const std::string& _strPath);
 
-		// Get xtension from path
+		// Get extension from path
 		static std::string getExtensionFromPath(const std::string& _strPath);
 
 		// Get filename + extension from path

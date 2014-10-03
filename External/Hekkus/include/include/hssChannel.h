@@ -18,16 +18,24 @@ namespace hss
     class HSS_CLS_API Speaker;
     class HSS_CLS_API AudioOutInterface;
     class HSS_CLS_API ChannelGroup;
+    class HSS_CLS_API ChannelData;
 
     /**
     *  %Sound channel class.
     *  When a sound are played the Sound class assign it to a Channel.\n
-    *  Use this class to modify the state of a playing or paused hssMusic or hssSound.
+    *  Use this class to modify the state of a playing or paused hssSound.
     */
     class HSS_CLS_API Channel
     {
-    private:
+        friend class Speaker;
+        friend class ChannelGroup;
+
+    protected:
+        ChannelData *data_;
+
+    protected:
         HSS_API_H Channel();
+        HSS_API_H ~Channel();
 
     public:
         /**

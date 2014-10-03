@@ -26,7 +26,7 @@
 NAMESPACE(SPlay)
 
 SoundSystem::SoundSystem()
-#if !defined __ANDROID__ && !defined MARMALADE 
+#if !defined __ANDROID__ && !defined MARMALADE
 	:
 	m_pSpeaker(NULL)
 #endif
@@ -54,8 +54,8 @@ SoundSystem* SoundSystem::create()
 
 bool SoundSystem::initialize()
 {
-#if !defined __ANDROID__ && !defined MARMALADE 
-	m_pSpeaker	= hss::Speaker::createSpeaker();
+#if !defined __ANDROID__ && !defined MARMALADE
+	m_pSpeaker	= hss::createSpeaker();
         
 	if (NULL == m_pSpeaker)
 	{
@@ -82,7 +82,7 @@ void SoundSystem::close()
 	releaseSounds();
 	releaseMusic();
 
-#if !defined __ANDROID__ && !defined MARMALADE 
+#if !defined __ANDROID__ && !defined MARMALADE
 	if (m_pSpeaker != NULL)
 	{
 		m_pSpeaker->close();
@@ -95,7 +95,7 @@ void SoundSystem::close()
 
 void SoundSystem::pause()
 {
-#if !defined __ANDROID__ && !defined MARMALADE 
+#if !defined __ANDROID__ && !defined MARMALADE
 	ASSERT_LOG(m_pSpeaker != NULL, "Sound system not initialized");
 
 	m_pSpeaker->pauseSounds();
@@ -104,7 +104,7 @@ void SoundSystem::pause()
 
 void SoundSystem::unpause()
 {
-#if !defined __ANDROID__ && !defined MARMALADE 
+#if !defined __ANDROID__ && !defined MARMALADE
 	ASSERT_LOG(m_pSpeaker != NULL, "Sound system not initialized");
 
 	m_pSpeaker->unpauseSounds();
@@ -113,7 +113,7 @@ void SoundSystem::unpause()
 
 void SoundSystem::setVolume(int _iVolume)
 {
-#if !defined __ANDROID__ && !defined MARMALADE 
+#if !defined __ANDROID__ && !defined MARMALADE
 	ASSERT_LOG(m_pSpeaker != NULL, "Sound system not initialized");
 
 	hss::ChannelGroup*	pGroup	= m_pSpeaker->getMasterChannelGroup();
@@ -132,7 +132,7 @@ bool SoundSystem::addSoundEvent(const tinystl::string& _strSoundName, int _iEven
 		return	false;
 	}
 
-#if !defined __ANDROID__ && !defined MARMALADE 
+#if !defined __ANDROID__ && !defined MARMALADE
 	ASSERT_LOG(m_pSpeaker != NULL, "Sound system not initialized");
 
 	hss::Sound*	pSound	= m_pSpeaker->createSound(_strSoundName.c_str());
@@ -154,7 +154,7 @@ void SoundSystem::triggerSoundEvent(int _iEventID)
 {
 	if (true == soundExists(_iEventID))
 	{
-#if !defined __ANDROID__ && !defined MARMALADE 
+#if !defined __ANDROID__ && !defined MARMALADE
 		ASSERT_LOG(m_pSpeaker != NULL, "Sound system not initialized");
 
 		m_pSpeaker->playSound(m_mapSoundEvents[_iEventID]);
@@ -166,7 +166,7 @@ void SoundSystem::stopSoundEvent(int _iEventID)
 {
 	if (true == soundExists(_iEventID))
 	{
-#if !defined __ANDROID__ && !defined MARMALADE 
+#if !defined __ANDROID__ && !defined MARMALADE
 		ASSERT_LOG(m_pSpeaker != NULL, "Sound system not initialized");
 
 		m_pSpeaker->stopSoundInstances(m_mapSoundEvents[_iEventID]);
@@ -181,7 +181,7 @@ bool SoundSystem::addMusicEvent(const tinystl::string& _strMusicName, int _iEven
 		return	false;
 	}
 
-#if !defined __ANDROID__ && !defined MARMALADE 
+#if !defined __ANDROID__ && !defined MARMALADE
 	ASSERT_LOG(m_pSpeaker != NULL, "Sound system not initialized");
 
 	hss::Sound*	pSound	= m_pSpeaker->createSound(_strMusicName.c_str());
@@ -203,7 +203,7 @@ void SoundSystem::triggerMusicEvent(int _iEventID)
 {
 	if (true == musicExists(_iEventID))
 	{
-#if !defined __ANDROID__ && !defined MARMALADE 
+#if !defined __ANDROID__ && !defined MARMALADE
 		ASSERT_LOG(m_pSpeaker != NULL, "Sound system not initialized");
 
 		m_pSpeaker->playSound(m_mapMusicEvents[_iEventID]);
@@ -215,7 +215,7 @@ void SoundSystem::stopMusicEvent(int _iEventID)
 {
 	if (true == musicExists(_iEventID))
 	{
-#if !defined __ANDROID__ && !defined MARMALADE 
+#if !defined __ANDROID__ && !defined MARMALADE
 		ASSERT_LOG(m_pSpeaker != NULL, "Sound system not initialized");
 
 		m_pSpeaker->stopSoundInstances(m_mapMusicEvents[_iEventID]);
@@ -225,7 +225,7 @@ void SoundSystem::stopMusicEvent(int _iEventID)
 
 void SoundSystem::releaseSounds()
 {
-#if !defined __ANDROID__ && !defined MARMALADE 
+#if !defined __ANDROID__ && !defined MARMALADE
 	for (SoundEventIterator iterator = m_mapSoundEvents.begin(); iterator != m_mapSoundEvents.end(); ++iterator)
 	{
 		if (iterator->second != NULL)
@@ -242,7 +242,7 @@ void SoundSystem::releaseSounds()
 
 bool SoundSystem::soundExists(int _iEventID)
 {
-#if !defined __ANDROID__ && !defined MARMALADE 
+#if !defined __ANDROID__ && !defined MARMALADE
 	if (m_mapSoundEvents.find(_iEventID) == m_mapSoundEvents.end())
 	{
 		return	false;
@@ -254,7 +254,7 @@ bool SoundSystem::soundExists(int _iEventID)
 
 void SoundSystem::releaseMusic()
 {
-#if !defined __ANDROID__ && !defined MARMALADE 
+#if !defined __ANDROID__ && !defined MARMALADE
 	for (MusicEventIterator iterator = m_mapMusicEvents.begin(); iterator != m_mapMusicEvents.end(); ++iterator)
 	{
 		if (iterator->second != NULL)
@@ -271,7 +271,7 @@ void SoundSystem::releaseMusic()
 
 bool SoundSystem::musicExists(int _iEventID)
 {
-#if !defined __ANDROID__ && !defined MARMALADE 
+#if !defined __ANDROID__ && !defined MARMALADE
 	if (m_mapMusicEvents.find(_iEventID) == m_mapMusicEvents.end())
 	{
 		return	false;

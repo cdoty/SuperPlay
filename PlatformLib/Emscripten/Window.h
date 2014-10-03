@@ -9,7 +9,8 @@
 
 #pragma once
 
-#include <GL/gl.h>
+#define EGL_EGLEXT_PROTOTYPES
+#include <EGL/egl.h>
 
 #include "Macros.h"
 
@@ -37,7 +38,22 @@ class Window
 		int getWidth() const {return m_iWidth;}
 		int getHeight() const {return m_iHeight;}
 
+		// Get display
+		EGLDisplay getDisplay() const {return m_display;}
+
+		// Get surface
+		EGLSurface getSurface() const {return m_surface;}
+
 	private:
+		// Display
+		EGLDisplay	m_display;
+
+		// Surface
+		EGLSurface	m_surface;
+
+		// Context
+		EGLContext	m_context;
+
 		// Window size
 		int			m_iWidth;
 		int			m_iHeight;

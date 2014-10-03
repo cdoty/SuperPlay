@@ -15,8 +15,8 @@
 #include "BulletManager.h"
 #include "EnemyManager.h"
 #include "FPS.h"
+#include "GameResources.h"
 #include "PlayerSprite.h"
-#include "ResourceManager.h"
 #include "ScoreBar.h"
 
 using namespace	SPlay;

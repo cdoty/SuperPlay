@@ -9,7 +9,10 @@
 
 #pragma once
 
+#if !defined __ANDROID__ && !defined MARMALADE
 #include <HSS.h>
+#endif
+
 #include <TinySTL/string.h>
 
 #include "ISoundSystem.h"
@@ -64,7 +67,7 @@ class SoundSystem : public ISoundSystem
 		virtual void stopMusicEvent(int _iEventID);
 
 	protected:
-#if !defined __ANDROID__ && !defined MARMALADE 
+#if !defined __ANDROID__ && !defined MARMALADE
 		// Speaker
 		hss::Speaker*	m_pSpeaker;
 

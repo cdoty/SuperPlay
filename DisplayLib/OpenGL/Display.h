@@ -11,7 +11,7 @@
 #endif
 #endif
 
-#if !defined __ANDROID__ && !defined __IOS__ && !defined MARMALADE
+#if !defined __ANDROID__ && !defined __IOS__ && !defined MARMALADE && !defined EMSCRIPTEN
 #include "GL/glew.h"
 #endif
 
@@ -23,7 +23,7 @@
 #else
 #include <OpenGL/gl.h>
 #endif
-#elif defined __ANDROID__
+#elif defined __ANDROID__ || defined EMSCRIPTEN
 #define GL_GLEXT_PROTOTYPES
 #include <GLES/gl.h>
 #include <GLES/glext.h>
@@ -47,6 +47,8 @@
 #include "GLAndroid.h"
 #elif defined MARMALADE
 #include "GLMarmalade.h"
+#elif defined EMSCRIPTEN
+#include "GLEmscripten.h"
 #elif defined __linux__ 
 #include "GLLinux.h"
 #elif defined __APPLE__ 

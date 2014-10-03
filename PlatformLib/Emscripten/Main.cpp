@@ -24,9 +24,13 @@ int main()
 
 	else
 	{
+		emscripten_set_keydown_callback(NULL, NULL, 1, SPlay::Platform::handleKeyDown);
+		emscripten_set_keyup_callback(NULL, NULL, 1, SPlay::Platform::handleKeyUp);
+		emscripten_set_fullscreenchange_callback(NULL, NULL, 1, SPlay::Platform::handleFullscreen);
+		
 		SPlay::Platform::getTimer()->start();
 
-		emscripten_set_main_loop(SPlay::Platform::runLoop, 60, 0);
+		emscripten_set_main_loop(SPlay::Platform::runLoop, 0, 0);
 	}
 	
 // 	SPlay::System::close();

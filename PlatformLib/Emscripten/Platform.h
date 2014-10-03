@@ -9,6 +9,7 @@
 
 #pragma once
 
+#include <html5.h>
 #include <TinySTL/string.h>
 
 #include "Macros.h"
@@ -41,6 +42,11 @@ class Platform
 
 		// Get storage path
 		static const tinystl::string& getStoragePath();
+
+		// Event handlers
+		static int handleKeyDown(int _iEventType, const EmscriptenKeyboardEvent* _pKeyEvent, void* _pUserData);
+		static int handleKeyUp(int _iEventType, const EmscriptenKeyboardEvent* _pKeyEvent, void* _pUserData);
+		static EM_BOOL handleFullscreen(int _iEventType, const EmscriptenFullscreenChangeEvent* _pFullscreenEvent, void* _pUserData);
 
 	private:
 		// Timer

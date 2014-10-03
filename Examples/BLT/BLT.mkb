@@ -1,6 +1,9 @@
 #!/usr/bin/env mkb
-define MARMALADE
-debug_define _DEBUG
+
+defines
+{
+	MARMALADE
+}
 
 files
 {
@@ -22,10 +25,10 @@ files
 	Game.h
 	GameDefines.h
 	GameHeader.cpp
+	GameResources.cpp
+	GameResources.h
 	PlayerSprite.cpp
 	PlayerSprite.h
-	ResourceManager.cpp
-	ResourceManager.h
 	ScoreBar.cpp
 	ScoreBar.h
 }
@@ -41,26 +44,26 @@ librarypaths
 	../../Lib/Marmalade/Hekkus
 }
 
-if {{ not defined _DEBUG }}
+if {{ defined IW_DEBUG }}
 {
 	librarys
 	{
-		Display.lib
-		Expansion.lib
-		Platform.lib
-		Sound.lib
-		SuperPlay.lib
+		Display_d
+		Expansion_d
+		Platform_d
+		Sound_d
+		SuperPlay_d
 	}
 }
 else
 {
 	librarys
 	{
-		Display_d.lib
-		Expansion_d.lib
-		Platform_d.lib
-		Sound_d.lib
-		SuperPlay_d.lib
+		Display
+		Expansion
+		Platform
+		Sound
+		SuperPlay
 	}
 }
 

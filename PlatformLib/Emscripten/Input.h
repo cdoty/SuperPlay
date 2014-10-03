@@ -55,6 +55,12 @@ class Input	: public IInput
 		// Device change
 		virtual void deviceChange();
 
+		// Handle key down
+		void handleKeyDown(uint32_t _uKey);
+
+		// Handle key up
+		void handleKeyUp(uint32_t _uKey);
+
 	private:
 		// Exit?
 		bool					m_bExit;
@@ -94,8 +100,8 @@ class Input	: public IInput
 		int						m_iKeyY;
 		int						m_iKeyL;
 		int						m_iKeyR;
-		int						m_iSelectKey;
-		int						m_iStartKey;
+		int						m_iKeySelect;
+		int						m_iKeyStart;
 				
 		// Button indexes
 		int						m_iButtonA;
@@ -104,32 +110,8 @@ class Input	: public IInput
 		int						m_iButtonY;
 		int						m_iButtonL;
 		int						m_iButtonR;
-		int						m_iSelectButton;
-		int						m_iStartButton;
-				
-		// Game pad
-		uint32_t				m_uGamePad;
-
-		// Initialize keyboard
-		bool initializeKeyboard();
-
-		// Release keyboard
-		void releaseKeyboard();
-
-		// Update keyboard
-		bool updateKeyboard();
-
-		// Initialize joystick
-		bool initializeJoystick();
-
-		// Release joystick
-		void releaseJoystick();
-
-		// Update joystick
-		bool updateJoystick();
-
-		// Setup buttons		
-		bool setupButtons(uint32_t _uGamePad);
+		int						m_iButtonSelect;
+		int						m_iButtonStart;
 };
 
 ENDNAMESPACE

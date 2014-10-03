@@ -7,9 +7,6 @@
     <Filter Include="res\values">
       <UniqueIdentifier>ee90bb7e-0af8-480b-a72f-cd5d583c65be</UniqueIdentifier>
     </Filter>
-    <Filter Include="src">
-      <UniqueIdentifier>{29a3df46-d34f-487e-b2a6-b505750fdd68}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files">
       <UniqueIdentifier>{e46971ad-3d6d-48f5-be08-d45188a7e0c6}</UniqueIdentifier>
     </Filter>

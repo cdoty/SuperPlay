@@ -1,0 +1,1 @@
+VC10;build_blt_vc10;

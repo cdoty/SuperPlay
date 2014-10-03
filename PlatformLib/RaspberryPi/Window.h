@@ -35,13 +35,13 @@ class Window
 		void close();
 
 		// Get display
-		EGLDisplay getDisplay() {return m_pDisplay;}
+		EGLDisplay getDisplay() const {return m_pDisplay;}
 
 		// Get surface
-		EGLSurface getSurface() {return m_pSurface;}
+		EGLSurface getSurface() const {return m_pSurface;}
 
 		// Get window
-		EGL_DISPMANX_WINDOW_T getWindow() {return m_window;}
+		EGL_DISPMANX_WINDOW_T getWindow() const {return m_window;}
 		
 	private:
 		// Display

@@ -26,7 +26,7 @@ namespace hss
         kSoundStartPlaying   = 0x0010,
         kSoundStopPlaying    = 0x0020,
 
-        kAll                 = 0xFFFF
+        kSoundListenerAll    = 0xFFFF
     };
 
     /**

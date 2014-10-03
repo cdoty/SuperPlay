@@ -1,0 +1,12 @@
+*.PVS-Studio.cfg
+*.suo
+*.sdf
+*.ilk
+*.pdb
+*.exe
+Log.html
+Build/
+Debug/
+Release/
+External/
+Lib/*.*

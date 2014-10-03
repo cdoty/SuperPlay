@@ -343,7 +343,6 @@ extern void stbi_install_YCbCr_to_RGB(stbi_YCbCr_to_RGB_run func);
 #include <stdio.h>
 #endif
 #include <stdlib.h>
-#include <memory.h>
 #include <assert.h>
 #include <stdarg.h>
 

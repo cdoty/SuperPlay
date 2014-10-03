@@ -103,22 +103,22 @@ int32 Input::eventHandler(void* _pSystemData, void* _pUserData)
 	switch (key)
 	{
 		case s3eKeyAbsUp:
-			uInput	= IK_PAD_UP;
-						
-			break;
-	
-		case s3eKeyAbsDown:
-			uInput	= IK_PAD_DOWN;
-						
-			break;
-	
-		case s3eKeyAbsLeft:
 			uInput	= IK_PAD_LEFT;
 						
 			break;
 	
-		case s3eKeyAbsRight:
+		case s3eKeyAbsDown:
 			uInput	= IK_PAD_RIGHT;
+						
+			break;
+	
+		case s3eKeyAbsLeft:
+			uInput	= IK_PAD_DOWN;
+						
+			break;
+	
+		case s3eKeyAbsRight:
+			uInput	= IK_PAD_UP;
 						
 			break;
 	

@@ -130,7 +130,7 @@ bool Texture::unlockTexture()
 	glEnable(GL_TEXTURE_2D);
 	glBindTexture(GL_TEXTURE_2D, m_uTextureID);
 
-#if defined __ANDROID__ || defined MARMALADE
+#if defined __ANDROID__ || defined MARMALADE || defined EMSCRIPTEN
 	glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, m_iImageWidth, m_iImageHeight, GL_RGBA, GL_UNSIGNED_BYTE, m_pTextureBuffer);
 #elif defined __IOS__
 	glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, m_iImageWidth, m_iImageHeight, GL_BGRA_EXT, GL_UNSIGNED_BYTE, m_pTextureBuffer);
@@ -176,7 +176,7 @@ bool Texture::generateTexture()
 
 bool Texture::setupTexture()
 {
-#if defined __ANDROID__ || defined MARMALADE
+#if defined __ANDROID__ || defined MARMALADE || defined EMSCRIPTEN
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, m_iTextureWidth, m_iTextureHeight, 0, GL_RGBA, GL_UNSIGNED_BYTE, m_pTextureBuffer);
 #elif defined __IOS__
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, m_iTextureWidth, m_iTextureHeight, 0, GL_BGRA_EXT, GL_UNSIGNED_BYTE, m_pTextureBuffer);

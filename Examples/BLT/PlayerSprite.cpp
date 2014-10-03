@@ -13,9 +13,6 @@
 #include "Game.h"
 #include "Hardware.h"
 
-// Sounds event names
-static const char*	gsc_szShot	= "Shot";
-
 // Animation frames
 enum AnimationFrames
 {
@@ -170,8 +167,6 @@ void PlayerSprite::updateInput(float _fElapsedTime)
 		m_fButtonCooldown	= gsc_iButtonCooldown;
 
 		g_pGame->getBulletManager()->addBullet(m_fX, m_fY);
-
-		g_pGame->getResourceManager()->getAudioLoader()->playSound(gsc_szShot);
 	}
 }
 

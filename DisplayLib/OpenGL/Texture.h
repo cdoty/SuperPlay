@@ -21,7 +21,7 @@
 #else
 #include <OpenGL/gl.h>
 #endif
-#elif defined __ANDROID__
+#elif defined __ANDROID__ || defined EMSCRIPTEN
 #include <GLES/gl.h>
 #elif defined MARMALADE
 #include <IwGL.h>

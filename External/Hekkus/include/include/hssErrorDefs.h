@@ -40,6 +40,12 @@ namespace hss
         kErrorPlay             = -11,
         // bad buffer size (too low?)
         kErrorBufferLength     = -12,
+        // some Platform data is missing, probably you forgot
+        // to pass platform specific data to createSpeaker,
+        // please check the documentation
+        kErrorNeedPlatformData = -13,
+        // property not supported on this platform
+        kErrorPropertyNotSupported = -14,
 
         kPlayFree         = 0x10000000,
         kPlayPaused       = 0x20000000,

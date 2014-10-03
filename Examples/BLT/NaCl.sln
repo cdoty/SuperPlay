@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BLT", "NaCl.vcxproj", "{6A41CB2E-0022-47E1-89C5-FB2B558BEB91}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|NaCl32 = Debug|NaCl32
+		Debug|NaCl64 = Debug|NaCl64
+		Debug|PNaCl = Debug|PNaCl
+		Debug|PPAPI = Debug|PPAPI
+		Release|NaCl32 = Release|NaCl32
+		Release|NaCl64 = Release|NaCl64
+		Release|PNaCl = Release|PNaCl
+		Release|PPAPI = Release|PPAPI
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6A41CB2E-0022-47E1-89C5-FB2B558BEB91}.Debug|NaCl32.ActiveCfg = Debug|NaCl32
+		{6A41CB2E-0022-47E1-89C5-FB2B558BEB91}.Debug|NaCl32.Build.0 = Debug|NaCl32
+		{6A41CB2E-0022-47E1-89C5-FB2B558BEB91}.Debug|NaCl64.ActiveCfg = Debug|NaCl64
+		{6A41CB2E-0022-47E1-89C5-FB2B558BEB91}.Debug|NaCl64.Build.0 = Debug|NaCl64
+		{6A41CB2E-0022-47E1-89C5-FB2B558BEB91}.Debug|PNaCl.ActiveCfg = Debug|PNaCl
+		{6A41CB2E-0022-47E1-89C5-FB2B558BEB91}.Debug|PNaCl.Build.0 = Debug|PNaCl
+		{6A41CB2E-0022-47E1-89C5-FB2B558BEB91}.Debug|PPAPI.ActiveCfg = Debug|PPAPI
+		{6A41CB2E-0022-47E1-89C5-FB2B558BEB91}.Debug|PPAPI.Build.0 = Debug|PPAPI
+		{6A41CB2E-0022-47E1-89C5-FB2B558BEB91}.Release|NaCl32.ActiveCfg = Release|NaCl32
+		{6A41CB2E-0022-47E1-89C5-FB2B558BEB91}.Release|NaCl32.Build.0 = Release|NaCl32
+		{6A41CB2E-0022-47E1-89C5-FB2B558BEB91}.Release|NaCl64.ActiveCfg = Release|NaCl64
+		{6A41CB2E-0022-47E1-89C5-FB2B558BEB91}.Release|NaCl64.Build.0 = Release|NaCl64
+		{6A41CB2E-0022-47E1-89C5-FB2B558BEB91}.Release|PNaCl.ActiveCfg = Release|PNaCl
+		{6A41CB2E-0022-47E1-89C5-FB2B558BEB91}.Release|PNaCl.Build.0 = Release|PNaCl
+		{6A41CB2E-0022-47E1-89C5-FB2B558BEB91}.Release|PPAPI.ActiveCfg = Release|PPAPI
+		{6A41CB2E-0022-47E1-89C5-FB2B558BEB91}.Release|PPAPI.Build.0 = Release|PPAPI
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

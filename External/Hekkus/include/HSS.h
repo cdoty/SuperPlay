@@ -1,6 +1,6 @@
 /* ****************************************************************************
 
-Hekkus Sound System ver 1.00.rc9 - 12/12/2012
+Hekkus Sound System ver 1.00.rc14 - 01/03/2014
     by Thomas Maniero
 
 
@@ -11,7 +11,7 @@ Hekkus Sound System ver 1.00.rc9 - 12/12/2012
 
 **************************************************************************** */
 
-/*! \mainpage Hekkus Sound System ver. 1.00.rc9
+/*! \mainpage Hekkus Sound System ver. 1.00.rc14
  *
  * \n \n
  *

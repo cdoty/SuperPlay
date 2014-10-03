@@ -7,6 +7,8 @@
 // IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
 // PARTICULAR PURPOSE.
 
+#include <emscripten.h>
+
 #include "Log.h"
 #include "Timer.h"
 
@@ -37,8 +39,6 @@ Timer* Timer::create()
 
 bool Timer::initialize()
 {
-	m_iTicksPerSecond	= SDL_GetPerformanceFrequency();
-
 	return	true;
 }
 
@@ -48,51 +48,19 @@ void Timer::close()
 
 void Timer::start()
 {
-	m_iCurrentTicks	= SDL_GetPerformanceCounter();
-}
-
-int Timer::getElapsed()
-{
-	Uint64	iCurrent	= SDL_GetPerformanceCounter();
-
-	int	iCurrentTime;
-	
-	if (iCurrent >= m_iCurrentTicks)
-	{
-		iCurrentTime	= static_cast<int>(static_cast<double>(iCurrent - m_iCurrentTicks) / 
-			static_cast<double>(m_iTicksPerSecond) * 1000.0f);
-	}
-	
-	else
-	{
-		iCurrentTime	= static_cast<int>(static_cast<double>(m_iCurrentTicks - iCurrent) / 
-			static_cast<double>(m_iTicksPerSecond) * 1000.0f);
-	}
-	
-	m_iCurrentTicks	= iCurrent;
-
-	return	iCurrentTime;
+	// Get current time, in milliseconds
+	m_fCurrentTime	= emscripten_get_now() / 1000.0f;
 }
 
 float Timer::getElapsedFloat()
 {
-	Uint64	iCurrent	= SDL_GetPerformanceCounter();
+	float	fCurrent	= emscripten_get_now() / 1000.0f;
 
-	double	fCurrentTime;
+	float	fTime	= fCurrent - m_fCurrentTime;
 	
-	if (iCurrent >= m_iCurrentTicks)
-	{
-		fCurrentTime	= static_cast<double>(iCurrent - m_iCurrentTicks) / static_cast<double>(m_iTicksPerSecond);
-	}
-	
-	else
-	{
-		fCurrentTime	= static_cast<double>(m_iCurrentTicks - iCurrent) / static_cast<double>(m_iTicksPerSecond);
-	}
-	
-	m_iCurrentTicks	= iCurrent;
+	m_fCurrentTime	= fCurrent;
 
-	return	static_cast<float>(fCurrentTime);
+	return	fTime;
 }
 
 ENDNAMESPACE

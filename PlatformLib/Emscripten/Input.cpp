@@ -7,20 +7,23 @@
 // IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
 // PARTICULAR PURPOSE.
 
-#include <TinyXML2/tinyxml2.h>
+#include <emscripten.h>
 #include <stdlib.h>
 
-#include "File.h"
 #include "IDisplay.h"
 #include "Input.h"
 #include "Joypad.h"
-#include "JoystickGUIDs.h"
 #include "Log.h"
 #include "PathDefines.h"
 #include "Platform.h"
 #include "PlatformDefines.h"
 #include "System.h"
 #include "Window.h"
+
+#define	USE_KEY_UP
+//#define USE_GS
+#define USE_ROKU
+//#define	USE_IMPULSE
 
 NAMESPACE(SPlay)
 
@@ -34,29 +37,41 @@ Input::Input()	:
 	m_iDeadZone(16384),
 	m_uCurrentInput(0),
 	m_uLastInput(0),
-/*
-	m_iKeyUp(SDL_SCANCODE_UP),
-	m_iKeyDown(SDL_SCANCODE_DOWN),
-	m_iKeyLeft(SDL_SCANCODE_LEFT),
-	m_iKeyRight(SDL_SCANCODE_RIGHT),
-	m_iKeyA(SDL_SCANCODE_Z),
-	m_iKeyB(SDL_SCANCODE_X),
-	m_iKeyX(SDL_SCANCODE_C),
-	m_iKeyY(SDL_SCANCODE_V),
-	m_iKeyL(SDL_SCANCODE_Q),
-	m_iKeyR(SDL_SCANCODE_E),
-	m_iSelectKey(SDL_SCANCODE_TAB),
-	m_iStartKey(SDL_SCANCODE_SPACE),
-*/
+#ifdef USE_GS
+	m_iKeyUp('W'),
+	m_iKeyDown('S'),
+	m_iKeyLeft('A'),
+	m_iKeyRight('D'),
+	m_iKeyA('2'),
+	m_iKeyB('1'),
+	m_iKeyX('4'),
+	m_iKeyY('3'),
+	m_iKeyL('5'),
+	m_iKeyR('7'),
+	m_iKeySelect('6'),
+	m_iKeyStart('8'),
+#elif defined USE_ROKU
+	m_iKeyUp('R'),
+	m_iKeyDown('L'),
+	m_iKeyLeft('U'),
+	m_iKeyRight('D'),
+	m_iKeyA('X'),
+	m_iKeyB('Y'),
+	m_iKeyX('6'),
+	m_iKeyY('C'),
+	m_iKeyL('3'),
+	m_iKeyR('8'),
+	m_iKeySelect('A'),
+	m_iKeyStart('S'),
+#endif
 	m_iButtonA(-1),
 	m_iButtonB(-1),
 	m_iButtonX(-1),
 	m_iButtonY(-1),
 	m_iButtonL(-1),
 	m_iButtonR(-1),
-	m_iSelectButton(-1),
-	m_iStartButton(-1),
-	m_uGamePad(0xFFFFFFFF)
+	m_iButtonSelect(-1),
+	m_iButtonStart(-1)
 {
 }
 
@@ -84,500 +99,270 @@ bool Input::initialize()
 	m_uCurrentInput	= 0;
 	m_uLastInput	= 0;
 
-	if (false == initializeKeyboard())
-	{
-		return	false;
-	}
-
-	if (false == initializeJoystick())
-	{
-		return	false;
-	}
-
 	return	true;
 }
 
 void Input::close()
 {
-	releaseKeyboard();
-	releaseJoystick();
 }
 
 bool Input::update()
 {
 	m_uLastInput	= m_uCurrentInput;
 
-	m_uCurrentInput	= 0;
-	
-	if (true == m_bJoystickAttached)
+	if (false == m_bJoystickAttached)
 	{
-		updateJoystick();
-	}
+		int	iGamePads	= emscripten_get_num_gamepads();
 
-	updateKeyboard();
+		Log::instance()->logMessage("Gamepads %d", iGamePads);
+
+		if (iGamePads > 0)
+		{
+			m_bJoystickAttached	= true;
+		}
+	}
 
 	return	true;
 }
 
 void Input::deviceChange()
 {
-	releaseJoystick();
-
-	initializeJoystick();
 }
 
-bool Input::initializeKeyboard()
+void Input::handleKeyDown(uint32_t _uKey)
 {
-	return	true;
-}
-
-void Input::releaseKeyboard()
-{
-}
-
-bool Input::updateKeyboard()
-{
-/*
-	int	iCount;
-
-	const uint8_t*	pKeys	= SDL_GetKeyboardState(&iCount);
-	
-	for (int iLoop = 0; iLoop < iCount; ++iLoop)
-	{
-		if (pKeys[iLoop] != 0)
-		{
-			break;
-		}
-	}
-	
-	if (true == m_b4Way)
-	{
-		if (1 == pKeys[m_iKeyUp])
+#ifdef USE_IMPULSE
+		if ('W' == _uKey)
 		{
 			m_uCurrentInput	|= IK_PAD_UP;
 		}
 
-		else if (1 == pKeys[m_iKeyDown])
+		else if ('E' == _uKey)
+		{
+			m_uCurrentInput	&= ~IK_PAD_UP;
+		}
+
+		if ('X' == _uKey)
 		{
 			m_uCurrentInput	|= IK_PAD_DOWN;
 		}
 
-		else if (1 == pKeys[m_iKeyLeft])
+		else if ('Z' == _uKey)
+		{
+			m_uCurrentInput	&= ~IK_PAD_DOWN;
+		}
+
+		if ('A' == _uKey)
 		{
 			m_uCurrentInput	|= IK_PAD_LEFT;
 		}
 
-		else if (1 == pKeys[m_iKeyRight])
+		else if ('Q' == _uKey)
+		{
+			m_uCurrentInput	&= ~IK_PAD_LEFT;
+		}
+
+		if ('D' == _uKey)
 		{
 			m_uCurrentInput	|= IK_PAD_RIGHT;
 		}
-	}
-			
-	else
+
+		else if ('C' == _uKey)
+		{
+			m_uCurrentInput	&= ~IK_PAD_RIGHT;
+		}
+
+		if ('Y' == _uKey)
+		{
+			m_uCurrentInput	|= IK_A;
+		}
+
+		else if ('T' == _uKey)
+		{
+			m_uCurrentInput	&= ~IK_A;
+		}
+
+		if ('K' == _uKey)
+		{
+			m_uCurrentInput	|= IK_B;
+		}
+
+		else if ('P' == _uKey)
+		{
+			m_uCurrentInput	&= ~IK_B;
+		}
+
+		if ('O' == _uKey)
+		{
+			m_uCurrentInput	|= IK_X;
+		}
+
+		else if ('G' == _uKey)
+		{
+			m_uCurrentInput	&= ~IK_X;
+		}
+
+		if ('L' == _uKey)
+		{
+			m_uCurrentInput	|= IK_Y;
+		}
+
+		else if ('V' == _uKey)
+		{
+			m_uCurrentInput	&= ~IK_Y;
+		}
+
+		if ('H' == _uKey)
+		{
+			m_uCurrentInput	|= IK_SELECT;
+		}
+
+		else if ('R' == _uKey)
+		{
+			m_uCurrentInput	&= ~IK_SELECT;
+		}
+
+		if ('J' == _uKey)
+		{
+			m_uCurrentInput	|= IK_START;
+		}
+
+		else if ('N' == _uKey)
+		{
+			m_uCurrentInput	&= ~IK_START;
+		}
+#endif
+
+#ifdef USE_KEY_UP
+	if (m_iKeyUp == _uKey || 38 == _uKey)
 	{
-		if (1 == pKeys[m_iKeyUp])
-		{
-			m_uCurrentInput	|= IK_PAD_UP;
-		}
-
-		else if (1 == pKeys[m_iKeyDown])
-		{
-			m_uCurrentInput	|= IK_PAD_DOWN;
-		}
-
-		if (1 == pKeys[m_iKeyLeft])
-		{
-			m_uCurrentInput	|= IK_PAD_LEFT;
-		}
-
-		else if (1 == pKeys[m_iKeyRight])
-		{
-			m_uCurrentInput	|= IK_PAD_RIGHT;
-		}
+		m_uCurrentInput	|= IK_PAD_UP;
 	}
 
-	if (1 == pKeys[m_iKeyA])
+	else if (m_iKeyDown == _uKey || 40 == _uKey)
+	{
+		m_uCurrentInput	|= IK_PAD_DOWN;
+	}
+
+	else if (m_iKeyLeft == _uKey || 37 == _uKey)
+	{
+		m_uCurrentInput	|= IK_PAD_LEFT;
+	}
+
+	else if (m_iKeyRight == _uKey || 39 == _uKey)
+	{
+		m_uCurrentInput	|= IK_PAD_RIGHT;
+	}
+
+	else if (m_iKeyA == _uKey)
 	{
 		m_uCurrentInput	|= IK_A;
 	}
 
-	if (1 == pKeys[m_iKeyB])
-	{
-		m_uCurrentInput	|= IK_B;
-	}
-		
-	if (1 == pKeys[m_iKeyX])
-	{
-		m_uCurrentInput	|= IK_X;
-	}
-
-	if (1 == pKeys[m_iKeyY])
-	{
-		m_uCurrentInput	|= IK_Y;
-	}
-		
-	if (1 == pKeys[m_iKeyL])
-	{
-		m_uCurrentInput	|= IK_L;
-	}
-
-	if (1 == pKeys[m_iKeyR])
-	{
-		m_uCurrentInput	|= IK_R;
-	}
-		
-	if (1 == pKeys[m_iStartKey])
-	{
-		m_uCurrentInput	|= IK_START;
-	}
-
-	if (1 == pKeys[m_iSelectKey])
-	{
-		m_uCurrentInput	|= IK_SELECT;
-	}
-*/
-	return	true;
-}
-
-bool Input::initializeJoystick()
-{
-/*
-	int	iJoysticks	= SDL_NumJoysticks();
-
-	for (int iLoop = 0; iLoop < iJoysticks; ++iLoop)
-	{
-		m_pJoystick	= SDL_JoystickOpen(iLoop);
-
-		if (m_pJoystick != NULL)
-		{
-			SDL_JoystickGUID	Guid	= SDL_JoystickGetGUID(m_pJoystick);
-	
-			// Find gampad ID
-			uint32_t	uGamePad	= (Guid.data[9] << 24) | (Guid.data[8] << 16) | (Guid.data[5] << 8) | Guid.data[4];
-
-			setupButtons(uGamePad);
-
-			m_bJoystickAttached	= true;
-
-			break;
-		}
-	}
-*/
-
-	return	true;
-}
-
-void Input::releaseJoystick()
-{
-}
-
-bool Input::updateJoystick()
-{
-/*
-	if (m_pJoystick != NULL && SDL_TRUE == SDL_JoystickGetAttached(m_pJoystick))
-	{
-		if (true == m_bHasAxis)
-		{
-			int	iJoystickX	= SDL_JoystickGetAxis(m_pJoystick, 0);
-			int	iJoystickY	= SDL_JoystickGetAxis(m_pJoystick, 1);
-
-			int	iX	= iJoystickX;
-			
-			if (iX < 0)
-			{
-				iX	= -iX;
-			}
-			
-			int	iY	= iJoystickY;
-			
-			if (iY < 0)
-			{
-				iY	= -iY;
-			}
-			
-			if (false == m_b4Way)
-			{
-				if (iJoystickX <= -m_iDeadZone)
-				{
-					m_uCurrentInput	|= IK_PAD_LEFT;
-				}
-
-				else if (iJoystickX >= m_iDeadZone)
-				{
-					m_uCurrentInput	|= IK_PAD_RIGHT;
-				}
-
-				if (iJoystickY <= -m_iDeadZone)
-				{
-					m_uCurrentInput	|= IK_PAD_UP;
-				}
-				
-				else if (iJoystickY >= m_iDeadZone)
-				{
-					m_uCurrentInput	|= IK_PAD_DOWN;
-				}
-			}
-			
-			else if (iX > iY)
-			{
-				if (iJoystickX <= -m_iDeadZone)
-				{
-					m_uCurrentInput	|= IK_PAD_LEFT;
-				}
-
-				else if (iJoystickX >= m_iDeadZone)
-				{
-					m_uCurrentInput	|= IK_PAD_RIGHT;
-				}
-			}
-			
-			else
-			{
-				if (iJoystickY <= -m_iDeadZone)
-				{
-					m_uCurrentInput	|= IK_PAD_UP;
-				}
-				
-				else if (iJoystickY >= m_iDeadZone)
-				{
-					m_uCurrentInput	|= IK_PAD_DOWN;
-				}
-			}
-		}
-
-		if (true == m_bHasPOV)
-		{		
-			uint8_t	uPosition	= SDL_JoystickGetHat(m_pJoystick, 0);
-
-			switch (uPosition)
-			{
-				case SDL_HAT_LEFTUP:
-					m_uCurrentInput	|= IK_PAD_LEFT;
-					
-					if (false == m_b4Way)
-					{
-						m_uCurrentInput	|= IK_PAD_UP;
-					}
-
-					break;
-
-				case SDL_HAT_LEFT:
-					m_uCurrentInput	|= IK_PAD_LEFT;
-	
-					break;
-
-				case SDL_HAT_LEFTDOWN:
-					m_uCurrentInput	|= IK_PAD_LEFT;
-			
-					if (false == m_b4Way)
-					{
-						m_uCurrentInput	|= IK_PAD_DOWN;
-					}
-	
-					break;
-
-				case SDL_HAT_RIGHTUP:
-					m_uCurrentInput	|= IK_PAD_RIGHT;
-
-					if (false == m_b4Way)
-					{
-						m_uCurrentInput	|= IK_PAD_UP;
-					}
-
-					break;
-
-				case SDL_HAT_RIGHT:
-					m_uCurrentInput	|= IK_PAD_RIGHT;
-	
-					break;
-
-				case SDL_HAT_RIGHTDOWN:
-					m_uCurrentInput	|= IK_PAD_RIGHT;
-
-					if (false == m_b4Way)
-					{
-						m_uCurrentInput	|= IK_PAD_DOWN;
-					}
-	
-					break;
-
-				case SDL_HAT_UP:
-					m_uCurrentInput	|= IK_PAD_UP;
-	
-					break;
-
-				case SDL_HAT_DOWN:
-					m_uCurrentInput	|= IK_PAD_DOWN;
-	
-					break;
-			}
-		}
-	}
-
-	if (m_iButtonA != -1 && 1 == SDL_JoystickGetButton(m_pJoystick, m_iButtonA))
-	{
-		m_uCurrentInput	|= IK_A;
-	}
-
-	if (m_iButtonB != -1 && 1 == SDL_JoystickGetButton(m_pJoystick, m_iButtonB))
+	else if (m_iKeyB == _uKey)
 	{
 		m_uCurrentInput	|= IK_B;
 	}
 
-	if (m_iButtonX != -1 && 1 == SDL_JoystickGetButton(m_pJoystick, m_iButtonX))
+	else if (m_iKeyX == _uKey)
 	{
 		m_uCurrentInput	|= IK_X;
 	}
 
-	if (m_iButtonY != -1 && 1 == SDL_JoystickGetButton(m_pJoystick, m_iButtonY))
+	else if (m_iKeyY == _uKey)
 	{
 		m_uCurrentInput	|= IK_Y;
 	}
 
-	if (m_iButtonL != -1 && 1 == SDL_JoystickGetButton(m_pJoystick, m_iButtonL))
+	else if (m_iKeyL == _uKey)
 	{
 		m_uCurrentInput	|= IK_L;
 	}
 
-	if (m_iButtonR != -1 && 1 == SDL_JoystickGetButton(m_pJoystick, m_iButtonR))
+	else if (m_iKeyR == _uKey)
 	{
 		m_uCurrentInput	|= IK_R;
 	}
 
-	if (m_iStartButton != -1 && 1 == SDL_JoystickGetButton(m_pJoystick, m_iStartButton))
-	{
-		m_uCurrentInput	|= IK_START;
-	}
-
-	if (m_iSelectButton != -1 && 1 == SDL_JoystickGetButton(m_pJoystick, m_iSelectButton))
+	else if (m_iKeySelect == _uKey)
 	{
 		m_uCurrentInput	|= IK_SELECT;
 	}
-*/
 
-	return	true;
+	else if (m_iKeyStart == _uKey)
+	{
+		Log::instance()->logMessage("Start pressed");
+
+		m_uCurrentInput	|= IK_START;
+	}
+#endif
 }
 
-bool Input::setupButtons(uint32_t _uGamePad)
+void Input::handleKeyUp(uint32_t _uKey)
 {
-/*
-	m_iJoystickButtons	= SDL_JoystickNumButtons(m_pJoystick);
-	
-	if (SDL_JoystickNumAxes(m_pJoystick) > 1)
+#ifdef USE_KEY_UP
+	if (m_iKeyUp == _uKey || 38 == _uKey)
 	{
-		m_bHasAxis	= true;
+		m_uCurrentInput	&= ~IK_PAD_UP;
 	}
 
-	else
+	else if (m_iKeyDown == _uKey || 40 == _uKey)
 	{
-		m_bHasAxis	= false;
+		m_uCurrentInput	&= ~IK_PAD_DOWN;
 	}
 
-	if (SDL_JoystickNumHats(m_pJoystick) > 0)
+	else if (m_iKeyLeft == _uKey || 37 == _uKey)
 	{
-		m_bHasPOV	= true;
+		m_uCurrentInput	&= ~IK_PAD_LEFT;
 	}
 
-	else
+	else if (m_iKeyRight == _uKey)
 	{
-		m_bHasPOV	= false;
+		m_uCurrentInput	&= ~IK_PAD_RIGHT;
 	}
 
-	m_uGamePad	= _uGamePad;
-
-	int	t_c	= sizeof(gsc_joysticks) / sizeof(JoystickDefine);
-	
-	for (int iLoop = 0; iLoop < t_c; ++iLoop)
+	else if (m_iKeyA == _uKey)
 	{
-		if (_uGamePad == gsc_joysticks[iLoop].eGamePad)
-		{
-			if (-1 == m_iButtonA)
-			{
-				m_iButtonA	= gsc_joysticks[iLoop].m_iButtonA;
-			}
-
-			if (-1 == m_iButtonB)
-			{
-				m_iButtonB	= gsc_joysticks[iLoop].m_iButtonB;
-			}
-
-			if (-1 == m_iButtonX)
-			{
-				m_iButtonX	= gsc_joysticks[iLoop].m_iButtonX;
-			}
-
-			if (-1 == m_iButtonY)
-			{
-				m_iButtonY	= gsc_joysticks[iLoop].m_iButtonY;
-			}
-
-			if (-1 == m_iButtonL)
-			{
-				m_iButtonL	= gsc_joysticks[iLoop].m_iButtonL;
-			}
-
-			if (-1 == m_iButtonR)
-			{
-				m_iButtonR	= gsc_joysticks[iLoop].m_iButtonR;
-			}
-
-			if (-1 == m_iSelectButton)
-			{
-				m_iSelectButton	= gsc_joysticks[iLoop].m_iSelectButton;
-			}
-
-			if (-1 == m_iStartButton)
-			{
-				m_iStartButton	= gsc_joysticks[iLoop].m_iStartButton;
-			}
-		
-			return	true;
-		}
-	}	
-
-	// Map to XInput
-	if (-1 == m_iButtonA)
-	{
-		m_iButtonA	= 1;
+		m_uCurrentInput	&= ~IK_A;
 	}
 
-	if (-1 == m_iButtonB)
+	else if (m_iKeyB == _uKey)
 	{
-		m_iButtonB	= 0;
+		m_uCurrentInput	&= ~IK_B;
 	}
 
-	if (-1 == m_iButtonX)
+	else if (m_iKeyX == _uKey)
 	{
-		m_iButtonX	= 3;
+		m_uCurrentInput	&= ~IK_X;
 	}
 
-	if (-1 == m_iButtonY)
+	else if (m_iKeyY == _uKey)
 	{
-		m_iButtonY	= 2;
+		m_uCurrentInput	&= ~IK_Y;
 	}
 
-	if (-1 == m_iButtonL)
+	else if (m_iKeyL == _uKey)
 	{
-		m_iButtonL	= 4;
+		m_uCurrentInput	&= ~IK_L;
 	}
 
-	if (-1 == m_iButtonR)
+	else if (m_iKeyR == _uKey)
 	{
-		m_iButtonR	= 5;
+		m_uCurrentInput	&= ~IK_R;
 	}
 
-	if (-1 == m_iSelectButton)
+	else if (m_iKeySelect == _uKey)
 	{
-		m_iSelectButton	= 6;
+		m_uCurrentInput	&= ~IK_SELECT;
 	}
 
-	if (-1 == m_iStartButton)
+	else if (m_iKeyStart == _uKey)
 	{
-		m_iStartButton	= 7;
-	}
-*/
+		Log::instance()->logMessage("Start released");
 
-	return	true;
+		m_uCurrentInput	&= ~IK_START;
+	}
+#endif
 }
 
 ENDNAMESPACE

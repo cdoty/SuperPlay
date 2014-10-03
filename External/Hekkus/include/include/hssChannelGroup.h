@@ -22,12 +22,25 @@ namespace hss
     *  Operations that you made with a ChannelGroup affects all Channels associated with it.\n
     *  You can create new ChannelGroups with the %Speaker object.\n
     *  The %Speaker object have a special ChannelGroup called the master ChannelGroup that is\n
-    *  associated with every new Channels created, you can then change it if you like.
+    *  associated with every new Channel created, you can then change it if you like.
     */
     class HSS_CLS_API ChannelGroup
     {
-    private:
+        friend class ChannelData;
+        friend class Speaker;
+
+    protected:
+        Speaker *speaker_ptr_;
+
+        float volume_;
+        float pitch_;
+
+        bool pause_, mute_;
+        bool releaseable_;
+
+    protected:
         HSS_API_H ChannelGroup();
+        HSS_API_H ~ChannelGroup();
 
     public:
         /**

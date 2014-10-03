@@ -42,6 +42,9 @@ BGVRAM::BGVRAM(TileSize _eTileSize)	:
 			m_iTileSize	= 32;
 
 			break;
+
+		default:
+			break;
 	}
 
 	for (int iLoop = 0; iLoop < gsc_iMaxBGs; ++iLoop)

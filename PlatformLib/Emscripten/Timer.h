@@ -9,8 +9,6 @@
 
 #pragma once
 
-#include <SDL/SDL.h>
-
 #include "Macros.h"
 
 NAMESPACE(SPlay)
@@ -37,17 +35,11 @@ class Timer
 		void start();
 
 		// Get elapsed time
-		int getElapsed();
-		
-		// Get elapsed time
 		float getElapsedFloat();
 		
 	protected:
-		// Ticks per second
-		Uint64	m_iTicksPerSecond;
-		
 		// Current ticks
-		Uint64	m_iCurrentTicks;
+		float	m_fCurrentTime;
 };
 
 ENDNAMESPACE

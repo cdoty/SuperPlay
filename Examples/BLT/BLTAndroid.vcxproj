@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup Label="NsightTegraProject">
-    <NsightTegraProjectRevisionNumber>5</NsightTegraProjectRevisionNumber>
+    <NsightTegraProjectRevisionNumber>6</NsightTegraProjectRevisionNumber>
   </PropertyGroup>
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Tegra-Android">
@@ -39,8 +39,8 @@
     <ClCompile Include="FPS.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameHeader.cpp" />
+    <ClCompile Include="GameResources.cpp" />
     <ClCompile Include="PlayerSprite.cpp" />
-    <ClCompile Include="ResourceManager.cpp" />
     <ClCompile Include="ScoreBar.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -53,8 +53,8 @@
     <ClInclude Include="FPS.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameDefines.h" />
+    <ClInclude Include="GameResources.h" />
     <ClInclude Include="PlayerSprite.h" />
-    <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="ScoreBar.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -114,6 +114,7 @@
       </JarDirectories>
       <JarDependencies>
       </JarDependencies>
+      <JVMHeapInitial>512</JVMHeapInitial>
     </AntBuild>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Tegra-Android'">
@@ -138,6 +139,8 @@
       </JarDirectories>
       <JarDependencies>
       </JarDependencies>
+      <JVMHeapInitial>512</JVMHeapInitial>
+      <JVMHeapMaximum>1024</JVMHeapMaximum>
     </AntBuild>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Profile|Tegra-Android'">

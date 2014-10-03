@@ -120,6 +120,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SoundLib2010", "SoundLib\He
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SoundLib2010IrrKlang", "SoundLib\irrKlang\SoundLib2010IrrKlang.vcxproj", "{AF42DA9C-D9CC-457F-8F26-453C1B292D35}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DisplayLibAngle", "DisplayLib\OpenGL-ES2\DisplayLibAngle.vcxproj", "{16E4A2C8-984B-40C2-9FBD-BF77FECC4766}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -321,6 +323,14 @@ Global
 		{AF42DA9C-D9CC-457F-8F26-453C1B292D35}.Release|Win32.Build.0 = Release|Win32
 		{AF42DA9C-D9CC-457F-8F26-453C1B292D35}.ReleaseGL|Win32.ActiveCfg = Release|Win32
 		{AF42DA9C-D9CC-457F-8F26-453C1B292D35}.ReleaseGL|Win32.Build.0 = Release|Win32
+		{16E4A2C8-984B-40C2-9FBD-BF77FECC4766}.Debug|Win32.ActiveCfg = Debug|Win32
+		{16E4A2C8-984B-40C2-9FBD-BF77FECC4766}.Debug|Win32.Build.0 = Debug|Win32
+		{16E4A2C8-984B-40C2-9FBD-BF77FECC4766}.DebugGL|Win32.ActiveCfg = Debug|Win32
+		{16E4A2C8-984B-40C2-9FBD-BF77FECC4766}.DebugGL|Win32.Build.0 = Debug|Win32
+		{16E4A2C8-984B-40C2-9FBD-BF77FECC4766}.Release|Win32.ActiveCfg = Release|Win32
+		{16E4A2C8-984B-40C2-9FBD-BF77FECC4766}.Release|Win32.Build.0 = Release|Win32
+		{16E4A2C8-984B-40C2-9FBD-BF77FECC4766}.ReleaseGL|Win32.ActiveCfg = ReleaseGL|Win32
+		{16E4A2C8-984B-40C2-9FBD-BF77FECC4766}.ReleaseGL|Win32.Build.0 = ReleaseGL|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

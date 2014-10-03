@@ -205,7 +205,7 @@ bool FontLoader::loadFont()
 
 		memcpy(m_pImageBuffer, pDecoder->indexed, iSize);
 
-#if (!defined __ANDROID__ && !defined MARMALADE) || (!defined __ARMEL__ && defined __APPLE__)
+#if (!defined __ANDROID__ && !defined MARMALADE && !defined EMSCRIPTEN) || (!defined __ARMEL__ && defined __APPLE__)
 		uint32_t*	pSrc	= reinterpret_cast<uint32_t*>(m_pPalette);
 
 		for (int iLoop = 0; iLoop < m_iPaletteCount; ++iLoop)
@@ -243,7 +243,7 @@ bool FontLoader::loadFont()
 
 		memcpy(m_pImageBuffer, pDecoder->rgba, iSize);
 
-#if (!defined __ANDROID__ && !defined MARMALADE) || (!defined __ARMEL__ && defined __APPLE__)
+#if (!defined __ANDROID__ && !defined MARMALADE && !defined EMSCRIPTEN) || (!defined __ARMEL__ && defined __APPLE__)
 		uint32_t*	pSrc	= reinterpret_cast<uint32_t*>(m_pImageBuffer);
 
 		int	t_c	= iWidth * iHeight;

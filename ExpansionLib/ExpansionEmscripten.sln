@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ExpansionEmscripten", "ExpansionEmscripten.vcxproj", "{C4EE1966-37F1-4C60-99F7-67719DA63648}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Emscripten = Debug|Emscripten
+		Debug|Win32 = Debug|Win32
+		Release|Emscripten = Release|Emscripten
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C4EE1966-37F1-4C60-99F7-67719DA63648}.Debug|Emscripten.ActiveCfg = Debug|Emscripten
+		{C4EE1966-37F1-4C60-99F7-67719DA63648}.Debug|Emscripten.Build.0 = Debug|Emscripten
+		{C4EE1966-37F1-4C60-99F7-67719DA63648}.Debug|Win32.ActiveCfg = Debug|Win32
+		{C4EE1966-37F1-4C60-99F7-67719DA63648}.Debug|Win32.Build.0 = Debug|Win32
+		{C4EE1966-37F1-4C60-99F7-67719DA63648}.Release|Emscripten.ActiveCfg = Release|Emscripten
+		{C4EE1966-37F1-4C60-99F7-67719DA63648}.Release|Emscripten.Build.0 = Release|Emscripten
+		{C4EE1966-37F1-4C60-99F7-67719DA63648}.Release|Win32.ActiveCfg = Release|Win32
+		{C4EE1966-37F1-4C60-99F7-67719DA63648}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

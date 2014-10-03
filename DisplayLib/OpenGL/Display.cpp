@@ -69,7 +69,7 @@ void Display::close()
 {
 	if (m_uFrameBuffer != GL_INVALID_VALUE)
 	{
-#if defined __ANDROID__ || defined __IOS__ || defined MARMALADE
+#if defined __ANDROID__ || defined __IOS__ || defined MARMALADE || defined EMSCRIPTEN
 		glDeleteFramebuffersOES(1, &m_uFrameBuffer);
 #else
 		if (GLEW_ARB_framebuffer_object)
@@ -123,7 +123,7 @@ bool Display::render()
 	glEnableClientState(GL_VERTEX_ARRAY);
 	glEnableClientState(GL_TEXTURE_COORD_ARRAY);
 
-#if defined __ANDROID__ || defined __IOS__ || defined MARMALADE
+#if defined __ANDROID__ || defined __IOS__ || defined MARMALADE || defined EMSCRIPTEN
 	glBindFramebufferOES(GL_FRAMEBUFFER_OES, m_uFrameBuffer);
 #else
 	if (GLEW_ARB_framebuffer_object)
@@ -152,7 +152,7 @@ bool Display::render()
 	glMatrixMode(GL_PROJECTION);		   
 	glLoadIdentity();					   
 
-#if defined __ANDROID__ || defined __IOS__ || defined MARMALADE
+#if defined __ANDROID__ || defined __IOS__ || defined MARMALADE || defined EMSCRIPTEN
 	glOrthof(0.0f, static_cast<float>(gameHeader.iScreenWidth), static_cast<float>(gameHeader.iScreenHeight), 0.0f, 0.0f, 1.0f);
 #else
 	// Set up orthographic mode
@@ -166,7 +166,7 @@ bool Display::render()
 	// Render the hardware view
 	Hardware::render();
 
-#if defined __ANDROID__ || defined MARMALADE
+#if defined __ANDROID__ || defined MARMALADE || defined EMSCRIPTEN
 	glBindFramebufferOES(GL_FRAMEBUFFER_OES, 0);
 #elif defined __IOS__
 	glBindFramebufferOES(GL_FRAMEBUFFER_OES, m_uDefaultFrameBuffer);
@@ -198,7 +198,7 @@ bool Display::render()
 	glMatrixMode(GL_PROJECTION);		   
 	glLoadIdentity();					   
 
-#if defined __ANDROID__ || defined __IOS__ || defined MARMALADE
+#if defined __ANDROID__ || defined __IOS__ || defined MARMALADE || defined EMSCRIPTEN
 	// Set up orthographic mode
 	glOrthof(0.0f, static_cast<float>(gameHeader.iWindowedWidth), static_cast<float>(gameHeader.iWindowedHeight), 0.0f, 0.0f, 1.0f);
 #else
@@ -434,7 +434,7 @@ void Display::resetClipRect()
 
 bool Display::initializeOpenGL()
 {
-#if !defined __ANDROID__ && !defined __IOS__ && !defined MARMALADE
+#if !defined __ANDROID__ && !defined __IOS__ && !defined MARMALADE && !defined EMSCRIPTEN
 	glewExperimental	= GL_TRUE;
 
 	GLenum	error	= glewInit();
@@ -466,7 +466,7 @@ bool Display::initializeOpenGL()
 
 void Display::closeOpenGL()
 {	
-#if defined __ANDROID__ || defined __IOS__ || defined MARMALADE
+#if defined __ANDROID__ || defined __IOS__ || defined MARMALADE || defined EMSCRIPTEN
 	glFramebufferTexture2DOES(GL_FRAMEBUFFER_OES, GL_COLOR_ATTACHMENT0_OES, GL_TEXTURE_2D, 0, 0);
 	glBindFramebufferOES(GL_FRAMEBUFFER_OES, 0);
 #else
@@ -525,7 +525,7 @@ bool Display::createRenderTarget(int _iWidth, int _iHeight, GLint _iFormat)
 {
 	int	iMaxRenderBufferSize;
 
-#if defined __ANDROID__ || defined __IOS__ || defined MARMALADE
+#if defined __ANDROID__ || defined __IOS__ || defined MARMALADE || defined EMSCRIPTEN
 	glGetIntegerv(GL_MAX_RENDERBUFFER_SIZE_OES, &iMaxRenderBufferSize);
 #else
 	glGetIntegerv(GL_MAX_RENDERBUFFER_SIZE, &iMaxRenderBufferSize);
@@ -538,7 +538,7 @@ bool Display::createRenderTarget(int _iWidth, int _iHeight, GLint _iFormat)
 		return	false;
 	}
 		
-#if defined __ANDROID__ || defined __IOS__ || defined MARMALADE
+#if defined __ANDROID__ || defined __IOS__ || defined MARMALADE || defined EMSCRIPTEN
 	glGenFramebuffersOES(1, &m_uFrameBuffer);
 #else
 	if (GLEW_ARB_framebuffer_object)
@@ -591,7 +591,7 @@ bool Display::createRenderTarget(int _iWidth, int _iHeight, GLint _iFormat)
 		return	false;
 	}
 
-#if defined __ANDROID__ || defined __IOS__ || defined MARMALADE
+#if defined __ANDROID__ || defined __IOS__ || defined MARMALADE || defined EMSCRIPTEN
 	int	iTextureWidth	= static_cast<int>(pow(2, ceil(Utilities::log2(_iWidth))));
 	int	iTextureHeight	= static_cast<int>(pow(2, ceil(Utilities::log2(_iHeight))));
 #else
@@ -601,7 +601,7 @@ bool Display::createRenderTarget(int _iWidth, int _iHeight, GLint _iFormat)
 	
 #if defined USE_16BIT
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, iTextureWidth, iTextureHeight, 0, GL_RGB, GL_UNSIGNED_SHORT_5_6_5, NULL);
-#elif defined __ANDROID__ || defined MARMALADE
+#elif defined __ANDROID__ || defined MARMALADE || defined EMSCRIPTEN
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, iTextureWidth, iTextureHeight, 0, GL_RGBA, GL_UNSIGNED_BYTE, NULL);
 #elif defined __IOS__
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, iTextureWidth, iTextureHeight, 0, GL_BGRA_EXT, GL_UNSIGNED_BYTE, NULL);
@@ -618,7 +618,7 @@ bool Display::createRenderTarget(int _iWidth, int _iHeight, GLint _iFormat)
 		return	false;
 	}
 
-#if defined __ANDROID__ || defined __IOS__ || defined MARMALADE
+#if defined __ANDROID__ || defined __IOS__ || defined MARMALADE || defined EMSCRIPTEN
 	m_fU2	= static_cast<float>(_iWidth) / static_cast<float>(iTextureWidth);
 	m_fV2	= static_cast<float>(_iHeight) / static_cast<float>(iTextureHeight);
 #else
@@ -632,7 +632,7 @@ bool Display::createRenderTarget(int _iWidth, int _iHeight, GLint _iFormat)
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
 
-#if defined __ANDROID__ || defined __IOS__ || defined MARMALADE
+#if defined __ANDROID__ || defined __IOS__ || defined MARMALADE || defined EMSCRIPTEN
 	glBindFramebufferOES(GL_FRAMEBUFFER_OES, m_uFrameBuffer);
 #else
 	if (GLEW_ARB_framebuffer_object)
@@ -662,7 +662,7 @@ bool Display::createRenderTarget(int _iWidth, int _iHeight, GLint _iFormat)
 		return	false;
 	}
 
-#if defined __ANDROID__ || defined __IOS__ || defined MARMALADE
+#if defined __ANDROID__ || defined __IOS__ || defined MARMALADE || defined EMSCRIPTEN
 	glFramebufferTexture2DOES(GL_FRAMEBUFFER_OES, GL_COLOR_ATTACHMENT0_OES, GL_TEXTURE_2D, m_uRenderTexture, 0);
 #else
 	if (GLEW_ARB_framebuffer_object)
@@ -692,7 +692,7 @@ bool Display::createRenderTarget(int _iWidth, int _iHeight, GLint _iFormat)
 		return	false;
 	}
 
-#if defined __ANDROID__ || defined __IOS__ || defined MARMALADE
+#if defined __ANDROID__ || defined __IOS__ || defined MARMALADE || defined EMSCRIPTEN
 	error	= glCheckFramebufferStatusOES(GL_FRAMEBUFFER_OES);
 #else
 	if (GLEW_ARB_framebuffer_object)
@@ -727,7 +727,7 @@ bool Display::createRenderTarget(int _iWidth, int _iHeight, GLint _iFormat)
 		return	false;
 	}
 
-#if defined __ANDROID__ || defined MARMALADE
+#if defined __ANDROID__ || defined MARMALADE || defined EMSCRIPTEN
 	glBindFramebufferOES(GL_FRAMEBUFFER_OES, 0);
 #elif defined __IOS__
 	glBindFramebufferOES(GL_FRAMEBUFFER_OES, m_uDefaultFrameBuffer);

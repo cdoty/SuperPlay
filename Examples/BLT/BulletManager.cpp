@@ -10,6 +10,9 @@
 #include "BulletManager.h"
 #include "Game.h"
 
+// Sounds event names
+static const char*	gsc_szShot	= "Shot";
+
 BulletManager::BulletManager()
 {
 	for (int iLoop = 0; iLoop < gsc_iMaxBullets; ++iLoop)
@@ -106,6 +109,8 @@ void BulletManager::addBullet(float _fX, float _fY)
 
 			m_bullets[iLoop].pSprite->setPosition(m_bullets[iLoop].fX, m_bullets[iLoop].fY);
 			m_bullets[iLoop].pSprite->setActive(true);
+
+			g_pGame->getResourceManager()->getAudioLoader()->playSound(gsc_szShot);
 
 			break;
 		}

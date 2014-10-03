@@ -12,9 +12,41 @@ todo:
 #include "hssImpExp.h"
 #include "hssAudioSpec.h"
 
+#if ((defined(_WIN32) || defined(_WIN64)) && !defined(__SYMBIAN32__) && !defined(BADA))
+    #include <windows.h>
+#endif
+
+#include "hssErrorDefs.h"
+#include "hssSoundListener.h"
+#include "Array.h"
+
 namespace hss
 {
+
     class HSS_CLS_API SoundListener;
+
+    enum DataType
+    {
+        kSoundUndefined = 0,
+        
+        kSoundPCM       = 1,
+        kSoundOGG       = 2,
+        kSoundADPCM     = 3,
+        kSoundMOD       = 4,
+        kSoundMP3       = 5,
+
+        kSoundStream    = 10
+    };
+
+    class HSS_CLS_API Speaker;
+    class HSS_CLS_API ChannelData;
+    class HSS_CLS_API File;
+
+    struct SoundListenerItem
+    {
+        hss::SoundListener *listener;
+        void *user_data;
+    };
 
     /**
     *  Sound class.
@@ -28,8 +60,50 @@ namespace hss
     */
     class HSS_CLS_API Sound
     {   
-    private:
+        friend class Speaker;
+        friend class ChannelData;
+
+    protected:
+        unsigned int type_;
+
+        Speaker *speaker_ptr_;
+
+        AudioSpec audiospec_;
+        int length_;        // lunghezza in byte del suono
+
+        float volume_;        // volume suono
+        float pan_;
+        float pitch_;
+        bool loop_;
+
+        unsigned int virtual_samplerate_;
+
+        int max_playbacks_, num_playbacks_;
+
+        Array<SoundListenerItem> listeners_;
+
+        bool to_delete_;
+
+    protected:
+        HSS_API_H virtual void destroy() = 0;
+
+        HSS_API_H virtual int load(const char *sndname, unsigned int flags = kLoadDefault) = 0;
+        HSS_API_H virtual int load(void *membuf, unsigned int size, unsigned int flags = kLoadDefault) = 0;
+#if (defined(_WIN32) && (!defined(_CRT_BUILD_DESKTOP_APP) || (_CRT_BUILD_DESKTOP_APP == 1)) && !defined(__SYMBIAN32__) && !defined(BADA))
+        HSS_API_H virtual int load(HINSTANCE hInstance, DWORD dwResourceID, unsigned int flags = kLoadDefault) = 0;
+#endif
+
+    protected:
+        HSS_API_H virtual ChannelData *createChannel() = 0;
+
+    protected:
+        HSS_API_H void setLength(unsigned int length);
+
+        HSS_API_H void processListeners(unsigned int flag_functions, int channel_id, void *stream = 0, int length = 0);
+
+    protected:
         HSS_API_H Sound();
+        HSS_API_H virtual ~Sound();
 
     public:
         /**

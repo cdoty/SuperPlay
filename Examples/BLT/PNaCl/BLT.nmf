@@ -1,0 +1,14 @@
+{
+  "files": {},
+  "program": {
+    "x86-64": {
+      "url": "BLT_64.nexe"
+    },
+    "arm": {
+      "url": "BLT_arm.nexe"
+    },
+    "x86-32": {
+      "url": "BLT_32.nexe"
+    }
+  }
+}

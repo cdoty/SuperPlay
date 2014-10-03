@@ -7,6 +7,7 @@
 // IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
 // PARTICULAR PURPOSE.
 
+#include <emscripten.h>
 #include <time.h>
 
 #include "IDisplay.h"
@@ -114,12 +115,12 @@ void Platform::runLoop()
 	// Get the elapsed time
 	float	fElapsed	= ms_pTimer->getElapsedFloat();
 
-	System::getInput()->update();
-
 	if (false == System::getGame()->update(fElapsed))
 	{
 		return;
 	}
+
+	System::getInput()->update();
 
 	redraw();
 }
@@ -132,6 +133,55 @@ void Platform::redraw()
 const tinystl::string& Platform::getStoragePath()
 {
 	return	ms_strStoragePath;
+}
+
+int Platform::handleKeyDown(int _iEventType, const EmscriptenKeyboardEvent* _pKeyEvent, void* _pUserData)
+{
+	if (System::ms_pInput != NULL)
+	{
+		Input*	pInput	= static_cast<Input*>(System::ms_pInput);
+
+		pInput->handleKeyDown(_pKeyEvent->keyCode);
+	}
+
+	return	0;
+}
+
+int Platform::handleKeyUp(int _iEventType, const EmscriptenKeyboardEvent* _pKeyEvent, void* _pUserData)
+{
+	if (System::ms_pInput != NULL)
+	{
+		Input*	pInput	= static_cast<Input*>(System::ms_pInput);
+
+		pInput->handleKeyUp(_pKeyEvent->keyCode);
+	}
+
+	return	0;
+}
+
+EM_BOOL Platform::handleFullscreen(int _iEventType, const EmscriptenFullscreenChangeEvent* _pFullscreenEvent, void* _pUserData)
+{
+	if (System::ms_pDisplay != NULL)
+	{
+		GameHeader&	gameHeader	= System::getUpdateableGameHeader();
+
+		if (0 == _pFullscreenEvent->isFullscreen)
+		{
+			gameHeader.iWindowedWidth	= gameHeader.iScreenWidth;
+			gameHeader.iWindowedHeight	= gameHeader.iScreenHeight;
+		}
+
+		else
+		{
+			int	iFullscreen;
+
+			emscripten_get_canvas_size(&gameHeader.iWindowedWidth, &gameHeader.iWindowedHeight, &iFullscreen);
+		}
+
+		System::ms_pDisplay->resize();
+	}
+
+	return	0;
 }
 
 void Platform::setStoragePath()

@@ -14,10 +14,30 @@ todo:
 #include "hssAudioOutInterface.h"
 #include "hssErrorDefs.h"
 
+#include "hssSpeakerListener.h"
+#include "Array.h"
+#include "DataFactory/hssDataFactory.h"
+
+
 namespace hss
-{  
+{
+    /**
+    *  Create a new Speaker objects.
+    *  \param platform_data some platforms need additional data to be able to initialize the sound system.<BR>
+    * <B>Android</B>: please pass a JavaVM* object instance, you can get it from the function jint JNI_OnLoad(JavaVM*, void*).<BR>
+    * <B>Native Client</B>: please pass a pp::Instance* object instance.<BR>
+    * Other platforms don't need additional data so the parameter is ignored.
+    *  \return the created Speaker object, NULL on failure.
+    */
+    HSS_API_H Speaker *createSpeaker(void *platform_data = NULL);
 
     class HSS_CLS_API ChannelGroup;
+
+    struct SpeakerListenerItem
+    {
+        hss::SpeakerListener *listener;
+        void *user_data;
+    };
 
     enum
     {
@@ -26,7 +46,7 @@ namespace hss
         kPropertyOtherAudioIsPlaying,
         kPropertyOutputSamplerate,
         kPropertyOutputBitrate,
-        kPropertyParentInstance
+        kPropertyPlatformData
     };
 
     enum
@@ -57,16 +77,51 @@ namespace hss
     */
     class HSS_CLS_API Speaker
     {
+        friend class Sound;
+        friend class Channel;
+        friend class ChannelData;
+        friend class ChannelGroup;
+        friend Speaker *createSpeaker(void *platform_data);
+
+    private:
+        AudioOutInterface *audio_out_;
+        //AudioInInterface *m_audio_in;
+        bool open_;
+
+        int num_channels_;
+        Channel *channels_;
+        Channel **playing_channels_;
+
+        ChannelGroup *master_cgroup_;
+
+        AudioSpec audiospec_;
+        int buffer_length_;
+
+        Array<DataFactory*> data_factories_;
+
+        Array<SpeakerListenerItem> listeners_;
+
+    private:
+        HSS_API_H AudioOutInterface *createAudioOutInterface();
+
+        HSS_API_H static void audioCallback(void *userdata, void *samples, int len);
+        HSS_API_H void updateChannels(void *samples, int len);
+        HSS_API_H Channel *getChannel(int chl) const;
+
+        HSS_API_H void createDataFactories();
+        HSS_API_H void releaseDataFactories();
+
+        HSS_API_H void processListeners(unsigned int flag_functions, void *stream = 0, int length = 0);
+
     private:
         HSS_API_H Speaker();
+        HSS_API_H virtual ~Speaker();
+
+    private:
+        HSS_API_H int initialize(void *platform_data);
+        HSS_API_H void finalize();
 
     public:
-        /**
-        *  Create a new Speaker objects.
-        *  \return the created Speaker object, NULL on failure.
-        */
-        HSS_API_H static Speaker *createSpeaker(void *parent_instance = NULL);
-
         /**
         *  Sets a property.
         *  This function must be called before to open the Speaker object or it will fail.
@@ -77,10 +132,23 @@ namespace hss
         HSS_API_H int setProperty(int property, long value);
         /**
         *  Returns the value of the property requested
-        *  \param property
-        *  \return Value of the property.
+        *  \param property property to get.
+        *  \param value the value of the property.
+        *  \return hss::kOk on success, error code on failure.
         */
-        HSS_API_H long getProperty(int property);
+        HSS_API_H int getProperty(int property, long &value);
+
+        /**
+        *  Add a listener to this Speaker.
+        * \param listener listener pointer to add.
+        * \param user_data pointer with data that will be passed to listener event functions.
+        */
+        HSS_API_H void addListener(SpeakerListener *listener, void *user_data);
+        /**
+        *  Remove a listener from this Speaker.
+        * \param listener listener pointer to remove.
+        */
+        HSS_API_H void removeListener(SpeakerListener *listener);
 
         /**
          *  Initialize the Hekkus Sound System with default output specifications.

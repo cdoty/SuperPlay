@@ -1,0 +1,753 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Game">
+      <UniqueIdentifier>{69ab9b46-0a4a-4e6f-8c9d-72a92703dfb5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Display">
+      <UniqueIdentifier>{2dea3c8d-f5c6-41a6-b2aa-b65078b7585b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Display\Source Files">
+      <UniqueIdentifier>{fc9d1ccc-639a-4223-9c22-2b792468b0f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Display\Header Files">
+      <UniqueIdentifier>{9995b232-ebfe-4972-b5dc-62ac8cf45f33}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Source Files">
+      <UniqueIdentifier>{0be1de4b-5d7e-4cfa-b921-4860265d7a1b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Header Files">
+      <UniqueIdentifier>{681befc7-a748-487c-927c-429f950264e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Expansion">
+      <UniqueIdentifier>{9bb7b95f-36b1-482c-ad5a-2aa78b5da57b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Expansion\Include">
+      <UniqueIdentifier>{fe390d60-7827-4ef9-9471-d3902dfd1654}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Display\Include">
+      <UniqueIdentifier>{4f12a9b8-7499-483a-88dc-1938eed5c127}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Expansion\AudioLoader">
+      <UniqueIdentifier>{4a476dfe-2747-4de9-b1de-cd07e2dab371}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Expansion\FontLoader">
+      <UniqueIdentifier>{1c6bdc87-80d2-4f1d-b9ae-0716069faa73}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Expansion\HDMALoader">
+      <UniqueIdentifier>{79a97b4f-cfaf-48e1-83f7-c341cef8df82}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Expansion\MapLoader">
+      <UniqueIdentifier>{8a31a075-5a28-45ce-af6d-3331ba3708f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Expansion\SpriteLoader">
+      <UniqueIdentifier>{c05c3780-ebd0-46a4-8ca0-9ca9d700f131}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Expansion\FontLoader\yspng">
+      <UniqueIdentifier>{12d38bfb-fab7-49b4-b26d-f7950386b4c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform">
+      <UniqueIdentifier>{0a5f88cd-79fd-40b7-956f-d136c75b3e63}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\Header Files">
+      <UniqueIdentifier>{4afc9c7e-cad5-43af-a990-920ab376f724}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\Include">
+      <UniqueIdentifier>{0b482837-dcf0-42fb-b43d-2d23263cbb06}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sound">
+      <UniqueIdentifier>{eeb57b45-c8cf-4f60-8ada-0e660f277972}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sound\Source Files">
+      <UniqueIdentifier>{879fcdc0-f36e-401c-9560-5605e48965b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sound\Header Files">
+      <UniqueIdentifier>{a401a3c0-8593-42c4-b9c0-e7fe4e3fdba7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sound\Include">
+      <UniqueIdentifier>{011a1aec-1319-4d11-9fb5-8f00a388f2b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SuperPlay">
+      <UniqueIdentifier>{717bf82b-8702-40c3-9797-ab591554b69a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SuperPlay\Include">
+      <UniqueIdentifier>{fd7acb4a-2123-48a5-8880-1c7f77e96d7f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SuperPlay\Include\TinySTL">
+      <UniqueIdentifier>{ae79ce3d-83e5-4cf4-9e51-f3a8341efada}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SuperPlay\Include\TinyXML2">
+      <UniqueIdentifier>{177efcd7-73de-4217-ba27-4a88c1574962}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SuperPlay\Engine">
+      <UniqueIdentifier>{141981d6-3597-4d90-90d0-11d33f893de0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SuperPlay\Hardware">
+      <UniqueIdentifier>{c5e3f08a-3778-4664-b946-43ded6a87476}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SuperPlay\Libraries">
+      <UniqueIdentifier>{9d27f32b-dd7f-4f30-9e13-bb8d640c8951}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SuperPlay\Libraries\mtrand">
+      <UniqueIdentifier>{df7ed3bd-a12d-4d6c-9782-9ee9acd22bc1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SuperPlay\Libraries\TinyXML2">
+      <UniqueIdentifier>{c6c0fc19-c16a-4601-a6cf-1096ed2602d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SuperPlay\Libraries\stb_image">
+      <UniqueIdentifier>{8ae2dc55-51bd-4fdd-a84c-7c1bab3a9b8b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Display\VMath">
+      <UniqueIdentifier>{82058924-d4c1-4333-ad20-2a6d731091a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Hekkus">
+      <UniqueIdentifier>{a1c1a516-a6c7-41a1-8537-f8fa6cdf54ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Hekkus\External">
+      <UniqueIdentifier>{d93b5190-0d64-4fba-8a5a-9322a169a1b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Hekkus\External\libmad">
+      <UniqueIdentifier>{cc7f5ccb-dbf2-497b-8727-809a8f313777}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Hekkus\External\msadpcm">
+      <UniqueIdentifier>{ef693e94-078f-48c7-b9ea-9f27fa410894}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Hekkus\Source">
+      <UniqueIdentifier>{413b2fc8-3389-4cb3-a937-b5e189bae6ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Hekkus\Source\DataADPCM">
+      <UniqueIdentifier>{5b115a5c-0d7f-431b-90a7-59b1097b9378}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Hekkus\Source\DataMOD">
+      <UniqueIdentifier>{87132b91-5330-46ca-885a-d06ae00c5cc4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Hekkus\Source\DataMP3">
+      <UniqueIdentifier>{b99902f6-7070-4232-8a8c-b29c50130041}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Hekkus\Source\DataOGG">
+      <UniqueIdentifier>{2215dfc9-29bb-4c46-9c0e-7984105c6217}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Hekkus\Source\DataSTRM">
+      <UniqueIdentifier>{00a92b3f-1da7-45a0-996d-ec5077b53273}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Hekkus\Source\DataWAV">
+      <UniqueIdentifier>{6a27c6c4-afe1-4b8d-b7d3-a565d02e9274}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Hekkus\Source\sdl">
+      <UniqueIdentifier>{0016bca5-705a-4799-869e-d305b68599e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Hekkus\External\tremor">
+      <UniqueIdentifier>{0eeaba68-97c1-4fa4-88ac-c18b89abf5be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Hekkus\External\tremor\ogg">
+      <UniqueIdentifier>{5c520d1a-5e8b-4011-941c-f788c4716b5c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\Source Files">
+      <UniqueIdentifier>{53e3acce-bf35-4b2b-9695-4f64da61cc5b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\WebDev\Emscripten\Emscripten\Debug\Emscripten.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\DisplayLib\OpenGL-ES2\Display.cpp">
+      <Filter>Display\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\DisplayLib\OpenGL-ES2\GLEmscripten.cpp">
+      <Filter>Display\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\DisplayLib\OpenGL-ES2\IndexBuffer.cpp">
+      <Filter>Display\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\DisplayLib\OpenGL-ES2\SpriteBatch.cpp">
+      <Filter>Display\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\DisplayLib\OpenGL-ES2\Texture.cpp">
+      <Filter>Display\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\DisplayLib\OpenGL-ES2\VertexBuffer.cpp">
+      <Filter>Display\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ExpansionLib\AudioLoader\AudioLoader.cpp">
+      <Filter>Expansion\AudioLoader</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ExpansionLib\FontLoader\FontLoader.cpp">
+      <Filter>Expansion\FontLoader</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ExpansionLib\FontLoader\yspng\yspng.cpp">
+      <Filter>Expansion\FontLoader\yspng</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ExpansionLib\HDMALoader\HDMALoader.cpp">
+      <Filter>Expansion\HDMALoader</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ExpansionLib\MapLoader\MapLoader.cpp">
+      <Filter>Expansion\MapLoader</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ExpansionLib\SpriteLoader\SpriteLoader.cpp">
+      <Filter>Expansion\SpriteLoader</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\PlatformLib\Emscripten\File.cpp">
+      <Filter>Platform\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\PlatformLib\Emscripten\Input.cpp">
+      <Filter>Platform\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\PlatformLib\Emscripten\Log.cpp">
+      <Filter>Platform\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\PlatformLib\Emscripten\Main.cpp">
+      <Filter>Platform\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\PlatformLib\Emscripten\Platform.cpp">
+      <Filter>Platform\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\PlatformLib\Emscripten\StoragePath.cpp">
+      <Filter>Platform\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\PlatformLib\Emscripten\Timer.cpp">
+      <Filter>Platform\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\PlatformLib\Emscripten\Window.cpp">
+      <Filter>Platform\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SoundLib\Hekkus\Sound.cpp">
+      <Filter>Sound\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SoundLib\Hekkus\SoundSystem.cpp">
+      <Filter>Sound\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SuperPlayLib\Engine\Image.cpp">
+      <Filter>SuperPlay\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SuperPlayLib\Engine\ResourceManager.cpp">
+      <Filter>SuperPlay\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SuperPlayLib\Engine\System.cpp">
+      <Filter>SuperPlay\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SuperPlayLib\Engine\Utilities.cpp">
+      <Filter>SuperPlay\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SuperPlayLib\Hardware\BG.cpp">
+      <Filter>SuperPlay\Hardware</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SuperPlayLib\Hardware\BGManager.cpp">
+      <Filter>SuperPlay\Hardware</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SuperPlayLib\Hardware\BGVRAM.cpp">
+      <Filter>SuperPlay\Hardware</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SuperPlayLib\Hardware\CRC32.cpp">
+      <Filter>SuperPlay\Hardware</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SuperPlayLib\Hardware\DMA.cpp">
+      <Filter>SuperPlay\Hardware</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SuperPlayLib\Hardware\Hardware.cpp">
+      <Filter>SuperPlay\Hardware</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SuperPlayLib\Hardware\HDMA.cpp">
+      <Filter>SuperPlay\Hardware</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SuperPlayLib\Hardware\Joypad.cpp">
+      <Filter>SuperPlay\Hardware</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SuperPlayLib\Hardware\OAM.cpp">
+      <Filter>SuperPlay\Hardware</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SuperPlayLib\Hardware\Obj.cpp">
+      <Filter>SuperPlay\Hardware</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SuperPlayLib\Hardware\ObjVRAM.cpp">
+      <Filter>SuperPlay\Hardware</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SuperPlayLib\Hardware\ShadowOAM.cpp">
+      <Filter>SuperPlay\Hardware</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SuperPlayLib\Hardware\SPC.cpp">
+      <Filter>SuperPlay\Hardware</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SuperPlayLib\Hardware\SRAM.cpp">
+      <Filter>SuperPlay\Hardware</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SuperPlayLib\Hardware\Text.cpp">
+      <Filter>SuperPlay\Hardware</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SuperPlayLib\Libraries\mtrand\mtrand.cpp">
+      <Filter>SuperPlay\Libraries\mtrand</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SuperPlayLib\Libraries\stb_image\stb_image.cpp">
+      <Filter>SuperPlay\Libraries\stb_image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SuperPlayLib\Libraries\TinyXML2\tinyxml2.cpp">
+      <Filter>SuperPlay\Libraries\TinyXML2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\DisplayLib\OpenGL-ES2\VMath\vmath.cpp">
+      <Filter>Display\VMath</Filter>
+    </ClCompile>
+    <ClCompile Include="Background.cpp">
+      <Filter>Game\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseSprite.cpp">
+      <Filter>Game\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BulletManager.cpp">
+      <Filter>Game\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BulletSprite.cpp">
+      <Filter>Game\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyManager.cpp">
+      <Filter>Game\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemySprite.cpp">
+      <Filter>Game\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FPS.cpp">
+      <Filter>Game\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Game\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GameHeader.cpp">
+      <Filter>Game\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerSprite.cpp">
+      <Filter>Game\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ScoreBar.cpp">
+      <Filter>Game\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GameResources.cpp">
+      <Filter>Game\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\External\Hekkus\HekkusSoundSystem\external\libmad\bit.c">
+      <Filter>Hekkus\External\libmad</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\External\Hekkus\HekkusSoundSystem\external\libmad\decoder.c">
+      <Filter>Hekkus\External\libmad</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\External\Hekkus\HekkusSoundSystem\external\libmad\fixed.c">
+      <Filter>Hekkus\External\libmad</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\External\Hekkus\HekkusSoundSystem\external\libmad\frame.c">
+      <Filter>Hekkus\External\libmad</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\External\Hekkus\HekkusSoundSystem\external\libmad\huffman.c">
+      <Filter>Hekkus\External\libmad</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\External\Hekkus\HekkusSoundSystem\external\libmad\layer3.c">
+      <Filter>Hekkus\External\libmad</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\External\Hekkus\HekkusSoundSystem\external\libmad\layer12.c">
+      <Filter>Hekkus\External\libmad</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\External\Hekkus\HekkusSoundSystem\external\libmad\stream.c">
+      <Filter>Hekkus\External\libmad</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\External\Hekkus\HekkusSoundSystem\external\libmad\synth.c">
+      <Filter>Hekkus\External\libmad</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\External\Hekkus\HekkusSoundSystem\external\libmad\version.c">
+      <Filter>Hekkus\External\libmad</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\External\Hekkus\HekkusSoundSystem\external\msadpcm\msadpcm.c">
+      <Filter>Hekkus\External\msadpcm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\External\Hekkus\HekkusSoundSystem\source\DataADPCM\hssDataADPCM.cpp">
+      <Filter>Hekkus\Source\DataADPCM</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\External\Hekkus\HekkusSoundSystem\source\DataADPCM\hssChannelADPCM.cpp">
+      <Filter>Hekkus\Source\DataADPCM</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\External\Hekkus\HekkusSoundSystem\source\DataMOD\hssChannelMOD.cpp">
+      <Filter>Hekkus\Source\DataMOD</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\External\Hekkus\HekkusSoundSystem\source\DataMOD\hssDataMOD.cpp">
+      <Filter>Hekkus\Source\DataMOD</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\External\Hekkus\HekkusSoundSystem\source\DataMP3\hssChannelMP3.cpp">
+      <Filter>Hekkus\Source\DataMP3</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\External\Hekkus\HekkusSoundSystem\source\DataMP3\hssDataMP3.cpp">
+      <Filter>Hekkus\Source\DataMP3</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\External\Hekkus\HekkusSoundSystem\source\DataMP3\libmadext.cpp">
+      <Filter>Hekkus\Source\DataMP3</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\External\Hekkus\HekkusSoundSystem\source\DataOGG\hssChannelOGG.cpp">
+      <Filter>Hekkus\Source\DataOGG</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\External\Hekkus\HekkusSoundSystem\source\DataOGG\hssDataOGG.cpp">
+      <Filter>Hekkus\Source\DataOGG</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\External\Hekkus\HekkusSoundSystem\source\DataOGG\vorbisext.cpp">
+      <Filter>Hekkus\Source\DataOGG</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\External\Hekkus\HekkusSoundSystem\source\DataSTRM\hssChannelSTRM.cpp">
+      <Filter>Hekkus\Source\DataSTRM</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\External\Hekkus\HekkusSoundSystem\source\DataSTRM\hssDataSTRM.cpp">
+      <Filter>Hekkus\Source\DataSTRM</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\External\Hekkus\HekkusSoundSystem\source\DataWAV\hssChannelWAV.cpp">
+      <Filter>Hekkus\Source\DataWAV</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\External\Hekkus\HekkusSoundSystem\source\DataWAV\hssDataWAV.cpp">
+      <Filter>Hekkus\Source\DataWAV</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\External\Hekkus\HekkusSoundSystem\source\sdl\hssSDL.cpp">
+      <Filter>Hekkus\Source\sdl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\External\Hekkus\HekkusSoundSystem\source\hssChannel.cpp">
+      <Filter>Hekkus\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\External\Hekkus\HekkusSoundSystem\source\hssChannelData.cpp">
+      <Filter>Hekkus\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\External\Hekkus\HekkusSoundSystem\source\hssChannelGroup.cpp">
+      <Filter>Hekkus\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\External\Hekkus\HekkusSoundSystem\source\hssData.cpp">
+      <Filter>Hekkus\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\External\Hekkus\HekkusSoundSystem\source\hssFile.cpp">
+      <Filter>Hekkus\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\External\Hekkus\HekkusSoundSystem\source\hssMain.cpp">
+      <Filter>Hekkus\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\External\Hekkus\HekkusSoundSystem\source\hssSpeaker.cpp">
+      <Filter>Hekkus\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\External\Hekkus\HekkusSoundSystem\source\hssUtility.cpp">
+      <Filter>Hekkus\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\External\Hekkus\HekkusSoundSystem\source\hssAudioOutInterface.cpp">
+      <Filter>Hekkus\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\External\Hekkus\HekkusSoundSystem\external\libmad\madtimer.c">
+      <Filter>Hekkus\External\libmad</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\External\Hekkus\HekkusSoundSystem\external\tremor\synthesis.c">
+      <Filter>Hekkus\External\tremor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\External\Hekkus\HekkusSoundSystem\external\tremor\vorbis_window.c">
+      <Filter>Hekkus\External\tremor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\External\Hekkus\HekkusSoundSystem\external\tremor\vorbisfile.c">
+      <Filter>Hekkus\External\tremor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\External\Hekkus\HekkusSoundSystem\external\tremor\ogg\bitwise.c">
+      <Filter>Hekkus\External\tremor\ogg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\External\Hekkus\HekkusSoundSystem\external\tremor\ogg\framing.c">
+      <Filter>Hekkus\External\tremor\ogg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\External\Hekkus\HekkusSoundSystem\external\tremor\block.c">
+      <Filter>Hekkus\External\tremor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\External\Hekkus\HekkusSoundSystem\external\tremor\codebook.c">
+      <Filter>Hekkus\External\tremor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\External\Hekkus\HekkusSoundSystem\external\tremor\floor0.c">
+      <Filter>Hekkus\External\tremor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\External\Hekkus\HekkusSoundSystem\external\tremor\floor1.c">
+      <Filter>Hekkus\External\tremor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\External\Hekkus\HekkusSoundSystem\external\tremor\info.c">
+      <Filter>Hekkus\External\tremor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\External\Hekkus\HekkusSoundSystem\external\tremor\mapping0.c">
+      <Filter>Hekkus\External\tremor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\External\Hekkus\HekkusSoundSystem\external\tremor\mdct.c">
+      <Filter>Hekkus\External\tremor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\External\Hekkus\HekkusSoundSystem\external\tremor\registry.c">
+      <Filter>Hekkus\External\tremor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\External\Hekkus\HekkusSoundSystem\external\tremor\res012.c">
+      <Filter>Hekkus\External\tremor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\External\Hekkus\HekkusSoundSystem\external\tremor\sharedbook.c">
+      <Filter>Hekkus\External\tremor</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\DisplayLib\OpenGL-ES2\CustomVertex.h">
+      <Filter>Display\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\DisplayLib\OpenGL-ES2\Display.h">
+      <Filter>Display\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\DisplayLib\OpenGL-ES2\GLEmscripten.h">
+      <Filter>Display\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\DisplayLib\OpenGL-ES2\IndexBuffer.h">
+      <Filter>Display\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\DisplayLib\OpenGL-ES2\SpriteBatch.h">
+      <Filter>Display\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\DisplayLib\OpenGL-ES2\Texture.h">
+      <Filter>Display\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\DisplayLib\OpenGL-ES2\VertexBuffer.h">
+      <Filter>Display\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\DisplayLib\Include\IDisplay.h">
+      <Filter>Display\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\DisplayLib\Include\IIndexBuffer.h">
+      <Filter>Display\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\DisplayLib\Include\ISpriteBatch.h">
+      <Filter>Display\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\DisplayLib\Include\ITexture.h">
+      <Filter>Display\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\DisplayLib\Include\IVertexBuffer.h">
+      <Filter>Display\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Game\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameDefines.h">
+      <Filter>Game\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Include\Expansion\AudioLoader.h">
+      <Filter>Expansion\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Include\Expansion\FontLoader.h">
+      <Filter>Expansion\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Include\Expansion\HDMALoader.h">
+      <Filter>Expansion\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Include\Expansion\MapLoader.h">
+      <Filter>Expansion\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Include\Expansion\SpriteLoader.h">
+      <Filter>Expansion\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ExpansionLib\FontLoader\yspng\yspng.h">
+      <Filter>Expansion\FontLoader\yspng</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\PlatformLib\Emscripten\Window.h">
+      <Filter>Platform\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\PlatformLib\Emscripten\Timer.h">
+      <Filter>Platform\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\PlatformLib\Emscripten\PlatformDefines.h">
+      <Filter>Platform\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\PlatformLib\Emscripten\Input.h">
+      <Filter>Platform\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\PlatformLib\Emscripten\Platform.h">
+      <Filter>Platform\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\PlatformLib\Include\IInput.h">
+      <Filter>Platform\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\PlatformLib\Include\PlatformLib.h">
+      <Filter>Platform\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\PlatformLib\Include\StoragePath.h">
+      <Filter>Platform\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SoundLib\Hekkus\SoundSystem.h">
+      <Filter>Sound\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SoundLib\Include\ISoundSystem.h">
+      <Filter>Sound\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SoundLib\Include\Sound.h">
+      <Filter>Sound\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Include\AssertLog.h">
+      <Filter>SuperPlay\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Include\BG.h">
+      <Filter>SuperPlay\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Include\BGVRAM.h">
+      <Filter>SuperPlay\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Include\DMA.h">
+      <Filter>SuperPlay\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Include\File.h">
+      <Filter>SuperPlay\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Include\GameHeader.h">
+      <Filter>SuperPlay\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Include\Hardware.h">
+      <Filter>SuperPlay\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Include\HardwareDefines.h">
+      <Filter>SuperPlay\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Include\HDMA.h">
+      <Filter>SuperPlay\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Include\IGame.h">
+      <Filter>SuperPlay\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Include\Image.h">
+      <Filter>SuperPlay\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Include\IVRAM.h">
+      <Filter>SuperPlay\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Include\Joypad.h">
+      <Filter>SuperPlay\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Include\Log.h">
+      <Filter>SuperPlay\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Include\Macros.h">
+      <Filter>SuperPlay\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Include\OAM.h">
+      <Filter>SuperPlay\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Include\Obj.h">
+      <Filter>SuperPlay\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Include\ObjVRAM.h">
+      <Filter>SuperPlay\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Include\PathDefines.h">
+      <Filter>SuperPlay\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Include\Point.h">
+      <Filter>SuperPlay\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Include\Rect.h">
+      <Filter>SuperPlay\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Include\RenderParams.h">
+      <Filter>SuperPlay\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Include\ResourceManager.h">
+      <Filter>SuperPlay\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Include\SPC.h">
+      <Filter>SuperPlay\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Include\SRAM.h">
+      <Filter>SuperPlay\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Include\STLMacros.h">
+      <Filter>SuperPlay\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Include\Text.h">
+      <Filter>SuperPlay\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Include\Types.h">
+      <Filter>SuperPlay\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Include\TinyXML2\tinyxml2.h">
+      <Filter>SuperPlay\Include\TinyXML2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Include\TinySTL\allocator.h">
+      <Filter>SuperPlay\Include\TinySTL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Include\TinySTL\buffer.h">
+      <Filter>SuperPlay\Include\TinySTL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Include\TinySTL\hash.h">
+      <Filter>SuperPlay\Include\TinySTL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Include\TinySTL\hash_base.h">
+      <Filter>SuperPlay\Include\TinySTL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Include\TinySTL\new.h">
+      <Filter>SuperPlay\Include\TinySTL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Include\TinySTL\stddef.h">
+      <Filter>SuperPlay\Include\TinySTL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Include\TinySTL\stdint.h">
+      <Filter>SuperPlay\Include\TinySTL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Include\TinySTL\string.h">
+      <Filter>SuperPlay\Include\TinySTL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Include\TinySTL\traits.h">
+      <Filter>SuperPlay\Include\TinySTL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Include\TinySTL\unordered_map.h">
+      <Filter>SuperPlay\Include\TinySTL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Include\TinySTL\unordered_set.h">
+      <Filter>SuperPlay\Include\TinySTL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Include\TinySTL\vector.h">
+      <Filter>SuperPlay\Include\TinySTL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SuperPlayLib\Hardware\BGManager.h">
+      <Filter>SuperPlay\Hardware</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SuperPlayLib\Hardware\CRC32.h">
+      <Filter>SuperPlay\Hardware</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SuperPlayLib\Hardware\ShadowOAM.h">
+      <Filter>SuperPlay\Hardware</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SuperPlayLib\Include\System.h">
+      <Filter>SuperPlay\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SuperPlayLib\Include\Utilities.h">
+      <Filter>SuperPlay\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SuperPlayLib\Libraries\mtrand\mtrand.h">
+      <Filter>SuperPlay\Libraries\mtrand</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SuperPlayLib\Libraries\stb_image\stb_image.h">
+      <Filter>SuperPlay\Libraries\stb_image</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\DisplayLib\OpenGL-ES2\VMath\vmath.h">
+      <Filter>Display\VMath</Filter>
+    </ClInclude>
+    <ClInclude Include="FPS.h">
+      <Filter>Game\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Background.h">
+      <Filter>Game\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseSprite.h">
+      <Filter>Game\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BulletManager.h">
+      <Filter>Game\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BulletSprite.h">
+      <Filter>Game\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyManager.h">
+      <Filter>Game\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemySprite.h">
+      <Filter>Game\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerSprite.h">
+      <Filter>Game\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Game\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ScoreBar.h">
+      <Filter>Game\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameResources.h">
+      <Filter>Game\Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

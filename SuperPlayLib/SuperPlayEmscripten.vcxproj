@@ -62,11 +62,12 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Emscripten'">
-    <OutDir>..\Lib\Emscription\</OutDir>
-    <TargetName>$(ProjectName)_d</TargetName>
+    <OutDir>..\Lib\Emscripten\</OutDir>
+    <TargetName>SuperPlay_d</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Emscripten'">
-    <OutDir>..\Lib\Emscription\</OutDir>
+    <OutDir>..\Lib\Emscripten\</OutDir>
+    <TargetName>SuperPlay</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -83,6 +84,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>REPORT_RESULT=int dummy</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>Include;Libraries;..\Include;..\DisplayLib\Include;..\PlatformLib\Include;..\SoundLib\Include</AdditionalIncludeDirectories>
+      <DisableWarnings>switch</DisableWarnings>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -109,6 +111,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>REPORT_RESULT=int dummy</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>Include;Libraries;..\Include;..\DisplayLib\Include;..\PlatformLib\Include;..\SoundLib\Include</AdditionalIncludeDirectories>
+      <DisableWarnings>switch</DisableWarnings>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>

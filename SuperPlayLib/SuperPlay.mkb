@@ -1,12 +1,15 @@
 #!/usr/bin/env mkb
-define MARMALADE
-debug_define _DEBUG
+
+defines
+{
+	MARMALADE
+}
 
 options
 {
 	lib
-	output-name=../Lib/Marmalade/SuperPlay.lib
-	output-name-debug=../Lib/Marmalade/SuperPlay_d.lib
+	output-name=../Lib/Marmalade/libSuperPlay.a
+	output-name-debug=../Lib/Marmalade/libSuperPlay_d.a
 }
 
 includepaths

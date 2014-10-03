@@ -1,0 +1,242 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Emscripten">
+      <Configuration>Debug</Configuration>
+      <Platform>Emscripten</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Emscripten">
+      <Configuration>Release</Configuration>
+      <Platform>Emscripten</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\WebDev\Emscripten\Emscripten\Debug\Emscripten.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\DisplayLib\OpenGL-ES2\Display.cpp" />
+    <ClCompile Include="..\..\DisplayLib\OpenGL-ES2\GLEmscripten.cpp" />
+    <ClCompile Include="..\..\DisplayLib\OpenGL-ES2\IndexBuffer.cpp" />
+    <ClCompile Include="..\..\DisplayLib\OpenGL-ES2\SpriteBatch.cpp" />
+    <ClCompile Include="..\..\DisplayLib\OpenGL-ES2\Texture.cpp" />
+    <ClCompile Include="..\..\DisplayLib\OpenGL-ES2\VertexBuffer.cpp" />
+    <ClCompile Include="..\..\DisplayLib\OpenGL-ES2\VMath\vmath.cpp" />
+    <ClCompile Include="..\..\ExpansionLib\AudioLoader\AudioLoader.cpp" />
+    <ClCompile Include="..\..\ExpansionLib\FontLoader\FontLoader.cpp" />
+    <ClCompile Include="..\..\ExpansionLib\FontLoader\yspng\yspng.cpp" />
+    <ClCompile Include="..\..\ExpansionLib\HDMALoader\HDMALoader.cpp" />
+    <ClCompile Include="..\..\ExpansionLib\MapLoader\MapLoader.cpp" />
+    <ClCompile Include="..\..\ExpansionLib\SpriteLoader\SpriteLoader.cpp" />
+    <ClCompile Include="..\..\PlatformLib\Emscripten\File.cpp" />
+    <ClCompile Include="..\..\PlatformLib\Emscripten\Input.cpp" />
+    <ClCompile Include="..\..\PlatformLib\Emscripten\Log.cpp" />
+    <ClCompile Include="..\..\PlatformLib\Emscripten\Main.cpp" />
+    <ClCompile Include="..\..\PlatformLib\Emscripten\Platform.cpp" />
+    <ClCompile Include="..\..\PlatformLib\Emscripten\StoragePath.cpp" />
+    <ClCompile Include="..\..\PlatformLib\Emscripten\Timer.cpp" />
+    <ClCompile Include="..\..\PlatformLib\Emscripten\Window.cpp" />
+    <ClCompile Include="..\..\SoundLib\Hekkus\Sound.cpp" />
+    <ClCompile Include="..\..\SoundLib\Hekkus\SoundSystem.cpp" />
+    <ClCompile Include="..\..\SuperPlayLib\Engine\Image.cpp" />
+    <ClCompile Include="..\..\SuperPlayLib\Engine\ResourceManager.cpp" />
+    <ClCompile Include="..\..\SuperPlayLib\Engine\System.cpp" />
+    <ClCompile Include="..\..\SuperPlayLib\Engine\Utilities.cpp" />
+    <ClCompile Include="..\..\SuperPlayLib\Hardware\BG.cpp" />
+    <ClCompile Include="..\..\SuperPlayLib\Hardware\BGManager.cpp" />
+    <ClCompile Include="..\..\SuperPlayLib\Hardware\BGVRAM.cpp" />
+    <ClCompile Include="..\..\SuperPlayLib\Hardware\CRC32.cpp" />
+    <ClCompile Include="..\..\SuperPlayLib\Hardware\DMA.cpp" />
+    <ClCompile Include="..\..\SuperPlayLib\Hardware\Hardware.cpp" />
+    <ClCompile Include="..\..\SuperPlayLib\Hardware\HDMA.cpp" />
+    <ClCompile Include="..\..\SuperPlayLib\Hardware\Joypad.cpp" />
+    <ClCompile Include="..\..\SuperPlayLib\Hardware\OAM.cpp" />
+    <ClCompile Include="..\..\SuperPlayLib\Hardware\Obj.cpp" />
+    <ClCompile Include="..\..\SuperPlayLib\Hardware\ObjVRAM.cpp" />
+    <ClCompile Include="..\..\SuperPlayLib\Hardware\ShadowOAM.cpp" />
+    <ClCompile Include="..\..\SuperPlayLib\Hardware\SPC.cpp" />
+    <ClCompile Include="..\..\SuperPlayLib\Hardware\SRAM.cpp" />
+    <ClCompile Include="..\..\SuperPlayLib\Hardware\Text.cpp" />
+    <ClCompile Include="..\..\SuperPlayLib\Libraries\mtrand\mtrand.cpp" />
+    <ClCompile Include="..\..\SuperPlayLib\Libraries\stb_image\stb_image.cpp" />
+    <ClCompile Include="..\..\SuperPlayLib\Libraries\TinyXML2\tinyxml2.cpp" />
+    <ClCompile Include="FPS.cpp" />
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GameHeader.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\DisplayLib\Include\IDisplay.h" />
+    <ClInclude Include="..\..\DisplayLib\Include\IIndexBuffer.h" />
+    <ClInclude Include="..\..\DisplayLib\Include\ISpriteBatch.h" />
+    <ClInclude Include="..\..\DisplayLib\Include\ITexture.h" />
+    <ClInclude Include="..\..\DisplayLib\Include\IVertexBuffer.h" />
+    <ClInclude Include="..\..\DisplayLib\OpenGL-ES2\CustomVertex.h" />
+    <ClInclude Include="..\..\DisplayLib\OpenGL-ES2\Display.h" />
+    <ClInclude Include="..\..\DisplayLib\OpenGL-ES2\GLEmscripten.h" />
+    <ClInclude Include="..\..\DisplayLib\OpenGL-ES2\IndexBuffer.h" />
+    <ClInclude Include="..\..\DisplayLib\OpenGL-ES2\SpriteBatch.h" />
+    <ClInclude Include="..\..\DisplayLib\OpenGL-ES2\Texture.h" />
+    <ClInclude Include="..\..\DisplayLib\OpenGL-ES2\VertexBuffer.h" />
+    <ClInclude Include="..\..\DisplayLib\OpenGL-ES2\VMath\vmath.h" />
+    <ClInclude Include="..\..\ExpansionLib\FontLoader\yspng\yspng.h" />
+    <ClInclude Include="..\..\Include\AssertLog.h" />
+    <ClInclude Include="..\..\Include\BG.h" />
+    <ClInclude Include="..\..\Include\BGVRAM.h" />
+    <ClInclude Include="..\..\Include\DMA.h" />
+    <ClInclude Include="..\..\Include\Expansion\AudioLoader.h" />
+    <ClInclude Include="..\..\Include\Expansion\FontLoader.h" />
+    <ClInclude Include="..\..\Include\Expansion\HDMALoader.h" />
+    <ClInclude Include="..\..\Include\Expansion\MapLoader.h" />
+    <ClInclude Include="..\..\Include\Expansion\SpriteLoader.h" />
+    <ClInclude Include="..\..\Include\File.h" />
+    <ClInclude Include="..\..\Include\GameHeader.h" />
+    <ClInclude Include="..\..\Include\Hardware.h" />
+    <ClInclude Include="..\..\Include\HardwareDefines.h" />
+    <ClInclude Include="..\..\Include\HDMA.h" />
+    <ClInclude Include="..\..\Include\IGame.h" />
+    <ClInclude Include="..\..\Include\Image.h" />
+    <ClInclude Include="..\..\Include\IVRAM.h" />
+    <ClInclude Include="..\..\Include\Joypad.h" />
+    <ClInclude Include="..\..\Include\Log.h" />
+    <ClInclude Include="..\..\Include\Macros.h" />
+    <ClInclude Include="..\..\Include\OAM.h" />
+    <ClInclude Include="..\..\Include\Obj.h" />
+    <ClInclude Include="..\..\Include\ObjVRAM.h" />
+    <ClInclude Include="..\..\Include\PathDefines.h" />
+    <ClInclude Include="..\..\Include\Point.h" />
+    <ClInclude Include="..\..\Include\Rect.h" />
+    <ClInclude Include="..\..\Include\RenderParams.h" />
+    <ClInclude Include="..\..\Include\ResourceManager.h" />
+    <ClInclude Include="..\..\Include\SPC.h" />
+    <ClInclude Include="..\..\Include\SRAM.h" />
+    <ClInclude Include="..\..\Include\STLMacros.h" />
+    <ClInclude Include="..\..\Include\Text.h" />
+    <ClInclude Include="..\..\Include\TinySTL\allocator.h" />
+    <ClInclude Include="..\..\Include\TinySTL\buffer.h" />
+    <ClInclude Include="..\..\Include\TinySTL\hash.h" />
+    <ClInclude Include="..\..\Include\TinySTL\hash_base.h" />
+    <ClInclude Include="..\..\Include\TinySTL\new.h" />
+    <ClInclude Include="..\..\Include\TinySTL\stddef.h" />
+    <ClInclude Include="..\..\Include\TinySTL\stdint.h" />
+    <ClInclude Include="..\..\Include\TinySTL\string.h" />
+    <ClInclude Include="..\..\Include\TinySTL\traits.h" />
+    <ClInclude Include="..\..\Include\TinySTL\unordered_map.h" />
+    <ClInclude Include="..\..\Include\TinySTL\unordered_set.h" />
+    <ClInclude Include="..\..\Include\TinySTL\vector.h" />
+    <ClInclude Include="..\..\Include\TinyXML2\tinyxml2.h" />
+    <ClInclude Include="..\..\Include\Types.h" />
+    <ClInclude Include="..\..\PlatformLib\Emscripten\Input.h" />
+    <ClInclude Include="..\..\PlatformLib\Emscripten\Platform.h" />
+    <ClInclude Include="..\..\PlatformLib\Emscripten\PlatformDefines.h" />
+    <ClInclude Include="..\..\PlatformLib\Emscripten\Timer.h" />
+    <ClInclude Include="..\..\PlatformLib\Emscripten\Window.h" />
+    <ClInclude Include="..\..\PlatformLib\Include\IInput.h" />
+    <ClInclude Include="..\..\PlatformLib\Include\PlatformLib.h" />
+    <ClInclude Include="..\..\PlatformLib\Include\StoragePath.h" />
+    <ClInclude Include="..\..\SoundLib\Hekkus\SoundSystem.h" />
+    <ClInclude Include="..\..\SoundLib\Include\ISoundSystem.h" />
+    <ClInclude Include="..\..\SoundLib\Include\Sound.h" />
+    <ClInclude Include="..\..\SuperPlayLib\Hardware\BGManager.h" />
+    <ClInclude Include="..\..\SuperPlayLib\Hardware\CRC32.h" />
+    <ClInclude Include="..\..\SuperPlayLib\Hardware\ShadowOAM.h" />
+    <ClInclude Include="..\..\SuperPlayLib\Include\System.h" />
+    <ClInclude Include="..\..\SuperPlayLib\Include\Utilities.h" />
+    <ClInclude Include="..\..\SuperPlayLib\Libraries\mtrand\mtrand.h" />
+    <ClInclude Include="..\..\SuperPlayLib\Libraries\stb_image\stb_image.h" />
+    <ClInclude Include="FPS.h" />
+    <ClInclude Include="Game.h" />
+    <ClInclude Include="GameDefines.h" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{6A41CB2E-0022-47E1-89C5-FB2B558BEB91}</ProjectGuid>
+    <RootNamespace>hello_world_gles</RootNamespace>
+    <ProjectName>Text</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|Emscripten'">
+    <PlatformToolset>emcc</PlatformToolset>
+    <ConfigurationType>HTMLPage</ConfigurationType>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Release|Emscripten'">
+    <PlatformToolset>emcc</PlatformToolset>
+    <ConfigurationType>HTMLPage</ConfigurationType>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Emscripten'">
+    <IntDir>$(Platform)\$(ProjectName)_$(Configuration)\</IntDir>
+    <TargetExt>.html</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Emscripten'">
+    <IntDir>$(Platform)\$(ProjectName)_$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>
+      </AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>
+      </AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Emscripten'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>../../Include;../../Include/Expansion;../../DisplayLib/Include;../../PlatformLib/Emscripten;../../PlatformLib/Include;../../SoundLib/Include;../../SuperPlayLib/Include;../../SuperPlayLib/Libraries</AdditionalIncludeDirectories>
+      <EchoCommandLines>false</EchoCommandLines>
+      <PreprocessorDefinitions>DEBUG</PreprocessorDefinitions>
+      <AdditionalOptions>-s FULL_ES2=1 %(AdditionalOptions)</AdditionalOptions>
+      <DisableWarnings>switch</DisableWarnings>
+    </ClCompile>
+    <Link />
+    <Link>
+      <AdditionalOptions>-s FULL_ES2=1 %(AdditionalOptions)</AdditionalOptions>
+      <PreloadFile>Environment@</PreloadFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

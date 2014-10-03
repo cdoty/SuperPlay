@@ -88,7 +88,7 @@ bool Image::initialize(const tinystl::string& _strFilename, bool _bTransparent)
 	m_iHeight		= iHeight;
 	m_bTransparent	= _bTransparent;
 
-#if (!defined __ANDROID__ && !defined MARMALADE) || (!defined __ARMEL__ && defined __APPLE__)
+#if (!defined __ANDROID__ && !defined MARMALADE && !defined EMSCRIPTEN) || (!defined __ARMEL__ && defined __APPLE__)
 	uint32_t*	pBuffer	= m_pImage;
 
 	for (int iLoop = 0; iLoop < m_iWidth * m_iHeight; ++iLoop)

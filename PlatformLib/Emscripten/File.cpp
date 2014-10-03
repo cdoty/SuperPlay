@@ -35,7 +35,12 @@ bool File::open(const tinystl::string& _strFilename, bool _bBinary)
 		close();
 	}
 	
-	m_pHandle	= fopen(_strFilename.c_str(), true == _bBinary ? "rb" : "rt");
+	tinystl::string	strFilepath;
+	
+	strFilepath	= "/";
+	strFilepath += _strFilename;
+
+	m_pHandle	= fopen(strFilepath.c_str(), true == _bBinary ? "rb" : "rt");
 	
 	if (NULL == m_pHandle)
 	{
@@ -61,7 +66,7 @@ bool File::close()
 
 bool File::read8Bit(char& _iValue)
 {
-	ASSERT_LOG(m_pHandle != NULL, "File handle is invalid\n");
+	ASSERT_LOG(m_pHandle != NULL, "File handle is invalid");
 
 	if (fread(&_iValue, 1, sizeof(char), (FILE*)m_pHandle) != sizeof(char))
 	{
@@ -73,7 +78,7 @@ bool File::read8Bit(char& _iValue)
 
 bool File::readUnsigned8Bit(uint8_t& _iValue)
 {
-	ASSERT_LOG(m_pHandle != NULL, "File handle is invalid\n");
+	ASSERT_LOG(m_pHandle != NULL, "File handle is invalid");
 
 	if (fread(&_iValue, 1, sizeof(uint8_t), (FILE*)m_pHandle) != sizeof(uint8_t))
 	{
@@ -85,7 +90,7 @@ bool File::readUnsigned8Bit(uint8_t& _iValue)
 
 bool File::read16Bit(short& _iValue)
 {
-	ASSERT_LOG(m_pHandle != NULL, "File handle is invalid\n");
+	ASSERT_LOG(m_pHandle != NULL, "File handle is invalid");
 
 	if (fread(&_iValue, 1, sizeof(short), (FILE*)m_pHandle) != sizeof(short))
 	{
@@ -97,7 +102,7 @@ bool File::read16Bit(short& _iValue)
 
 bool File::readUnsigned16Bit(uint16_t& _iValue)
 {
-	ASSERT_LOG(m_pHandle != NULL, "File handle is invalid\n");
+	ASSERT_LOG(m_pHandle != NULL, "File handle is invalid");
 
 	if (fread(&_iValue, 1, sizeof(uint16_t), (FILE*)m_pHandle) != sizeof(uint16_t))
 	{
@@ -109,7 +114,7 @@ bool File::readUnsigned16Bit(uint16_t& _iValue)
 
 bool File::read32Bit(int& _iValue)
 {
-	ASSERT_LOG(m_pHandle != NULL, "File handle is invalid\n");
+	ASSERT_LOG(m_pHandle != NULL, "File handle is invalid");
 
 	if (fread(&_iValue, 1, sizeof(int), (FILE*)m_pHandle) != sizeof(int))
 	{
@@ -121,7 +126,7 @@ bool File::read32Bit(int& _iValue)
 
 bool File::readUnsigned32Bit(uint32_t& _iValue)
 {
-	ASSERT_LOG(m_pHandle != NULL, "File handle is invalid\n");
+	ASSERT_LOG(m_pHandle != NULL, "File handle is invalid");
 
 	if (fread(&_iValue, 1, sizeof(uint32_t), (FILE*)m_pHandle) != sizeof(uint32_t))
 	{
@@ -133,7 +138,7 @@ bool File::readUnsigned32Bit(uint32_t& _iValue)
 
 bool File::readBuffer(uint8_t** _pBuffer, int iBufferSize)
 {
-	ASSERT_LOG(m_pHandle != NULL, "File handle is invalid\n");
+	ASSERT_LOG(m_pHandle != NULL, "File handle is invalid");
 	
 	if (-1 == iBufferSize)
 	{
@@ -160,8 +165,8 @@ bool File::readBuffer(uint8_t** _pBuffer, int iBufferSize)
 
 bool File::readBuffer(uint8_t* _pBuffer, int iBufferSize)
 {
-	ASSERT_LOG(m_pHandle != NULL, "File handle is invalid\n");
-	ASSERT_LOG(_pBuffer != NULL, "Buffer is invalid\n");
+	ASSERT_LOG(m_pHandle != NULL, "File handle is invalid");
+	ASSERT_LOG(_pBuffer != NULL, "Buffer is invalid");
 	
 	if (-1 == iBufferSize)
 	{
@@ -216,14 +221,14 @@ bool File::seek(int _iOffset, SeekPoint _eSeekPoint)
 
 int File::getPosition() const
 {
-	ASSERT_LOG(m_pHandle != NULL, "File handle is invalid\n");
+	ASSERT_LOG(m_pHandle != NULL, "File handle is invalid");
 	
 	return	ftell((FILE*)m_pHandle);
 }
 
 int File::getLength() const
 {
-	ASSERT_LOG(m_pHandle != NULL, "File handle is invalid\n");
+	ASSERT_LOG(m_pHandle != NULL, "File handle is invalid");
 	
 	int	iCurrentPosition	= ftell((FILE*)m_pHandle);
 	
