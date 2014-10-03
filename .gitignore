@@ -5,6 +5,7 @@
 *.pdb
 *.exe
 Log.html
+ipch/
 Build/
 Debug/
 Release/
