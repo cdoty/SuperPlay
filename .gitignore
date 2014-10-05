@@ -4,6 +4,9 @@
 *.ilk
 *.pdb
 *.exe
+*.apk
+*.so
+*.opensdf
 Log.html
 ipch/
 Build/
