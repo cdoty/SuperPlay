@@ -45,6 +45,8 @@
 #include "GLEmscripten.h"
 #elif defined __native_client__
 #include "GLNaCl.h"
+#elif defined ANGLE
+#include "GLAngle.h"
 #elif defined WIN32
 #include "GLWin32.h"
 #elif defined __linux__ 
@@ -117,8 +119,7 @@ class Display : public IDisplay
 		virtual void bindTexture(int _iHash);
 
 		// Draw triangles
-		virtual bool drawTriangles(int _iVertexBufferIndex, int _iVertices = 0, int _iIndexBufferIndex = -1, 
-			int _iTriangles = 0);
+		virtual bool drawTriangles(int _iVertexBufferIndex, int _iVertices = 0, int _iIndexBufferIndex = -1, int _iTriangles = 0);
 		
 		// Set clip rect
 		virtual void setClipRect(const Rect& _rctClip);

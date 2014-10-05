@@ -8,6 +8,9 @@ Log.html
 ipch/
 Build/
 Debug/
+DebugAngle/
+DebugGL/
 Release/
+ReleaseAngle/
+ReleaseGL/
 External/
-Lib/*.*

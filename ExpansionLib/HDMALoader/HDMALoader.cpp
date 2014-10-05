@@ -105,12 +105,17 @@ bool HDMALoader::loadImage(const tinystl::string& _strFilename)
 	{
 		uint32_t	uValue	= *pPixels;
 
+#if (!defined __ANDROID__ && !defined MARMALADE && !defined EMSCRIPTEN && !defined ANGLE) || (!defined __ARMEL__ && defined __APPLE__)
+		m_pHDMATable[iYLoop]	= uValue;
+#else
 		uint32_t	uAlpha	= (uValue & 0xFF000000) >> 24;
 		uint32_t	uRed	= (uValue & 0x00FF0000) >> 16;
 		uint32_t	uGreen	= (uValue & 0x0000FF00) >> 8;
 		uint32_t	uBlue	= uValue & 0x000000FF;
 
 		m_pHDMATable[iYLoop]	= (uAlpha << 24) | (uBlue << 16) | (uGreen << 8) | uRed;
+#endif
+
 
 		pPixels	+= iWidth;
 	}

@@ -14,8 +14,16 @@
 #pragma comment(lib, "SuperPlay_d.lib")
 #pragma comment(lib, "Sound_d.lib")
 #pragma comment(lib, "Platform_d.lib")
+#ifdef ANGLE
+#pragma comment(lib, "DisplayAngle_d.lib")
+#else
 #pragma comment(lib, "Display_d.lib")
+#endif
 #pragma comment(lib, "winmm.lib")
+#ifdef ANGLE
+#pragma comment(lib, "libEGL.lib")
+#pragma comment(lib, "libGLESv2.lib")
+#endif
 #ifdef USE_SDL
 #pragma comment(lib, "SDL2_d.lib")
 #pragma comment(lib, "SDL2main_d.lib")
@@ -26,8 +34,16 @@
 #pragma comment(lib, "SuperPlay.lib")
 #pragma comment(lib, "Sound.lib")
 #pragma comment(lib, "Platform.lib")
+#ifdef ANGLE
+#pragma comment(lib, "DisplayAngle.lib")
+#else
 #pragma comment(lib, "Display.lib")
+#endif
 #pragma comment(lib, "winmm.lib")
+#ifdef ANGLE
+#pragma comment(lib, "libEGL.lib")
+#pragma comment(lib, "libGLESv2.lib")
+#endif
 #ifdef USE_SDL
 #pragma comment(lib, "SDL2.lib")
 #pragma comment(lib, "SDL2main.lib")

@@ -527,7 +527,7 @@ bool Display::createRenderTarget(int _iWidth, int _iHeight, GLint _iFormat)
 
 #if defined __IOS__
 	glBindFramebuffer(GL_FRAMEBUFFER, m_uDefaultFrameBuffer);
-#elif defined __ANDROID__ || defined MARMALADE || defined EMSCRIPTEN
+#elif defined __ANDROID__ || defined MARMALADE || defined EMSCRIPTEN || defined ANGLE
 	glBindFramebuffer(GL_FRAMEBUFFER, 0);
 #endif
 

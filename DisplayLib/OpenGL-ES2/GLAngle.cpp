@@ -8,19 +8,20 @@
 // PARTICULAR PURPOSE.
 
 #include "AssertLog.h"
-#include "GLWin32.h"
+#include "Display.h"
+#include "GLAngle.h"
 #include "GameHeader.h"
 #include "Log.h"
 #include "Platform.h"
 #include "Window.h"
 
-#pragma comment(lib, "opengl32.lib")
-
 NAMESPACE(SPlay)
 
 GLPlatform::GLPlatform()	:
-	m_hRC(NULL),
-	m_hDC(NULL)
+	m_pDisplay(EGL_NO_DISPLAY),
+	m_pSurface(EGL_NO_SURFACE),
+	m_pContext(EGL_NO_CONTEXT),
+	m_eRendererType(RENDERER_D3D9)
 {
 }
 
@@ -44,102 +45,135 @@ GLPlatform* GLPlatform::create()
 
 bool GLPlatform::initialize()
 {
-	if (false == setupPixelFormat())
+	if (false == initializeEGL())
 	{
 		return	false;
 	}
 
-	if (false == setupWGL())
-	{
-		return	false;
-	}
-
-	return	true;
-}
-
-bool GLPlatform::setupPixelFormat()
-{
-	HWND	hWnd	= Platform::getWindow()->getHwnd();
-	
-	PIXELFORMATDESCRIPTOR	PixelFormatDescriptor	=
-	{
-		sizeof(PIXELFORMATDESCRIPTOR), 1, PFD_DRAW_TO_WINDOW | PFD_SUPPORT_OPENGL | PFD_DOUBLEBUFFER, PFD_TYPE_RGBA, 32,
-			0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, PFD_MAIN_PLANE, 0, 0, 0, 0
-	};
-
-	m_hDC	= GetDC(Platform::getWindow()->getHwnd());
-
-	if (NULL == m_hDC)
-	{
-		Log::instance()->logError("Unable to get device context (%08X)", GetLastError());
-
-		return	false;
-	}
-
-	int	iPixelFormat	= ChoosePixelFormat(m_hDC, &PixelFormatDescriptor);
-
-	if (0 == iPixelFormat)
-	{
-		Log::instance()->logError("Unable to choose pixel format (%08X)", GetLastError());
-
-		return	false;
-	}
-
-	if (FALSE == SetPixelFormat(m_hDC, iPixelFormat, &PixelFormatDescriptor))
-	{
-		Log::instance()->logError("Unable to set pixel format (%08X)", GetLastError());
-
-		return	false;
-	}
-	
-	return	true;
-}
-
-bool GLPlatform::setupWGL()
-{
-	m_hRC	= wglCreateContext(m_hDC);
-
-	if (NULL == m_hRC)
-	{
-		Log::instance()->logError("Unable to create context (%08X)", GetLastError());
-
-		return	false;
-	}
-
-	if (FALSE == wglMakeCurrent(m_hDC, m_hRC))
-	{
-		Log::instance()->logError("Unable to set current context (%08X)", GetLastError());
-
-		return	false;
-	}
-	
 	return	true;
 }
 
 void GLPlatform::close()
-{	
-	if (m_hRC != NULL)
-	{
-		wglMakeCurrent(NULL, NULL);
-	
-		wglDeleteContext(m_hRC);
-
-		m_hRC	= NULL;
-	}
-
-	if (m_hDC != NULL)
-	{
-		ReleaseDC(Platform::getWindow()->getHwnd(), m_hDC);
-
-		m_hDC	= NULL;
-	}
+{
 }
 
 bool GLPlatform::swapBuffers()
 {
-	if (FALSE == SwapBuffers(m_hDC))
+	Window*	pWindow	= Platform::getWindow();
+
+	eglSwapBuffers(m_pDisplay, m_pSurface);
+
+	return	true;
+}
+
+bool GLPlatform::initializeEGL()
+{
+	HWND	hWnd	= Platform::getWindow()->getHwnd();
+	HDC		hDC		= GetDC(hWnd);
+
+	if (NULL == hDC)
 	{
+		Log::instance()->logError("HDC is invalid");
+
 		return	false;
+	}
+
+	EGLNativeDisplayType	displayType	= hDC;
+
+	if (RENDERER_D3D11 == m_eRendererType)
+	{
+		displayType	= EGL_D3D11_ONLY_DISPLAY_ANGLE;
+	}
+
+	m_pDisplay	= eglGetDisplay(displayType);
+	
+	if (EGL_NO_DISPLAY == m_pDisplay)
+	{
+		m_pDisplay	= eglGetDisplay((EGLNativeDisplayType)EGL_DEFAULT_DISPLAY);
+	}
+	
+	eglBindAPI(EGL_OPENGL_ES_API);
+
+	if (eglGetError() != EGL_SUCCESS)
+	{
+		Log::instance()->logError("Unable to bind OpenGL ES api: %d", eglGetError());
+
+		return	false;
+	}
+
+	EGLint	iMajor;
+	EGLint	iMinor;
+
+	if (EGL_FALSE == eglInitialize(m_pDisplay, &iMajor, &iMinor))
+	{
+		Log::instance()->logError("Unable to initialize EGL %d", eglGetError());
+
+		return	false;
+	}
+
+	const EGLint iConfigAttributes[]	=
+	{
+		EGL_RED_SIZE, 8,
+		EGL_GREEN_SIZE, 8,
+		EGL_BLUE_SIZE, 8,
+		EGL_ALPHA_SIZE, 8,
+		EGL_NONE
+	};
+
+	EGLConfig	config;
+	int			iConfigs;
+
+	if (false == eglChooseConfig(m_pDisplay, iConfigAttributes, &config, 1, &iConfigs))
+	{
+		Log::instance()->logError("Unable to choose config %d", eglGetError());
+
+		return	false;
+	}
+
+	const EGLint iSurfaceAttributes[]	=
+	{
+        EGL_POST_SUB_BUFFER_SUPPORTED_NV, EGL_TRUE,
+        EGL_NONE, EGL_NONE
+	};
+
+	m_pSurface	= eglCreateWindowSurface(m_pDisplay, config, (EGLNativeWindowType)hWnd, iSurfaceAttributes);
+
+	if (EGL_NO_SURFACE == m_pSurface)
+	{
+		eglGetError(); // Clear error and try again
+		
+		m_pSurface	= eglCreateWindowSurface(m_pDisplay, config, NULL, NULL);
+	}
+
+	if (eglGetError() != EGL_SUCCESS)
+	{
+		Log::instance()->logError("Unable to create window surface %d", eglGetError());
+
+		return	false;
+	}
+
+	EGLint iContextAttibutes[]	=
+	{
+		EGL_CONTEXT_CLIENT_VERSION, 2,
+		EGL_NONE
+	};
+
+	m_pContext	= eglCreateContext(m_pDisplay, config, NULL, iContextAttibutes);
+
+	if (eglGetError() != EGL_SUCCESS)
+	{
+		Log::instance()->logError("Unable to create context %d", eglGetError());
+
+		return	false;
+	}
+
+	eglMakeCurrent(m_pDisplay, m_pSurface, m_pSurface, m_pContext);
+	
+	if (eglGetError() != EGL_SUCCESS)
+	{
+		Log::instance()->logError("Unable to set current context %d", eglGetError());
+
+		return false;
 	}
 
 	return	true;

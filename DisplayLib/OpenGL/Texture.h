@@ -21,12 +21,13 @@
 #else
 #include <OpenGL/gl.h>
 #endif
-#elif defined __ANDROID__ || defined EMSCRIPTEN
+#elif defined __ANDROID__
 #include <GLES/gl.h>
 #elif defined MARMALADE
 #include <IwGL.h>
 #else
 #include <GL/gl.h>
+#include <GL/glext.h>
 #endif
 
 #include <TinySTL/stdint.h>

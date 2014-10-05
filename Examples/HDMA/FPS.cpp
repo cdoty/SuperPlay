@@ -47,11 +47,11 @@ void FPS::update(float _fElapsedTime)
 
 	char	szText[16];
 
-	sprintf(szText, "%04.4f", (float)gsc_iFrameRate * gsc_fFramePeriod / (m_fTickSum / (float)msc_iMaxSamples));
+	sprintf(szText, "%6.2f", (float)gsc_iFrameRate * gsc_fFramePeriod / (m_fTickSum / (float)msc_iMaxSamples));
 
 	// Get text layer
 	Text*	pText	= Hardware::getText();
 	
 	// Draw text string to the Text Layer.
-	pText->drawText((gsc_iScreenWidth / 8) - 10, (gsc_iScreenHeight / 8) - 2, szText);
+	pText->drawText((gsc_iScreenWidth / 8) - 6, (gsc_iScreenHeight / 8) - 1, szText);
 }

@@ -11,7 +11,7 @@
 #endif
 #endif
 
-#if !defined __ANDROID__ && !defined __IOS__ && !defined MARMALADE && !defined EMSCRIPTEN
+#if !defined __ANDROID__ && !defined __IOS__ && !defined MARMALADE && !defined EMSCRIPTEN && !defined ANGLE
 #include "GL/glew.h"
 #endif
 
@@ -23,13 +23,14 @@
 #else
 #include <OpenGL/gl.h>
 #endif
-#elif defined __ANDROID__ || defined EMSCRIPTEN
+#elif defined __ANDROID__ || defined EMSCRIPTEN || defined ANGLE
 #define GL_GLEXT_PROTOTYPES
 #include <GLES/gl.h>
 #include <GLES/glext.h>
 #elif defined MARMALADE
 #else
 #include <GL/gl.h>
+#include <GL/glext.h>
 #endif
 #include <TinySTL/vector.h>
 #include <TinySTL/unordered_map.h>

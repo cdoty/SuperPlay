@@ -9,11 +9,16 @@
 
 #pragma once
 
-#define WIN32_LEAN_AND_MEAN
-#include <windows.h>
-#include <GL/gl.h>
+#include <EGL/egl.h>
+#include <EGL/eglext.h>
 
 NAMESPACE(SPlay)
+
+enum RendererType
+{
+    RENDERER_D3D9,
+    RENDERER_D3D11
+};
 
 class GLPlatform
 {
@@ -37,17 +42,20 @@ class GLPlatform
 		bool swapBuffers();
 
 	private:
-		// Render context
-		HGLRC	m_hRC;
+		// Display
+		EGLDisplay		m_pDisplay;
 
-		// Device context
-		HDC		m_hDC;
+		// Surface
+		EGLSurface		m_pSurface;
 
-		// Setup pixel format
-		bool setupPixelFormat();
+		// Context
+		EGLContext		m_pContext;
 
-		// Setup WGL
-		bool setupWGL();
+		// Renderer type
+		RendererType	m_eRendererType;
+
+		// Initialize EGL
+		bool initializeEGL();
 };
 
 ENDNAMESPACE
