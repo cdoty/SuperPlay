@@ -59,8 +59,6 @@ void GLPlatform::close()
 
 bool GLPlatform::swapBuffers()
 {
-	Window*	pWindow	= Platform::getWindow();
-
 	eglSwapBuffers(m_pDisplay, m_pSurface);
 
 	return	true;

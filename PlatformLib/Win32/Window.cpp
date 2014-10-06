@@ -57,7 +57,7 @@ bool Window::initialize()
 {
 	const GameHeader&	gameHeader	= System::getGameHeader();
 	
-	bool	bFramed	= gameHeader.bFramedWindow;
+	bool	bFramed	= true == gameHeader.bFramedWindow && false == gameHeader.bFullScreen;
 
 	if (true == bFramed && false == loadFrame())
 	{
@@ -95,7 +95,7 @@ bool Window::initialize()
 
 	DWORD	dwExStyle	= 0;
 
-	if (true == bFramed && false == bFullscreen)
+	if (true == bFramed)
 	{
 		// Layered window
 		dwExStyle	|= WS_EX_LAYERED;
@@ -207,7 +207,7 @@ LRESULT CALLBACK Window::messageProc(HWND _hWnd, UINT _msg, WPARAM _wParam, LPAR
 		{
 			GameHeader&	gameHeader	= System::getUpdateableGameHeader();
 
-			if (false == gameHeader.bFramedWindow)
+			if (false == gameHeader.bFramedWindow || true == gameHeader.bFullScreen)
 			{
 				gameHeader.iWindowedWidth	= LOWORD(_lParam);
 				gameHeader.iWindowedHeight	= HIWORD(_lParam);
@@ -237,7 +237,9 @@ LRESULT CALLBACK Window::messageProc(HWND _hWnd, UINT _msg, WPARAM _wParam, LPAR
 
 		case WM_NCHITTEST:
 		{			
-			if (true == System::getGameHeader().bFramedWindow)
+			const GameHeader&	gameHeader	= System::getGameHeader();
+
+			if (true == gameHeader.bFramedWindow && false == gameHeader.bFullScreen)
 			{
 				return	HTCAPTION;
 			}

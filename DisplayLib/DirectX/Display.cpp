@@ -104,7 +104,9 @@ void Display::close()
 
 bool Display::render()
 {
-	if (true == System::getGameHeader().bFramedWindow)
+	const GameHeader&	gameHeader	= System::getGameHeader();
+
+	if (true == gameHeader.bFramedWindow && false == gameHeader.bFullScreen)
 	{
 		return	renderFramed();
 	}

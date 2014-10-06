@@ -151,7 +151,9 @@ void Platform::redraw()
 {
 	System::getDisplay()->render();
 
-	if (true == System::getGameHeader().bFramedWindow)
+	const GameHeader&	gameHeader	= System::getGameHeader();
+
+	if (true == gameHeader.bFramedWindow && false == gameHeader.bFullScreen)
 	{
 		Platform::getWindow()->drawLayeredWindow();
 	}
