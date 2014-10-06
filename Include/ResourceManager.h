@@ -42,7 +42,7 @@ class ResourceManager
 		bool initialize();
 
 		// Load image
-		int loadImage(const tinystl::string& _strFilename, bool _bTransparent = false);
+		int loadImage(const tinystl::string& _strFilename);
 
 		// Get image
 		Image* getImage(int iIndex) const;

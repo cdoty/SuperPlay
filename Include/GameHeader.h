@@ -32,6 +32,9 @@ struct GameHeader
 	// Full screen
 	bool	bFullScreen;
 
+	// Framed window (Windows only). bFullScreen must be false to work.
+	bool	bFramedWindow;
+
 	// Portrait orientation. Ignored on platforms that don't support screen orientations.
 	bool	bPortrait;
 
@@ -48,6 +51,7 @@ struct GameHeader
 		iWindowedWidth(256),
 		iWindowedHeight(224),
 		bFullScreen(true),
+		bFramedWindow(false),
 		bPortrait(false),
 		bUseShadowOAM(false),
 		iSRAMSize(0)

@@ -150,6 +150,11 @@ bool Platform::runLoop()
 void Platform::redraw()
 {
 	System::getDisplay()->render();
+
+	if (true == System::getGameHeader().bFramedWindow)
+	{
+		Platform::getWindow()->drawLayeredWindow();
+	}
 }
 
 const tinystl::string& Platform::getStoragePath()

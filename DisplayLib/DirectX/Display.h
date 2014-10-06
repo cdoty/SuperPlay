@@ -121,6 +121,9 @@ class Display : public IDisplay
 		// Render target texture
 		LPDIRECT3DTEXTURE9		m_pRenderTexture;
 		
+		// Offscreen surface
+		LPDIRECT3DSURFACE9		m_pOffscreenSurface;
+
 		// Device size
 		int						m_iDeviceWidth;
 		int						m_iDeviceHeight;
@@ -133,9 +136,13 @@ class Display : public IDisplay
 		float					m_fEdgeU;
 		float					m_fEdgeV;
 
-		// Window size
+		// Render size
 		float					m_fRenderWidth;
 		float					m_fRenderHeight;
+
+		// Render texture size
+		int						m_iRenderTextureWidth;
+		int						m_iRenderTextureHeight;
 
 		// Vertex buffer
 		int						m_iVertexBuffer;
@@ -174,6 +181,9 @@ class Display : public IDisplay
 		// Create render target
 		bool createRenderTarget(int _iWidth, int _iHeight, D3DFORMAT _eFormat = D3DFMT_A8R8G8B8);
 		
+		// Create offscreen surface
+		bool createOffscreenSurface();
+
 		// Create vertex buffer
 		bool createVertexBuffer();
 
@@ -182,6 +192,12 @@ class Display : public IDisplay
 
 		// Setup transform
 		void setupTransform();
+
+		// Render framed
+		bool renderFramed();
+
+		// Render normal
+		bool renderNormal();
 };
 
 ENDNAMESPACE

@@ -207,7 +207,7 @@ bool SpriteLoader::loadTiles()
 
 	ResourceManager*	pResourceManager	= System::getResourceManager();
 
-	m_iImageIndex	= pResourceManager->loadImage(strFilename, true);
+	m_iImageIndex	= pResourceManager->loadImage(strFilename);
 
 	if (-1 == m_iImageIndex)
 	{

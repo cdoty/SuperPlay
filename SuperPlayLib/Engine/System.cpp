@@ -34,20 +34,8 @@ MTRand_int32		gsc_randomNumber;
 
 bool System::initialize()
 {
-	Log::instance()->logMessage("Initializing");
-
 	// Get game header
 	::getGameHeader(ms_gameHeader);
-
-	Log::instance()->logMessage("Initializing Platform");
-
-	// Initialize platform
-	if (false == initializePlatform())
-	{
-		return	false;
-	}
-
-	Log::instance()->logMessage("Initializing Resource manager");
 
 	// Create resource manager
 	ms_pResourceManager	= ResourceManager::create();
@@ -57,15 +45,17 @@ bool System::initialize()
 		return	false;
 	}
 
-	Log::instance()->logMessage("Initializing Hardware");
+	// Initialize platform
+	if (false == initializePlatform())
+	{
+		return	false;
+	}
 
 	// Initialize hardware
 	if (false == Hardware::initialize())
 	{
 		return	false;
 	}
-
-	Log::instance()->logMessage("Creating game");
 
 	// Create game
 	ms_pGame	= createGame();

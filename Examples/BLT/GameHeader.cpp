@@ -29,6 +29,9 @@ void getGameHeader(GameHeader& _gameHeader)
 	// Full screen
 	_gameHeader.bFullScreen		= false;
 
+	// Framed window
+	_gameHeader.bFramedWindow	= true;
+
 	// Use Shadow OAM
 	_gameHeader.bUseShadowOAM	= true;
 

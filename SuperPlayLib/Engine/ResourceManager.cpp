@@ -44,7 +44,7 @@ bool ResourceManager::initialize()
 	return	true;
 }
 
-int ResourceManager::loadImage(const tinystl::string& _strFilename, bool _bTransparent)
+int ResourceManager::loadImage(const tinystl::string& _strFilename)
 {
 	int	iHash	= Utilities::getHash(_strFilename);
 
@@ -55,7 +55,7 @@ int ResourceManager::loadImage(const tinystl::string& _strFilename, bool _bTrans
 		return	iImageIndex;
 	}
 
-	Image*	pImage	= Image::create(_strFilename, _bTransparent);
+	Image*	pImage	= Image::create(_strFilename);
 
 	if (NULL == pImage)
 	{

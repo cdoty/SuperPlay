@@ -26,10 +26,10 @@ class Image
 		~Image();
 
 		// Create an image from a bitmap
-		static Image* create(const tinystl::string& _strFilename, bool _bTransparent = false);
+		static Image* create(const tinystl::string& _strFilename);
 
 		// Initialize
-		bool initialize(const tinystl::string& _strFilename, bool _bTransparent = false);
+		bool initialize(const tinystl::string& _strFilename);
 
 		// Close
 		void close();
@@ -43,16 +43,10 @@ class Image
 		// Get height
 		int getHeight() const {return m_iHeight;}
 
-		// Get transparent
-		bool getTransparent() const {return m_bTransparent;}
-
 	private:
 		// Image size
 		int			m_iWidth;
 		int			m_iHeight;
-
-		// Is this a transparent image?
-		bool		m_bTransparent;
 
 		// Image pointer
 		uint32_t*	m_pImage;

@@ -35,6 +35,7 @@ Display::Display()	:
 	m_pDirect3D(NULL),
 	m_pDirect3DDevice(NULL),
 	m_pRenderTexture(NULL),
+	m_pOffscreenSurface(NULL),
 	m_iVertexBuffer(-1)
 {
 }
@@ -73,6 +74,7 @@ bool Display::initialize()
 
 void Display::close()
 {
+	SAFE_RELEASE(m_pOffscreenSurface);
 	SAFE_RELEASE(m_pRenderTexture);
 	SAFE_RELEASE(m_pDirect3DDevice);
 	SAFE_RELEASE(m_pDirect3D);
@@ -102,160 +104,12 @@ void Display::close()
 
 bool Display::render()
 {
-	LPDIRECT3DSURFACE9	pBackBuffer		= NULL;
-	LPDIRECT3DSURFACE9	pRenderSurface	= NULL;
-
-	HRESULT	hResult	= m_pDirect3DDevice->GetRenderTarget(0, &pBackBuffer);
-
-	if (FAILED(hResult))
+	if (true == System::getGameHeader().bFramedWindow)
 	{
-		Log::instance()->logError("GetRenderTarget error (%08X)", hResult);
-
-		return	false;
-	}
-	
-	hResult	= m_pRenderTexture->GetSurfaceLevel(0, &pRenderSurface);
-
-	if (FAILED(hResult))
-	{
-		Log::instance()->logError("GetSurfaceLevel error (%08X)", hResult);
-
-		return	false;
-	}
-	
-	hResult	= m_pDirect3DDevice->SetRenderTarget(0, pRenderSurface);
-
-	if (FAILED(hResult))
-	{
-		Log::instance()->logError("SetRenderTarget error (%08X)", hResult);
-
-		return	false;
-	}
-	
-	hResult	= m_pDirect3DDevice->SetTransform(D3DTS_PROJECTION, &m_renderTarget);
-
-	if (FAILED(hResult))
-	{
-		Log::instance()->logError("SetTransform error (%08X)", hResult);
-
-		return	false;
+		return	renderFramed();
 	}
 
-	hResult	= m_pDirect3DDevice->BeginScene();
-
-	if (FAILED(hResult))
-	{
-		Log::instance()->logError("BeginScene error (%08X)", hResult);
-
-		return	false;
-	}
-
-	// Render the hardware view
-	Hardware::render();
-
-	hResult	= m_pDirect3DDevice->EndScene();
-
-	if (FAILED(hResult))
-	{
-		Log::instance()->logError("EndScene error (%08X)", hResult);
-
-		return	false;
-	}
-	
-	hResult	= m_pDirect3DDevice->SetRenderTarget(0, pBackBuffer);
-
-	if (FAILED(hResult))
-	{
-		Log::instance()->logError("SetRenderTarget error (%08X)", hResult);
-
-		return	false;
-	}
-	
-	hResult	= m_pDirect3DDevice->SetTransform(D3DTS_PROJECTION, &m_ortho2D);
-
-	if (FAILED(hResult))
-	{
-		Log::instance()->logError("SetTransform error (%08X)", hResult);
-
-		return	false;
-	}
-
-	hResult	= m_pDirect3DDevice->BeginScene();
-
-	if (FAILED(hResult))
-	{
-		Log::instance()->logError("BeginScene error (%08X)", hResult);
-
-		return	false;
-	}
-	
-	hResult	= m_pDirect3DDevice->Clear(0, NULL, D3DCLEAR_TARGET, 0xFF000000, 1.0f, 0);
-
-	if (FAILED(hResult))
-	{
-		Log::instance()->logError("Clear error (%08X)", hResult);
-
-		return	false;
-	}
-	
-	hResult	= m_pDirect3DDevice->SetTexture(0, m_pRenderTexture);
-
-	if (FAILED(hResult))
-	{
-		Log::instance()->logError("SetTexture error (%08X)", hResult);
-
-		return	false;
-	}
-	
-	hResult	= m_pDirect3DDevice->SetStreamSource(0, getVertexBuffer(m_iVertexBuffer)->getVertexBuffer(), 0, sizeof(CustomVertex));
-
-	if (FAILED(hResult))
-	{
-		Log::instance()->logError("SetStreamSource error (%08X)", hResult);
-
-		return	false;
-	}
-	
-	hResult	= m_pDirect3DDevice->SetFVF(VertexFormat);
-	
-	if (FAILED(hResult))
-	{
-		Log::instance()->logError("SetFVF error (%08X)", hResult);
-
-		return	false;
-	}
-
-	hResult	= m_pDirect3DDevice->DrawPrimitive(D3DPT_TRIANGLESTRIP, 0, 2);
-
-	if (FAILED(hResult))
-	{
-		Log::instance()->logError("DrawPrimitive error (%08X)", hResult);
-
-		return	false;
-	}
-	
-	hResult	= m_pDirect3DDevice->EndScene();
-
-	if (FAILED(hResult))
-	{
-		Log::instance()->logError("EndScene error (%08X)", hResult);
-
-		return	false;
-	}
-	
-	hResult	= m_pDirect3DDevice->Present(NULL, NULL, NULL, NULL);
-
-	if (FAILED(hResult))
-	{
-//		Log::instance()->logError("Present error (%08X)", hResult);
-
-		return	false;
-	}
-	
-	SAFE_RELEASE(pRenderSurface);
-	SAFE_RELEASE(pBackBuffer);
-
-	return	true;
+	return	renderNormal();
 }
 
 void Display::clear(uint32_t _uColor)
@@ -639,6 +493,12 @@ bool Display::initializeDirectX()
 		return	false;
 	}
 	
+	// Create offscreen surface
+	if (false == createOffscreenSurface())
+	{
+		return	false;
+	}
+
 	return	true;
 }
 
@@ -811,6 +671,24 @@ bool Display::createRenderTarget(int _iWidth, int _iHeight, D3DFORMAT _eFormat)
 
 	D3DXMatrixOrthoOffCenterLH(&m_renderTarget, 0.0f, m_fRenderTextureWidth, m_fRenderTextureHeight, 0.0f, 0.0f, 1.0f);
 
+	m_iRenderTextureWidth	= iTextureWidth;
+	m_iRenderTextureHeight	= iTextureHeight;
+
+	return	true;
+}
+
+bool Display::createOffscreenSurface()
+{
+	HRESULT	hResult	= m_pDirect3DDevice->CreateOffscreenPlainSurface((UINT)m_iRenderTextureWidth, (UINT)m_iRenderTextureHeight, D3DFMT_A8R8G8B8, 
+		D3DPOOL_SYSTEMMEM, &m_pOffscreenSurface, 0);
+
+	if (FAILED(hResult))
+	{
+		Log::instance()->logError("CreateOffscreenPlainSurface error (%08X)", hResult);
+
+		return	false;
+	}
+
 	return	true;
 }
 
@@ -919,6 +797,276 @@ void Display::setupTransform()
 
 	m_fRenderWidth	= fScreenWidth * fScale;
 	m_fRenderHeight	= fScreenHeight * fScale;
+}
+
+bool Display::renderFramed()
+{
+	Window*	pWindow	= Platform::getWindow();
+
+	uint8_t*	pLayeredBuffer	= pWindow->getLayeredBuffer();
+	int			iLayeredWidth	= pWindow->getLayeredWidth();
+	int			iLayeredHeight	= pWindow->getLayeredHeight();
+	
+	LPDIRECT3DSURFACE9	pBackBuffer		= NULL;
+	LPDIRECT3DSURFACE9	pRenderSurface	= NULL;
+
+	HRESULT	hResult	= m_pDirect3DDevice->GetRenderTarget(0, &pBackBuffer);
+
+	if (FAILED(hResult))
+	{
+		Log::instance()->logError("GetRenderTarget error (%08X)", hResult);
+
+		return	false;
+	}
+	
+	hResult	= m_pRenderTexture->GetSurfaceLevel(0, &pRenderSurface);
+
+	if (FAILED(hResult))
+	{
+		Log::instance()->logError("GetSurfaceLevel error (%08X)", hResult);
+
+		return	false;
+	}
+	
+	hResult	= m_pDirect3DDevice->SetRenderTarget(0, pRenderSurface);
+
+	if (FAILED(hResult))
+	{
+		Log::instance()->logError("SetRenderTarget error (%08X)", hResult);
+
+		return	false;
+	}
+	
+	hResult	= m_pDirect3DDevice->SetTransform(D3DTS_PROJECTION, &m_renderTarget);
+
+	if (FAILED(hResult))
+	{
+		Log::instance()->logError("SetTransform error (%08X)", hResult);
+
+		return	false;
+	}
+
+	hResult	= m_pDirect3DDevice->BeginScene();
+
+	if (FAILED(hResult))
+	{
+		Log::instance()->logError("BeginScene error (%08X)", hResult);
+
+		return	false;
+	}
+
+	// Render the hardware view
+	Hardware::render();
+
+	hResult	= m_pDirect3DDevice->EndScene();
+
+	if (FAILED(hResult))
+	{
+		Log::instance()->logError("EndScene error (%08X)", hResult);
+
+		return	false;
+	}
+	
+	hResult	= m_pDirect3DDevice->GetRenderTargetData(pRenderSurface, m_pOffscreenSurface);
+
+	if (SUCCEEDED(hResult))
+	{
+		D3DLOCKED_RECT	lockedRect	= {0};
+
+		hResult	= m_pOffscreenSurface->LockRect(&lockedRect, 0, 0);
+
+		if (SUCCEEDED(hResult))
+		{
+			const uint8_t*	pSrc	= (const uint8_t*)lockedRect.pBits;
+
+			if (m_iRenderTextureWidth == iLayeredWidth && m_iRenderTextureHeight == iLayeredHeight)
+			{
+				memcpy(pLayeredBuffer, pSrc, (int)(m_fRenderTextureWidth * m_fRenderTextureHeight * 4));
+			}
+
+			else
+			{
+				int	iBufferWidth	= iLayeredWidth * 4;
+				int	iStride			= lockedRect.Pitch;
+
+				uint8_t*	pDest	= pLayeredBuffer;
+
+				for (int iYLoop = 0; iYLoop < iLayeredHeight; ++iYLoop)
+				{
+					memcpy(pDest, pSrc, iBufferWidth);
+					
+					pDest	+= iBufferWidth;
+					pSrc	+= iStride;
+				}
+			}
+			m_pOffscreenSurface->UnlockRect();
+		}
+	}
+
+	m_pDirect3DDevice->SetRenderTarget(0, pBackBuffer);
+
+	SAFE_RELEASE(pRenderSurface);
+	SAFE_RELEASE(pBackBuffer);
+
+	return	true;
+}
+
+bool Display::renderNormal()
+{
+	LPDIRECT3DSURFACE9	pBackBuffer		= NULL;
+	LPDIRECT3DSURFACE9	pRenderSurface	= NULL;
+
+	HRESULT	hResult	= m_pDirect3DDevice->GetRenderTarget(0, &pBackBuffer);
+
+	if (FAILED(hResult))
+	{
+		Log::instance()->logError("GetRenderTarget error (%08X)", hResult);
+
+		return	false;
+	}
+	
+	hResult	= m_pRenderTexture->GetSurfaceLevel(0, &pRenderSurface);
+
+	if (FAILED(hResult))
+	{
+		Log::instance()->logError("GetSurfaceLevel error (%08X)", hResult);
+
+		return	false;
+	}
+	
+	hResult	= m_pDirect3DDevice->SetRenderTarget(0, pRenderSurface);
+
+	if (FAILED(hResult))
+	{
+		Log::instance()->logError("SetRenderTarget error (%08X)", hResult);
+
+		return	false;
+	}
+	
+	hResult	= m_pDirect3DDevice->SetTransform(D3DTS_PROJECTION, &m_renderTarget);
+
+	if (FAILED(hResult))
+	{
+		Log::instance()->logError("SetTransform error (%08X)", hResult);
+
+		return	false;
+	}
+
+	hResult	= m_pDirect3DDevice->BeginScene();
+
+	if (FAILED(hResult))
+	{
+		Log::instance()->logError("BeginScene error (%08X)", hResult);
+
+		return	false;
+	}
+
+	// Render the hardware view
+	Hardware::render();
+
+	hResult	= m_pDirect3DDevice->EndScene();
+
+	if (FAILED(hResult))
+	{
+		Log::instance()->logError("EndScene error (%08X)", hResult);
+
+		return	false;
+	}
+	
+	hResult	= m_pDirect3DDevice->SetRenderTarget(0, pBackBuffer);
+
+	if (FAILED(hResult))
+	{
+		Log::instance()->logError("SetRenderTarget error (%08X)", hResult);
+
+		return	false;
+	}
+	
+	hResult	= m_pDirect3DDevice->SetTransform(D3DTS_PROJECTION, &m_ortho2D);
+
+	if (FAILED(hResult))
+	{
+		Log::instance()->logError("SetTransform error (%08X)", hResult);
+
+		return	false;
+	}
+
+	hResult	= m_pDirect3DDevice->BeginScene();
+
+	if (FAILED(hResult))
+	{
+		Log::instance()->logError("BeginScene error (%08X)", hResult);
+
+		return	false;
+	}
+	
+	hResult	= m_pDirect3DDevice->Clear(0, NULL, D3DCLEAR_TARGET, 0xFF000000, 1.0f, 0);
+
+	if (FAILED(hResult))
+	{
+		Log::instance()->logError("Clear error (%08X)", hResult);
+
+		return	false;
+	}
+	
+	hResult	= m_pDirect3DDevice->SetTexture(0, m_pRenderTexture);
+
+	if (FAILED(hResult))
+	{
+		Log::instance()->logError("SetTexture error (%08X)", hResult);
+
+		return	false;
+	}
+	
+	hResult	= m_pDirect3DDevice->SetStreamSource(0, getVertexBuffer(m_iVertexBuffer)->getVertexBuffer(), 0, sizeof(CustomVertex));
+
+	if (FAILED(hResult))
+	{
+		Log::instance()->logError("SetStreamSource error (%08X)", hResult);
+
+		return	false;
+	}
+	
+	hResult	= m_pDirect3DDevice->SetFVF(VertexFormat);
+	
+	if (FAILED(hResult))
+	{
+		Log::instance()->logError("SetFVF error (%08X)", hResult);
+
+		return	false;
+	}
+
+	hResult	= m_pDirect3DDevice->DrawPrimitive(D3DPT_TRIANGLESTRIP, 0, 2);
+
+	if (FAILED(hResult))
+	{
+		Log::instance()->logError("DrawPrimitive error (%08X)", hResult);
+
+		return	false;
+	}
+	
+	hResult	= m_pDirect3DDevice->EndScene();
+
+	if (FAILED(hResult))
+	{
+		Log::instance()->logError("EndScene error (%08X)", hResult);
+
+		return	false;
+	}
+	
+	hResult	= m_pDirect3DDevice->Present(NULL, NULL, NULL, NULL);
+
+	if (FAILED(hResult))
+	{
+//		Log::instance()->logError("Present error (%08X)", hResult);
+
+		return	false;
+	}
+	
+	SAFE_RELEASE(pRenderSurface);
+	SAFE_RELEASE(pBackBuffer);
+
+	return	true;
 }
 
 ENDNAMESPACE

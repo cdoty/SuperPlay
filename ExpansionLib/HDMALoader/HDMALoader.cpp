@@ -82,7 +82,7 @@ bool HDMALoader::loadImage(const tinystl::string& _strFilename)
 
 	ResourceManager*	pResourceManager	= System::getResourceManager();
 
-	int	iImageIndex	= pResourceManager->loadImage(strFilename, true);
+	int	iImageIndex	= pResourceManager->loadImage(strFilename);
 
 	if (-1 == iImageIndex)
 	{

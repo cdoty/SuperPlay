@@ -33,6 +33,16 @@ class Window
 		// Close
 		void close();
 
+		// Get layered size
+		int getLayeredWidth() const {return m_iLayeredWidth;}
+		int getLayeredHeight() const {return m_iLayeredHeight;}
+
+		// Get layered buffer
+		uint8_t* getLayeredBuffer() const {return m_pLayeredBuffer;}
+
+		// Draw layered window
+		void drawLayeredWindow();
+
 		// Get window handle
 		HWND getHwnd() const {return m_hWnd;}
 		
@@ -57,11 +67,50 @@ class Window
 		int			m_iWidth;
 		int			m_iHeight;
 
+		// Layered window info
+		int			m_iLayeredWidth;
+		int			m_iLayeredHeight;
+		HDC			m_hLayeredDC;
+		HBITMAP		m_hLayeredBitmap;
+		BITMAPINFO	m_layeredBitmapInfo;
+		uint8_t*	m_pLayeredBuffer;
+		uint8_t*	m_pRenderBuffer;
+
+		// Frame
+		uint8_t*	m_pFrameBuffer;
+		int			m_iFrameWidth;
+		int			m_iFrameHeight;
+		int			m_iFrameOffset;
+
 		// Resize client area
 		void resizeClientArea();
 
+		// Center window
+		void centerWindow();
+
 		// Show mouse
 		void showMouse(bool _bShow);
+
+		// Load frame
+		bool loadFrame();
+
+		// Create layered window
+		bool createLayeredWindow();
+
+		// Destroy layered window
+		void destroyLayeredWindow();
+
+		// Draw screen
+		void drawScreen();
+
+		// Pre-multiply alpha
+		void premultiplyAlpha(uint8_t* _pBuffer, int _iWidth, int _iHeight);
+
+		// Update layered window
+		void updateLayeredWindow();
+
+		// Get frame point
+		void getFramePoint(int& _iX, int& _iY);
 };
 
 ENDNAMESPACE

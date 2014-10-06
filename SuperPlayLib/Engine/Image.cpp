@@ -16,8 +16,7 @@
 NAMESPACE(SPlay)
 
 Image::Image()	:
-	m_pImage(NULL),	
-	m_bTransparent(false)
+	m_pImage(NULL)
 {
 }
 
@@ -26,11 +25,11 @@ Image::~Image()
 	close();
 }
 
-Image* Image::create(const tinystl::string& _strFilename, bool _bTransparent)
+Image* Image::create(const tinystl::string& _strFilename)
 {
 	Image*	pImage	= new Image();
 
-	if (false == pImage->initialize(_strFilename, _bTransparent))
+	if (false == pImage->initialize(_strFilename))
 	{
 		delete	pImage;
 
@@ -40,7 +39,7 @@ Image* Image::create(const tinystl::string& _strFilename, bool _bTransparent)
 	return	pImage;
 }
 
-bool Image::initialize(const tinystl::string& _strFilename, bool _bTransparent)
+bool Image::initialize(const tinystl::string& _strFilename)
 {
 	int	iWidth;
 	int	iHeight;
@@ -86,7 +85,6 @@ bool Image::initialize(const tinystl::string& _strFilename, bool _bTransparent)
 	
 	m_iWidth		= iWidth;
 	m_iHeight		= iHeight;
-	m_bTransparent	= _bTransparent;
 
 #if (!defined __ANDROID__ && !defined MARMALADE && !defined EMSCRIPTEN && !defined ANGLE) || (!defined __ARMEL__ && defined __APPLE__)
 	uint32_t*	pBuffer	= m_pImage;
