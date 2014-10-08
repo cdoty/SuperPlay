@@ -16,4 +16,13 @@ DebugGL/
 Release/
 ReleaseAngle/
 ReleaseGL/
-External/
+libmad/
+libzip/
+tremor/
+DataOGG/
+DataMP3/
+DataWAV/
+source/
+msadpcm/
+oafile/
+html5/
