@@ -13,7 +13,7 @@
   <Project Name="BLT" Path="Examples/BLT/BLT.project" Active="Yes"/>
   <Project Name="Display" Path="DisplayLib/SDL/Display.project" Active="No"/>
   <BuildMatrix>
-    <WorkspaceConfiguration Name="Debug" Selected="yes">
+    <WorkspaceConfiguration Name="Debug" Selected="no">
       <Project Name="DisplayLib" ConfigName="Debug"/>
       <Project Name="Platform" ConfigName="Debug"/>
       <Project Name="Audio" ConfigName="Debug"/>
@@ -26,7 +26,7 @@
       <Project Name="BLT" ConfigName="Debug"/>
       <Project Name="Display" ConfigName="Debug"/>
     </WorkspaceConfiguration>
-    <WorkspaceConfiguration Name="Release" Selected="no">
+    <WorkspaceConfiguration Name="Release" Selected="yes">
       <Project Name="DisplayLib" ConfigName="Release"/>
       <Project Name="Platform" ConfigName="Release"/>
       <Project Name="Audio" ConfigName="Release"/>

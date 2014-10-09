@@ -17,7 +17,11 @@ NAMESPACE(SPlay)
 
 double Utilities::log2(double _fValue)
 {  
-	return	log(_fValue) / log(2.0f);  
+#ifdef WIN32
+	return	log(_fValue) / log(2.0);
+#else
+	return	::log2(_fValue);
+#endif
 }
 
 int Utilities::getHash(const tinystl::string& _strString)

@@ -2,36 +2,36 @@
 ## Auto Generated makefile by CodeLite IDE
 ## any manual changes will be erased      
 ##
-## Debug
+## Release
 ProjectName            :=Sound
-ConfigurationName      :=Debug
+ConfigurationName      :=Release
 WorkspacePath          := "/home/cdoty/SuperPlay"
 ProjectPath            := "/home/cdoty/SuperPlay/SoundLib/irrKlang"
-IntermediateDirectory  :=./Debug
+IntermediateDirectory  :=./Release
 OutDir                 := $(IntermediateDirectory)
 CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=Charles Doty
-Date                   :=01/26/14
+Date                   :=10/08/14
 CodeLitePath           :="/home/cdoty/.codelite"
-LinkerName             :=g++
-SharedObjectLinkerName :=g++ -shared -fPIC
+LinkerName             :=/usr/bin/g++ 
+SharedObjectLinkerName :=/usr/bin/g++ -shared -fPIC
 ObjectSuffix           :=.o
 DependSuffix           :=.o.d
-PreprocessSuffix       :=.o.i
-DebugSwitch            :=-gstab
+PreprocessSuffix       :=.i
+DebugSwitch            :=-g 
 IncludeSwitch          :=-I
 LibrarySwitch          :=-l
 OutputSwitch           :=-o 
 LibraryPathSwitch      :=-L
 PreprocessorSwitch     :=-D
 SourceSwitch           :=-c 
-OutputFile             :=../../Lib/Linux/irrKlang/lib$(ProjectName)_d.a
+OutputFile             :=../../Lib/Linux/irrKlang/lib$(ProjectName).a
 Preprocessors          :=
 ObjectSwitch           :=-o 
 ArchiveOutputSwitch    := 
-PreprocessOnlySwitch   :=-E 
+PreprocessOnlySwitch   :=-E
 ObjectsFileList        :="Sound.txt"
 PCHCompileFlags        :=
 MakeDirCommand         :=mkdir -p
@@ -47,20 +47,20 @@ LibPath                := $(LibraryPathSwitch).
 ## Common variables
 ## AR, CXX, CC, AS, CXXFLAGS and CFLAGS can be overriden using an environment variables
 ##
-AR       := ar rcus
-CXX      := g++
-CC       := gcc
-CXXFLAGS :=  -g -O0 -Wall $(Preprocessors)
-CFLAGS   :=  -g -O0 -Wall $(Preprocessors)
+AR       := /usr/bin/ar rcu
+CXX      := /usr/bin/g++
+CC       := /usr/bin/gcc
+CXXFLAGS :=  -O2 $(Preprocessors)
+CFLAGS   :=  -O2 $(Preprocessors)
 ASFLAGS  := 
-AS       := as
+AS       := /usr/bin/as 
 
 
 ##
 ## User defined environment variables
 ##
 CodeLiteDir:=/usr/share/codelite
-Objects0=$(IntermediateDirectory)/Sound$(ObjectSuffix) $(IntermediateDirectory)/SoundSystem$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/Sound.cpp$(ObjectSuffix) $(IntermediateDirectory)/SoundSystem.cpp$(ObjectSuffix) 
 
 
 
@@ -77,11 +77,11 @@ $(OutputFile): $(Objects)
 	@echo "" > $(IntermediateDirectory)/.d
 	@echo $(Objects0)  > $(ObjectsFileList)
 	$(AR) $(ArchiveOutputSwitch)$(OutputFile) @$(ObjectsFileList) $(ArLibs)
-	@$(MakeDirCommand) "/home/cdoty/SuperPlay/.build-debug"
-	@echo rebuilt > "/home/cdoty/SuperPlay/.build-debug/Sound"
+	@$(MakeDirCommand) "/home/cdoty/SuperPlay/.build-release"
+	@echo rebuilt > "/home/cdoty/SuperPlay/.build-release/Sound"
 
-./Debug:
-	@test -d ./Debug || $(MakeDirCommand) ./Debug
+./Release:
+	@test -d ./Release || $(MakeDirCommand) ./Release
 
 PreBuild:
 
@@ -89,21 +89,21 @@ PreBuild:
 ##
 ## Objects
 ##
-$(IntermediateDirectory)/Sound$(ObjectSuffix): Sound.cpp $(IntermediateDirectory)/Sound$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/cdoty/SuperPlay/SoundLib/irrKlang/Sound.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Sound$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/Sound$(DependSuffix): Sound.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/Sound$(ObjectSuffix) -MF$(IntermediateDirectory)/Sound$(DependSuffix) -MM "Sound.cpp"
+$(IntermediateDirectory)/Sound.cpp$(ObjectSuffix): Sound.cpp $(IntermediateDirectory)/Sound.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/cdoty/SuperPlay/SoundLib/irrKlang/Sound.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Sound.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/Sound.cpp$(DependSuffix): Sound.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/Sound.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/Sound.cpp$(DependSuffix) -MM "Sound.cpp"
 
-$(IntermediateDirectory)/Sound$(PreprocessSuffix): Sound.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Sound$(PreprocessSuffix) "Sound.cpp"
+$(IntermediateDirectory)/Sound.cpp$(PreprocessSuffix): Sound.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Sound.cpp$(PreprocessSuffix) "Sound.cpp"
 
-$(IntermediateDirectory)/SoundSystem$(ObjectSuffix): SoundSystem.cpp $(IntermediateDirectory)/SoundSystem$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/cdoty/SuperPlay/SoundLib/irrKlang/SoundSystem.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/SoundSystem$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/SoundSystem$(DependSuffix): SoundSystem.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/SoundSystem$(ObjectSuffix) -MF$(IntermediateDirectory)/SoundSystem$(DependSuffix) -MM "SoundSystem.cpp"
+$(IntermediateDirectory)/SoundSystem.cpp$(ObjectSuffix): SoundSystem.cpp $(IntermediateDirectory)/SoundSystem.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/cdoty/SuperPlay/SoundLib/irrKlang/SoundSystem.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/SoundSystem.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/SoundSystem.cpp$(DependSuffix): SoundSystem.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/SoundSystem.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/SoundSystem.cpp$(DependSuffix) -MM "SoundSystem.cpp"
 
-$(IntermediateDirectory)/SoundSystem$(PreprocessSuffix): SoundSystem.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/SoundSystem$(PreprocessSuffix) "SoundSystem.cpp"
+$(IntermediateDirectory)/SoundSystem.cpp$(PreprocessSuffix): SoundSystem.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/SoundSystem.cpp$(PreprocessSuffix) "SoundSystem.cpp"
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)
@@ -111,13 +111,9 @@ $(IntermediateDirectory)/SoundSystem$(PreprocessSuffix): SoundSystem.cpp
 ## Clean
 ##
 clean:
-	$(RM) $(IntermediateDirectory)/Sound$(ObjectSuffix)
-	$(RM) $(IntermediateDirectory)/Sound$(DependSuffix)
-	$(RM) $(IntermediateDirectory)/Sound$(PreprocessSuffix)
-	$(RM) $(IntermediateDirectory)/SoundSystem$(ObjectSuffix)
-	$(RM) $(IntermediateDirectory)/SoundSystem$(DependSuffix)
-	$(RM) $(IntermediateDirectory)/SoundSystem$(PreprocessSuffix)
+	$(RM) ./Release/*$(ObjectSuffix)
+	$(RM) ./Release/*$(DependSuffix)
 	$(RM) $(OutputFile)
-	$(RM) "../../.build-debug/Sound"
+	$(RM) "../../.build-release/Sound"
 
 

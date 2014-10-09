@@ -167,8 +167,8 @@ void Log::logString(LogType _eType, const tinystl::string& _strString)
 	m_strLogStrings.push_back(_strString);
 	m_strLogStrings.push_back("</FONT><BR>");
 
-#ifdef DEBUG
-	printf("%s\n", _strString.c_str());
+#if 1 //def DEBUG
+	fprintf(stdout, "%s\n", _strString.c_str());
 #endif
 }
 

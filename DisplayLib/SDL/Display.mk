@@ -2,36 +2,36 @@
 ## Auto Generated makefile by CodeLite IDE
 ## any manual changes will be erased      
 ##
-## Debug
+## Release
 ProjectName            :=Display
-ConfigurationName      :=Debug
+ConfigurationName      :=Release
 WorkspacePath          := "/home/cdoty/SuperPlay"
 ProjectPath            := "/home/cdoty/SuperPlay/DisplayLib/SDL"
-IntermediateDirectory  :=./Debug
+IntermediateDirectory  :=./Release
 OutDir                 := $(IntermediateDirectory)
 CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=Charles Doty
-Date                   :=01/26/14
+Date                   :=10/08/14
 CodeLitePath           :="/home/cdoty/.codelite"
-LinkerName             :=g++
-SharedObjectLinkerName :=g++ -shared -fPIC
+LinkerName             :=/usr/bin/g++ 
+SharedObjectLinkerName :=/usr/bin/g++ -shared -fPIC
 ObjectSuffix           :=.o
 DependSuffix           :=.o.d
-PreprocessSuffix       :=.o.i
-DebugSwitch            :=-gstab
+PreprocessSuffix       :=.i
+DebugSwitch            :=-g 
 IncludeSwitch          :=-I
 LibrarySwitch          :=-l
 OutputSwitch           :=-o 
 LibraryPathSwitch      :=-L
 PreprocessorSwitch     :=-D
 SourceSwitch           :=-c 
-OutputFile             :=../../Lib/Linux/lib$(ProjectName)_d.a
+OutputFile             :=../../Lib/Linux/lib$(ProjectName).a
 Preprocessors          :=
 ObjectSwitch           :=-o 
 ArchiveOutputSwitch    := 
-PreprocessOnlySwitch   :=-E 
+PreprocessOnlySwitch   :=-E
 ObjectsFileList        :="Display.txt"
 PCHCompileFlags        :=
 MakeDirCommand         :=mkdir -p
@@ -47,20 +47,20 @@ LibPath                := $(LibraryPathSwitch).
 ## Common variables
 ## AR, CXX, CC, AS, CXXFLAGS and CFLAGS can be overriden using an environment variables
 ##
-AR       := ar rcus
-CXX      := g++
-CC       := gcc
-CXXFLAGS :=  -g -O0 $(Preprocessors)
-CFLAGS   :=  -g -O0 $(Preprocessors)
+AR       := /usr/bin/ar rcu
+CXX      := /usr/bin/g++
+CC       := /usr/bin/gcc
+CXXFLAGS :=  -O2 $(Preprocessors)
+CFLAGS   :=  -O2 $(Preprocessors)
 ASFLAGS  := 
-AS       := as
+AS       := /usr/bin/as 
 
 
 ##
 ## User defined environment variables
 ##
 CodeLiteDir:=/usr/share/codelite
-Objects0=$(IntermediateDirectory)/Display$(ObjectSuffix) $(IntermediateDirectory)/IndexBuffer$(ObjectSuffix) $(IntermediateDirectory)/SpriteBatch$(ObjectSuffix) $(IntermediateDirectory)/Texture$(ObjectSuffix) $(IntermediateDirectory)/VertexBuffer$(ObjectSuffix) $(IntermediateDirectory)/glew$(ObjectSuffix) $(IntermediateDirectory)/GLPlatform$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/Display.cpp$(ObjectSuffix) $(IntermediateDirectory)/IndexBuffer.cpp$(ObjectSuffix) $(IntermediateDirectory)/SpriteBatch.cpp$(ObjectSuffix) $(IntermediateDirectory)/Texture.cpp$(ObjectSuffix) $(IntermediateDirectory)/VertexBuffer.cpp$(ObjectSuffix) $(IntermediateDirectory)/glew.cpp$(ObjectSuffix) $(IntermediateDirectory)/GLPlatform.cpp$(ObjectSuffix) 
 
 
 
@@ -77,11 +77,11 @@ $(OutputFile): $(Objects)
 	@echo "" > $(IntermediateDirectory)/.d
 	@echo $(Objects0)  > $(ObjectsFileList)
 	$(AR) $(ArchiveOutputSwitch)$(OutputFile) @$(ObjectsFileList) $(ArLibs)
-	@$(MakeDirCommand) "/home/cdoty/SuperPlay/.build-debug"
-	@echo rebuilt > "/home/cdoty/SuperPlay/.build-debug/Display"
+	@$(MakeDirCommand) "/home/cdoty/SuperPlay/.build-release"
+	@echo rebuilt > "/home/cdoty/SuperPlay/.build-release/Display"
 
-./Debug:
-	@test -d ./Debug || $(MakeDirCommand) ./Debug
+./Release:
+	@test -d ./Release || $(MakeDirCommand) ./Release
 
 PreBuild:
 
@@ -89,61 +89,61 @@ PreBuild:
 ##
 ## Objects
 ##
-$(IntermediateDirectory)/Display$(ObjectSuffix): Display.cpp $(IntermediateDirectory)/Display$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/cdoty/SuperPlay/DisplayLib/SDL/Display.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Display$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/Display$(DependSuffix): Display.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/Display$(ObjectSuffix) -MF$(IntermediateDirectory)/Display$(DependSuffix) -MM "Display.cpp"
+$(IntermediateDirectory)/Display.cpp$(ObjectSuffix): Display.cpp $(IntermediateDirectory)/Display.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/cdoty/SuperPlay/DisplayLib/SDL/Display.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Display.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/Display.cpp$(DependSuffix): Display.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/Display.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/Display.cpp$(DependSuffix) -MM "Display.cpp"
 
-$(IntermediateDirectory)/Display$(PreprocessSuffix): Display.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Display$(PreprocessSuffix) "Display.cpp"
+$(IntermediateDirectory)/Display.cpp$(PreprocessSuffix): Display.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Display.cpp$(PreprocessSuffix) "Display.cpp"
 
-$(IntermediateDirectory)/IndexBuffer$(ObjectSuffix): IndexBuffer.cpp $(IntermediateDirectory)/IndexBuffer$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/cdoty/SuperPlay/DisplayLib/SDL/IndexBuffer.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/IndexBuffer$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/IndexBuffer$(DependSuffix): IndexBuffer.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/IndexBuffer$(ObjectSuffix) -MF$(IntermediateDirectory)/IndexBuffer$(DependSuffix) -MM "IndexBuffer.cpp"
+$(IntermediateDirectory)/IndexBuffer.cpp$(ObjectSuffix): IndexBuffer.cpp $(IntermediateDirectory)/IndexBuffer.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/cdoty/SuperPlay/DisplayLib/SDL/IndexBuffer.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/IndexBuffer.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/IndexBuffer.cpp$(DependSuffix): IndexBuffer.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/IndexBuffer.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/IndexBuffer.cpp$(DependSuffix) -MM "IndexBuffer.cpp"
 
-$(IntermediateDirectory)/IndexBuffer$(PreprocessSuffix): IndexBuffer.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/IndexBuffer$(PreprocessSuffix) "IndexBuffer.cpp"
+$(IntermediateDirectory)/IndexBuffer.cpp$(PreprocessSuffix): IndexBuffer.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/IndexBuffer.cpp$(PreprocessSuffix) "IndexBuffer.cpp"
 
-$(IntermediateDirectory)/SpriteBatch$(ObjectSuffix): SpriteBatch.cpp $(IntermediateDirectory)/SpriteBatch$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/cdoty/SuperPlay/DisplayLib/SDL/SpriteBatch.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/SpriteBatch$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/SpriteBatch$(DependSuffix): SpriteBatch.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/SpriteBatch$(ObjectSuffix) -MF$(IntermediateDirectory)/SpriteBatch$(DependSuffix) -MM "SpriteBatch.cpp"
+$(IntermediateDirectory)/SpriteBatch.cpp$(ObjectSuffix): SpriteBatch.cpp $(IntermediateDirectory)/SpriteBatch.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/cdoty/SuperPlay/DisplayLib/SDL/SpriteBatch.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/SpriteBatch.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/SpriteBatch.cpp$(DependSuffix): SpriteBatch.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/SpriteBatch.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/SpriteBatch.cpp$(DependSuffix) -MM "SpriteBatch.cpp"
 
-$(IntermediateDirectory)/SpriteBatch$(PreprocessSuffix): SpriteBatch.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/SpriteBatch$(PreprocessSuffix) "SpriteBatch.cpp"
+$(IntermediateDirectory)/SpriteBatch.cpp$(PreprocessSuffix): SpriteBatch.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/SpriteBatch.cpp$(PreprocessSuffix) "SpriteBatch.cpp"
 
-$(IntermediateDirectory)/Texture$(ObjectSuffix): Texture.cpp $(IntermediateDirectory)/Texture$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/cdoty/SuperPlay/DisplayLib/SDL/Texture.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Texture$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/Texture$(DependSuffix): Texture.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/Texture$(ObjectSuffix) -MF$(IntermediateDirectory)/Texture$(DependSuffix) -MM "Texture.cpp"
+$(IntermediateDirectory)/Texture.cpp$(ObjectSuffix): Texture.cpp $(IntermediateDirectory)/Texture.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/cdoty/SuperPlay/DisplayLib/SDL/Texture.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Texture.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/Texture.cpp$(DependSuffix): Texture.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/Texture.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/Texture.cpp$(DependSuffix) -MM "Texture.cpp"
 
-$(IntermediateDirectory)/Texture$(PreprocessSuffix): Texture.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Texture$(PreprocessSuffix) "Texture.cpp"
+$(IntermediateDirectory)/Texture.cpp$(PreprocessSuffix): Texture.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Texture.cpp$(PreprocessSuffix) "Texture.cpp"
 
-$(IntermediateDirectory)/VertexBuffer$(ObjectSuffix): VertexBuffer.cpp $(IntermediateDirectory)/VertexBuffer$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/cdoty/SuperPlay/DisplayLib/SDL/VertexBuffer.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/VertexBuffer$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/VertexBuffer$(DependSuffix): VertexBuffer.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/VertexBuffer$(ObjectSuffix) -MF$(IntermediateDirectory)/VertexBuffer$(DependSuffix) -MM "VertexBuffer.cpp"
+$(IntermediateDirectory)/VertexBuffer.cpp$(ObjectSuffix): VertexBuffer.cpp $(IntermediateDirectory)/VertexBuffer.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/cdoty/SuperPlay/DisplayLib/SDL/VertexBuffer.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/VertexBuffer.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/VertexBuffer.cpp$(DependSuffix): VertexBuffer.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/VertexBuffer.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/VertexBuffer.cpp$(DependSuffix) -MM "VertexBuffer.cpp"
 
-$(IntermediateDirectory)/VertexBuffer$(PreprocessSuffix): VertexBuffer.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/VertexBuffer$(PreprocessSuffix) "VertexBuffer.cpp"
+$(IntermediateDirectory)/VertexBuffer.cpp$(PreprocessSuffix): VertexBuffer.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/VertexBuffer.cpp$(PreprocessSuffix) "VertexBuffer.cpp"
 
-$(IntermediateDirectory)/glew$(ObjectSuffix): glew.cpp $(IntermediateDirectory)/glew$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/cdoty/SuperPlay/DisplayLib/SDL/glew.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/glew$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/glew$(DependSuffix): glew.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/glew$(ObjectSuffix) -MF$(IntermediateDirectory)/glew$(DependSuffix) -MM "glew.cpp"
+$(IntermediateDirectory)/glew.cpp$(ObjectSuffix): glew.cpp $(IntermediateDirectory)/glew.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/cdoty/SuperPlay/DisplayLib/SDL/glew.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/glew.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/glew.cpp$(DependSuffix): glew.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/glew.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/glew.cpp$(DependSuffix) -MM "glew.cpp"
 
-$(IntermediateDirectory)/glew$(PreprocessSuffix): glew.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/glew$(PreprocessSuffix) "glew.cpp"
+$(IntermediateDirectory)/glew.cpp$(PreprocessSuffix): glew.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/glew.cpp$(PreprocessSuffix) "glew.cpp"
 
-$(IntermediateDirectory)/GLPlatform$(ObjectSuffix): GLPlatform.cpp $(IntermediateDirectory)/GLPlatform$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/cdoty/SuperPlay/DisplayLib/SDL/GLPlatform.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/GLPlatform$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/GLPlatform$(DependSuffix): GLPlatform.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/GLPlatform$(ObjectSuffix) -MF$(IntermediateDirectory)/GLPlatform$(DependSuffix) -MM "GLPlatform.cpp"
+$(IntermediateDirectory)/GLPlatform.cpp$(ObjectSuffix): GLPlatform.cpp $(IntermediateDirectory)/GLPlatform.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/cdoty/SuperPlay/DisplayLib/SDL/GLPlatform.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/GLPlatform.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/GLPlatform.cpp$(DependSuffix): GLPlatform.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/GLPlatform.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/GLPlatform.cpp$(DependSuffix) -MM "GLPlatform.cpp"
 
-$(IntermediateDirectory)/GLPlatform$(PreprocessSuffix): GLPlatform.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/GLPlatform$(PreprocessSuffix) "GLPlatform.cpp"
+$(IntermediateDirectory)/GLPlatform.cpp$(PreprocessSuffix): GLPlatform.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/GLPlatform.cpp$(PreprocessSuffix) "GLPlatform.cpp"
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)
@@ -151,28 +151,9 @@ $(IntermediateDirectory)/GLPlatform$(PreprocessSuffix): GLPlatform.cpp
 ## Clean
 ##
 clean:
-	$(RM) $(IntermediateDirectory)/Display$(ObjectSuffix)
-	$(RM) $(IntermediateDirectory)/Display$(DependSuffix)
-	$(RM) $(IntermediateDirectory)/Display$(PreprocessSuffix)
-	$(RM) $(IntermediateDirectory)/IndexBuffer$(ObjectSuffix)
-	$(RM) $(IntermediateDirectory)/IndexBuffer$(DependSuffix)
-	$(RM) $(IntermediateDirectory)/IndexBuffer$(PreprocessSuffix)
-	$(RM) $(IntermediateDirectory)/SpriteBatch$(ObjectSuffix)
-	$(RM) $(IntermediateDirectory)/SpriteBatch$(DependSuffix)
-	$(RM) $(IntermediateDirectory)/SpriteBatch$(PreprocessSuffix)
-	$(RM) $(IntermediateDirectory)/Texture$(ObjectSuffix)
-	$(RM) $(IntermediateDirectory)/Texture$(DependSuffix)
-	$(RM) $(IntermediateDirectory)/Texture$(PreprocessSuffix)
-	$(RM) $(IntermediateDirectory)/VertexBuffer$(ObjectSuffix)
-	$(RM) $(IntermediateDirectory)/VertexBuffer$(DependSuffix)
-	$(RM) $(IntermediateDirectory)/VertexBuffer$(PreprocessSuffix)
-	$(RM) $(IntermediateDirectory)/glew$(ObjectSuffix)
-	$(RM) $(IntermediateDirectory)/glew$(DependSuffix)
-	$(RM) $(IntermediateDirectory)/glew$(PreprocessSuffix)
-	$(RM) $(IntermediateDirectory)/GLPlatform$(ObjectSuffix)
-	$(RM) $(IntermediateDirectory)/GLPlatform$(DependSuffix)
-	$(RM) $(IntermediateDirectory)/GLPlatform$(PreprocessSuffix)
+	$(RM) ./Release/*$(ObjectSuffix)
+	$(RM) ./Release/*$(DependSuffix)
 	$(RM) $(OutputFile)
-	$(RM) "../../.build-debug/Display"
+	$(RM) "../../.build-release/Display"
 
 

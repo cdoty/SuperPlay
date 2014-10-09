@@ -14,7 +14,9 @@
 #include "PlatformDefines.h"
 #include "SoundSystem.h"
 
+#ifdef WIN32
 #pragma comment(lib, "irrKlang.lib")
+#endif
 
 NAMESPACE(SPlay)
 
