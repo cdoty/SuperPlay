@@ -17,10 +17,10 @@ NAMESPACE(SPlay)
 
 double Utilities::log2(double _fValue)
 {  
-#ifdef WIN32
-	return	log(_fValue) / log(2.0);
-#else
+#if defined __linux__ && !defined ANDROID
 	return	::log2(_fValue);
+#else
+	return	log(_fValue) / log(2.0);
 #endif
 }
 
