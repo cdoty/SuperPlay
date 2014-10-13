@@ -150,7 +150,7 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>..\..\Lib\VS2010;..\..\Lib\VS2010\Hekkus;..\..\External\Hekkus\lib\windows\x86;$(VLD_DIR)\lib\Win32</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\..\Lib\VS2010;..\..\Lib\VS2010\Hekkus;..\..\External\Hekkus\lib_static\windows\x86;$(VLD_DIR)\lib\Win32</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugGL|Win32'">
@@ -180,7 +180,7 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>..\..\Lib\VS2010;..\..\Lib\VS2010\Hekkus;..\..\External\Angle\lib\Debug;..\..\External\Hekkus\lib\windows\x86;$(VLD_DIR)\lib\Win32</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\..\Lib\VS2010;..\..\Lib\VS2010\Hekkus;..\..\External\Angle\lib\Debug;..\..\External\Hekkus\lib_static\windows\x86;$(VLD_DIR)\lib\Win32</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -199,7 +199,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>..\..\Lib\VS2010;..\..\Lib\VS2010\Hekkus;..\..\External\Hekkus\lib\windows\x86;..\..\Lib\DirectX</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\..\Lib\VS2010;..\..\Lib\VS2010\Hekkus;..\..\External\Hekkus\lib_static\windows\x86</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseGL|Win32'">
@@ -237,7 +237,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>..\..\Lib\VS2010;..\..\External\Angle\lib\Release;..\..\Lib\VS2010\Hekkus;..\..\External\Hekkus\lib\windows\x86</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\..\Lib\VS2010;..\..\External\Angle\lib\Release;..\..\Lib\VS2010\Hekkus;..\..\External\Hekkus\lib_static\windows\x86</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
