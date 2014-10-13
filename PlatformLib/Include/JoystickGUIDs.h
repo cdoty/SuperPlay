@@ -144,7 +144,7 @@ enum GamePads
 	// Start: Start (9)
 	LOGITECH_WINGMAN_GAMEPAD	= 0xC209046D,
 
-	// steelseries 1GC/3GC/Dragon Rise/Generic USB/Playstation 2 style game pad
+	// SteelSeries 1GC/3GC/Dragon Rise/Generic USB/Playstation 2 style game pad
 	// Button A: 3 (3)
 	// Button B: 2 (2)
 	// Button X: 4 (4)
@@ -165,6 +165,17 @@ enum GamePads
 	DRAGON_RISE_GAMEPAD		= 0x00010079,
 	STEELSERIES_1GC_GAMEPAD	= 0x00110079,
 	STEELSERIES_3GC_GAMEPAD	= 0x00060079,
+
+	// SteelSeries Free
+	// Button A: 3 (2)
+	// Button B: 4 (1)
+	// Button X: 2 (5)
+	// Button Y: 1 (4)
+	// Button L: L (7)
+	// Button R: R (8)
+	// Select: A (13)
+	// Start: B (12)
+	STEELSERIES_FREE		= 0x14121038,
 
 	// Saitek P150
 	// Button A: B (2)
@@ -569,6 +580,7 @@ JoystickDefine	gsc_joysticks[]	=
 	{LOGITECH_WINGMAN_GAMEPAD, 1, 0, 4, 3, 6, 7, 10, 8},
 	{STEELSERIES_1GC_GAMEPAD, 2, 1, 3, 0, 4, 5, 8, 9},	
 	{STEELSERIES_3GC_GAMEPAD, 1, 2, 0, 3, 6, 7, 8, 9},	
+	{STEELSERIES_FREE, 1, 0, 4, 3, 6, 7, 12, 11},	
 	{SAITEK_P150_GAMEPAD, 1, 0, 4, 3, 6, 7, 5, 2},
 	{SAITEK_P880_GAMEPAD, 3, 2, 1, 0, 6, 7, 4, 5},
 	{SAITEK_P2500_GAMEPAD, 3, 2, 1, 0, 6, 7, 4, 5},
