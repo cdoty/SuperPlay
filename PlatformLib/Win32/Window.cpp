@@ -7,7 +7,7 @@
 // IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
 // PARTICULAR PURPOSE.
 
-#include <windowsx.h>
+#include <windows.h>
 
 #include "GameHeader.h"
 #include "IDisplay.h"

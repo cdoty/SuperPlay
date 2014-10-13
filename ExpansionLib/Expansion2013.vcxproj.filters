@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="MapLoader">
+      <UniqueIdentifier>{6a6f65fa-23f8-4546-a293-692b0692c842}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SpriteLoader">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Include">
+      <UniqueIdentifier>{8394dab8-e6d9-4f3e-b616-24c64bb3a545}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\ExpansionLib">
+      <UniqueIdentifier>{c849fc94-2eeb-4e90-b043-9b78b917e0df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="HDMALoader">
+      <UniqueIdentifier>{f9b9e86a-f5d0-4171-9361-da7e3290c2e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FontLoader">
+      <UniqueIdentifier>{18e84eaf-48b2-48c9-a3c6-f80045d2c47f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AudioLoader">
+      <UniqueIdentifier>{938c7a5e-7a22-49c6-83d2-15e469011192}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FontLoader\yspng">
+      <UniqueIdentifier>{7c20d01f-55a2-4bbb-838a-00d61b4d6457}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="MapLoader\MapLoader.cpp">
+      <Filter>MapLoader</Filter>
+    </ClCompile>
+    <ClCompile Include="SpriteLoader\SpriteLoader.cpp">
+      <Filter>SpriteLoader</Filter>
+    </ClCompile>
+    <ClCompile Include="HDMALoader\HDMALoader.cpp">
+      <Filter>HDMALoader</Filter>
+    </ClCompile>
+    <ClCompile Include="FontLoader\FontLoader.cpp">
+      <Filter>FontLoader</Filter>
+    </ClCompile>
+    <ClCompile Include="AudioLoader\AudioLoader.cpp">
+      <Filter>AudioLoader</Filter>
+    </ClCompile>
+    <ClCompile Include="FontLoader\yspng\yspng.cpp">
+      <Filter>FontLoader\yspng</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Include\ExpansionLib\MapLoader.h">
+      <Filter>Include\ExpansionLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\ExpansionLib\SpriteLoader.h">
+      <Filter>Include\ExpansionLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\ExpansionLib\HDMALoader.h">
+      <Filter>Include\ExpansionLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\ExpansionLib\FontLoader.h">
+      <Filter>Include\ExpansionLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\ExpansionLib\AudioLoader.h">
+      <Filter>Include\ExpansionLib</Filter>
+    </ClInclude>
+    <ClInclude Include="FontLoader\yspng\yspng.h">
+      <Filter>FontLoader\yspng</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

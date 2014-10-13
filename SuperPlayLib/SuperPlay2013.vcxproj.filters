@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Engine">
+      <UniqueIdentifier>{f0ee92fb-3691-4e31-b975-8d2fe6e022e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Engine\Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Hardware">
+      <UniqueIdentifier>{d7592355-cc79-4ada-bd49-a03848eacaba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Hardware\Source Files">
+      <UniqueIdentifier>{c05d565f-b968-44d3-b831-05aa81d7b506}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Libraries">
+      <UniqueIdentifier>{618ef3e4-7dc2-43a3-9ab9-920d2fa2068d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Libraries\stb_image">
+      <UniqueIdentifier>{f4133bd4-176d-4179-8219-387319fa8d5f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Hardware\Header Files">
+      <UniqueIdentifier>{6504e4c2-2f96-47ba-975e-87c0eddcd22f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include">
+      <UniqueIdentifier>{91f4666c-a171-43bc-9375-0eb88a7ac6af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\TinySTL">
+      <UniqueIdentifier>{4982712e-07d3-4246-9a99-2caeb7ec120b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Libraries\mtrand">
+      <UniqueIdentifier>{2bc75525-dd85-465b-87ff-1b89058405a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Libraries\TinyXML2">
+      <UniqueIdentifier>{aa99b50e-b835-4751-b95f-90ba05f8e468}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\TinyXML2">
+      <UniqueIdentifier>{a57d12b5-a96e-4973-a2a7-7740ef11c5be}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Engine\Image.cpp">
+      <Filter>Engine\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\ResourceManager.cpp">
+      <Filter>Engine\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Utilities.cpp">
+      <Filter>Engine\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Hardware\BG.cpp">
+      <Filter>Hardware\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Hardware\DMA.cpp">
+      <Filter>Hardware\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Hardware\Hardware.cpp">
+      <Filter>Hardware\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Hardware\OAM.cpp">
+      <Filter>Hardware\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Hardware\Obj.cpp">
+      <Filter>Hardware\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Hardware\Joypad.cpp">
+      <Filter>Hardware\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Libraries\stb_image\stb_image.cpp">
+      <Filter>Libraries\stb_image</Filter>
+    </ClCompile>
+    <ClCompile Include="Hardware\HDMA.cpp">
+      <Filter>Hardware\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Hardware\ObjVRAM.cpp">
+      <Filter>Hardware\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Hardware\BGVRAM.cpp">
+      <Filter>Hardware\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Hardware\BGManager.cpp">
+      <Filter>Hardware\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\System.cpp">
+      <Filter>Engine\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Hardware\Text.cpp">
+      <Filter>Hardware\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Hardware\SRAM.cpp">
+      <Filter>Hardware\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Hardware\CRC32.cpp">
+      <Filter>Hardware\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Hardware\SPC.cpp">
+      <Filter>Hardware\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Libraries\mtrand\mtrand.cpp">
+      <Filter>Libraries\mtrand</Filter>
+    </ClCompile>
+    <ClCompile Include="Hardware\ShadowOAM.cpp">
+      <Filter>Hardware\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Libraries\TinyXML2\tinyxml2.cpp">
+      <Filter>Libraries\TinyXML2</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Engine\Utilities.h">
+      <Filter>Engine\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Libraries\stb_image\stb_image.h">
+      <Filter>Libraries\stb_image</Filter>
+    </ClInclude>
+    <ClInclude Include="Hardware\BGManager.h">
+      <Filter>Hardware\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\System.h">
+      <Filter>Engine\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\BG.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\BGVRAM.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\DMA.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\File.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\GameHeader.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Hardware.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\HardwareDefines.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\HDMA.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\IGame.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\IVRAM.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Joypad.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Log.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Macros.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\OAM.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Obj.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\ObjVRAM.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\RenderParams.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\TinySTL\allocator.h">
+      <Filter>Include\TinySTL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\TinySTL\buffer.h">
+      <Filter>Include\TinySTL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\TinySTL\hash.h">
+      <Filter>Include\TinySTL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\TinySTL\hash_base.h">
+      <Filter>Include\TinySTL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\TinySTL\new.h">
+      <Filter>Include\TinySTL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\TinySTL\stddef.h">
+      <Filter>Include\TinySTL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\TinySTL\stdint.h">
+      <Filter>Include\TinySTL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\TinySTL\string.h">
+      <Filter>Include\TinySTL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\TinySTL\traits.h">
+      <Filter>Include\TinySTL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\TinySTL\unordered_map.h">
+      <Filter>Include\TinySTL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\TinySTL\unordered_set.h">
+      <Filter>Include\TinySTL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\TinySTL\vector.h">
+      <Filter>Include\TinySTL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Text.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Point.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Rect.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Types.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\SRAM.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="Hardware\CRC32.h">
+      <Filter>Hardware\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\AssertLog.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\SPC.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\STLMacros.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="Libraries\mtrand\mtrand.h">
+      <Filter>Libraries\mtrand</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Image.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\ResourceManager.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\PathDefines.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="Hardware\ShadowOAM.h">
+      <Filter>Hardware\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\TinyXML2\tinyxml2.h">
+      <Filter>Include\TinyXML2</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Todo.txt" />
+  </ItemGroup>
+</Project>
