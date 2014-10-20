@@ -77,7 +77,7 @@
     <Link>
       <AdditionalOptions>-lGLESv1_CM %(AdditionalOptions)</AdditionalOptions>
       <AdditionalLibraryDirectories>..\..\Lib\Android;..\..\Lib\Android\Hekkus;..\..\External\Hekkus\lib\android\armeabi-v7a</AdditionalLibraryDirectories>
-      <AdditionalDependencies>Expansion_d;SuperPlay_d;Platform_d;Sound_d;Display_d;hss;oafile;zip</AdditionalDependencies>
+      <AdditionalDependencies>Expansion_d;SuperPlay_d;Platform_d;Sound_d;Display_d</AdditionalDependencies>
       <AndroidSystemLibs>c;m;log;gcc;android;z;egl</AndroidSystemLibs>
     </Link>
     <AntBuild>

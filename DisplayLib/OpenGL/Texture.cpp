@@ -10,6 +10,7 @@
 #include <math.h>
 #include <string.h>
 
+#include "HardwareDefines.h"
 #include "Log.h"
 #include "ResourceManager.h"
 #include "Texture.h"
@@ -27,7 +28,10 @@ NAMESPACE(SPlay)
 Texture::Texture()	:
 	m_pTextureBuffer(NULL),
 	m_uTextureID(GL_INVALID_VALUE),
-	m_bDynamic(false)
+	m_bDynamic(false),
+	m_iUpdateSize(0),
+	m_vecUpdateRects(NULL),
+	m_bPartialUpdate(false)
 {
 }
 
@@ -52,6 +56,10 @@ void Texture::close()
 
 	m_pTextureBuffer	= NULL;
 
+	delete[]	m_vecUpdateRects;
+
+	m_vecUpdateRects	= NULL;
+
 	if (m_uTextureID != GL_INVALID_VALUE)
 	{
 		glDeleteTextures(1, &m_uTextureID);
@@ -74,6 +82,19 @@ bool Texture::getBuffer(uint32_t*& _pBuffer, int& _iStride) const
 void Texture::releaseBuffer()
 {
 	unlockTexture();
+}
+
+void Texture::addUpdateRect(int _iStartY, int _iHeight)
+{
+	int	iStartY	= _iStartY / m_iUpdateSize;
+	int	iEndY	= (_iStartY + _iHeight) / m_iUpdateSize;
+
+	for (int iLoop = iStartY; iLoop < iEndY; ++iLoop)
+	{
+		m_vecUpdateRects[iLoop]	= 1;
+	}
+
+	m_bPartialUpdate	= true;
 }
 
 bool Texture::createTexture(int _iWidth, int _iHeight, eFormat _eFormat, bool _bDynamic)
@@ -114,6 +135,12 @@ bool Texture::createTexture(int _iWidth, int _iHeight, eFormat _eFormat, bool _b
 		return	false;
 	}
 
+	m_iUpdateSize	= gsc_iMinObjSize < gsc_iMinTileSize ? gsc_iMinObjSize : gsc_iMinTileSize;
+
+	m_vecUpdateRects	= new int[m_iTextureHeight / m_iUpdateSize];
+
+	memset(m_vecUpdateRects, 0, m_iTextureHeight / m_iUpdateSize);
+
 	return	true;
 }
 	 
@@ -130,13 +157,70 @@ bool Texture::unlockTexture()
 	glEnable(GL_TEXTURE_2D);
 	glBindTexture(GL_TEXTURE_2D, m_uTextureID);
 
+	if (true == m_bPartialUpdate)
+	{
+		m_bPartialUpdate	= false;
+
+		int	iUpdates	= m_iTextureHeight / m_iUpdateSize;
+
+		int	iStartY	= -1;
+		int	iHeight	= 0;
+
+		int*	pUpdateRect	= m_vecUpdateRects;
+
+		uint32_t*	pCurrentOffset	= m_pTextureBuffer;
+		uint32_t*	pStartOffset;
+
+		for (int iLoop = 0; iLoop < iUpdates; ++iLoop)
+		{
+			int	iDraw	= *pUpdateRect;
+
+			if (1 == iDraw)
+			{
+				*pUpdateRect	= 0;
+
+				iHeight	+= m_iUpdateSize;
+
+				if (-1 == iStartY)
+				{
+					iStartY			= iLoop * m_iUpdateSize;
+				
+					pStartOffset	= pCurrentOffset;
+				}
+			}
+
+			if (0 == iDraw || iLoop == (iUpdates - 1))
+			{
+				if (iHeight != 0 && iStartY != -1)
+				{
 #if defined __ANDROID__ || defined MARMALADE
-	glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, m_iImageWidth, m_iImageHeight, GL_RGBA, GL_UNSIGNED_BYTE, m_pTextureBuffer);
+					glTexSubImage2D(GL_TEXTURE_2D, 0, 0, iStartY, m_iTextureWidth, iHeight, GL_RGBA, GL_UNSIGNED_BYTE, pStartOffset);
 #elif defined __IOS__
-	glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, m_iImageWidth, m_iImageHeight, GL_BGRA_EXT, GL_UNSIGNED_BYTE, m_pTextureBuffer);
+					glTexSubImage2D(GL_TEXTURE_2D, 0, 0, iStartY, m_iTextureWidth, iHeight, GL_BGRA_EXT, GL_UNSIGNED_BYTE, pStartOffset);
 #else
-	glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, m_iImageWidth, m_iImageHeight, GL_BGRA, GL_UNSIGNED_BYTE, m_pTextureBuffer);
+					glTexSubImage2D(GL_TEXTURE_2D, 0, 0, iStartY, m_iTextureWidth, iHeight, GL_BGRA, GL_UNSIGNED_BYTE, pStartOffset);
 #endif
+
+					iHeight	= 0;
+					iStartY	= -1;
+				}
+			}
+
+			pCurrentOffset	+= m_iTextureWidth;
+			pUpdateRect++;
+		}
+	}
+
+	else
+	{
+#if defined __ANDROID__ || defined MARMALADE
+		glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, m_iImageWidth, m_iImageHeight, GL_RGBA, GL_UNSIGNED_BYTE, m_pTextureBuffer);
+#elif defined __IOS__
+		glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, m_iImageWidth, m_iImageHeight, GL_BGRA_EXT, GL_UNSIGNED_BYTE, m_pTextureBuffer);
+#else
+		glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, m_iImageWidth, m_iImageHeight, GL_BGRA, GL_UNSIGNED_BYTE, m_pTextureBuffer);
+#endif
+	}
 
 	return	true;
 }

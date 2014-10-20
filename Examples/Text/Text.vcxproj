@@ -164,7 +164,7 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>..\..\Lib\VS2010;..\..\Lib\VS2010\Hekkus;..\..\External\Hekkus\lib\windows\x86;$(VLD_DIR)\lib\Win32</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\..\Lib\VS2010;..\..\Lib\VS2010\Hekkus;..\..\External\Hekkus\lib_static\windows\x86;$(VLD_DIR)\lib\Win32</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugAngle|Win32'">

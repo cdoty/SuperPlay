@@ -10,6 +10,7 @@
 #pragma once
 
 #include <windows.h>
+#include <TinySTL/stdint.h>
 
 #include "Macros.h"
 

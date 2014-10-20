@@ -128,19 +128,17 @@ bool Window::acquireContext()
 	{
 		ANativeWindow*	pWindow	= Platform::getAndroidApp()->window;
 
-#if defined OUYA || defined GAMESTICK
-		if (ANativeWindow_getHeight(pWindow) >= 540)
+		const GameHeader&	gameHeader	= System::getGameHeader();
+	
+		if (true == gameHeader.bResizeScreen)
 		{
-			ANativeWindow_setBuffersGeometry(pWindow, 960, 540, m_iFormat);
+			ANativeWindow_setBuffersGeometry(pWindow, gameHeader.iWindowedWidth, gameHeader.iWindowedWidth, m_iFormat);
 		}
 
 		else
 		{
 			ANativeWindow_setBuffersGeometry(pWindow, 0, 0, m_iFormat);
 		}
-#else
-		ANativeWindow_setBuffersGeometry(pWindow, 0, 0, m_iFormat);
-#endif
 
 		m_pSurface	= eglCreateWindowSurface(m_pDisplay, m_config, pWindow, NULL);
 

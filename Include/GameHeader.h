@@ -29,6 +29,9 @@ struct GameHeader
 	int		iWindowedWidth;
 	int		iWindowedHeight;
 
+	// Resize screen. Only used for android. Use iWindowedWidth and iWindowedHeight to set the hardware screen size.
+	bool	bResizeScreen;
+
 	// Full screen
 	bool	bFullScreen;
 
@@ -50,6 +53,7 @@ struct GameHeader
 		iScreenHeight(224),
 		iWindowedWidth(256),
 		iWindowedHeight(224),
+		bResizeScreen(false),
 		bFullScreen(true),
 		bFramedWindow(false),
 		bPortrait(false),

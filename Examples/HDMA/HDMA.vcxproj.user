@@ -14,4 +14,8 @@
     <LocalDebuggerWorkingDirectory>Environment</LocalDebuggerWorkingDirectory>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugAngle|Win32'">
+    <LocalDebuggerWorkingDirectory>$(ProjectDir)Environment</LocalDebuggerWorkingDirectory>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+  </PropertyGroup>
 </Project>

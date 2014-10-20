@@ -12,6 +12,7 @@
 #include <TinySTL/stdint.h>
 
 #include "Macros.h"
+#include "Rect.h"
 
 NAMESPACE(SPlay)
 
@@ -47,6 +48,9 @@ class ITexture
 		
 		// Release buffer
 		virtual void releaseBuffer() = 0;
+
+		// Add update rect
+		virtual void addUpdateRect(int _iStartY, int _iHeight) {};
 };
 
 ENDNAMESPACE

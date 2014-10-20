@@ -104,6 +104,22 @@ void ObjVRAM::getObjUVs(int _iTileIndex, ObjSize _eObjSize, Flip _eFlip, float& 
 	}
 }
 
+int ObjVRAM::getTileX(int _iIndex) const
+{
+	const int	iTilesPerRow	= m_iVRAMWidth / m_iTileSize;
+	int	iTileX					= _iIndex & (iTilesPerRow - 1);
+
+	return	iTileX * m_iTileSize;
+}
+
+int ObjVRAM::getTileY(int _iIndex) const
+{
+	const int	iTilesPerRow	= m_iVRAMWidth / m_iTileSize;
+	int	iTileY					= _iIndex / iTilesPerRow;
+
+	return	iTileY * m_iTileSize;
+}
+
 bool ObjVRAM::createTexture()
 {
 	IDisplay*	pDisplay	= System::getDisplay();

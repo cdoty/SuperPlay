@@ -22,15 +22,25 @@ void getGameHeader(GameHeader& _gameHeader)
 	_gameHeader.iScreenWidth	= gsc_iScreenWidth;
 	_gameHeader.iScreenHeight	= gsc_iScreenHeight;
 
+#ifdef __ANDROID__
+	// Window size
+	_gameHeader.iWindowedWidth	= 720;
+	_gameHeader.iWindowedHeight	= 480;
+	
+	_gameHeader.bResizeScreen	= false;
+#else
 	// Window size
 	_gameHeader.iWindowedWidth	= gsc_iScreenWidth;
 	_gameHeader.iWindowedHeight	= gsc_iScreenHeight;
+#endif
 
 	// Full screen
 	_gameHeader.bFullScreen		= false;
 
+#ifndef ANGLE
 	// Framed window
 	_gameHeader.bFramedWindow	= true;
+#endif
 
 	// Use Shadow OAM
 	_gameHeader.bUseShadowOAM	= true;

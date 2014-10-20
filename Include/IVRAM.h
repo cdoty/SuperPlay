@@ -21,6 +21,12 @@ class IVRAM
 		// Get tile offset
 		virtual int getTileOffset(int _iIndex) const = 0;
 
+		// Get tile x
+		virtual int getTileX(int _iIndex) const	= 0;
+
+		// Get tile y
+		virtual int getTileY(int _iIndex) const	= 0;
+
 		// Get VRAM size
 		virtual int getVRAMWidth() const = 0;
 		virtual int getVRAMHeight() const = 0;

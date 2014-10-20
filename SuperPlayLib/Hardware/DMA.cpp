@@ -135,12 +135,12 @@ bool DMA::doOAMTransfer()
 			{
 				if (-1 == dmaTransfer.iHeight)
 				{
-					doDMATransfer(dmaTransfer.pSource, pTextureData, iStride, dmaTransfer.iStartTile, dmaTransfer.iWidth, OAMDMA);
+					doDMATransfer(pTexture, dmaTransfer.pSource, pTextureData, iStride, dmaTransfer.iStartTile, dmaTransfer.iWidth, OAMDMA);
 				}
 
 				else
 				{
-					doDMATransfer(dmaTransfer.pSource, pTextureData, iStride, dmaTransfer.iStartTile, dmaTransfer.iWidth, dmaTransfer.iHeight, 
+					doDMATransfer(pTexture, dmaTransfer.pSource, pTextureData, iStride, dmaTransfer.iStartTile, dmaTransfer.iWidth, dmaTransfer.iHeight, 
 						OAMDMA);
 				}
 			}
@@ -205,12 +205,12 @@ bool DMA::doBGTransfer()
 			{
 				if (-1 == dmaTransfer.iHeight)
 				{
-					doDMATransfer(dmaTransfer.pSource, pTextureData, iStride, dmaTransfer.iStartTile, dmaTransfer.iWidth, BGDMA);
+					doDMATransfer(pTexture, dmaTransfer.pSource, pTextureData, iStride, dmaTransfer.iStartTile, dmaTransfer.iWidth, BGDMA);
 				}
 
 				else
 				{
-					doDMATransfer(dmaTransfer.pSource, pTextureData, iStride, dmaTransfer.iStartTile, dmaTransfer.iWidth, dmaTransfer.iHeight, 
+					doDMATransfer(pTexture, dmaTransfer.pSource, pTextureData, iStride, dmaTransfer.iStartTile, dmaTransfer.iWidth, dmaTransfer.iHeight, 
 						BGDMA);
 				}
 			}
@@ -245,24 +245,27 @@ int DMA::dmaSort(const void* _pTransfer1, const void* _pTransfer2)
 	return	0;
 }
 
-void DMA::doDMATransfer(uint32_t* _pSource, uint32_t* _pDest, int _iStride, int _iStartTile, int _iWidth, int _iHeight, DMAType _eDMAType)
+void DMA::doDMATransfer(ITexture* _pTexture, uint32_t* _pSource, uint32_t* _pDest, int _iStride, int _iStartTile, int _iWidth, int _iHeight, 
+	DMAType _eDMAType)
 {
 	uint32_t*	pSourcePtr	= _pSource;
 	uint32_t*	pDestPtr	= _pDest;
 
 	int	iIndex	= _iStartTile;
 
-	int	iTileOffset;
-	
+	IVRAM*	pVRAM;
+
 	if (BGDMA == _eDMAType)
 	{		
-		iTileOffset	= Hardware::getBGVRAM()->getTileOffset(iIndex);
+		pVRAM	= Hardware::getBGVRAM();
 	}
 
 	else
 	{		
-		iTileOffset	= Hardware::getObjVRAM()->getTileOffset(iIndex);
+		pVRAM	= Hardware::getObjVRAM();
 	}
+
+	int	iTileOffset	= pVRAM->getTileOffset(iIndex);
 
 	uint32_t*	pTile	= pDestPtr + iTileOffset;
 
@@ -273,9 +276,14 @@ void DMA::doDMATransfer(uint32_t* _pSource, uint32_t* _pDest, int _iStride, int 
 		pTile		+= _iStride;
 		pSourcePtr	+= _iWidth;
 	}
+
+	int	iStartY		= pVRAM->getTileY(_iStartTile);
+	int	iTileSize	= pVRAM->getTileSize();
+
+	_pTexture->addUpdateRect(iStartY, _iHeight);
 }
 
-void DMA::doDMATransfer(uint32_t* _pSource, uint32_t* _pDest, int _iStride, int _iStartTile, int _iTileCount, DMAType _eDMAType)
+void DMA::doDMATransfer(ITexture* _pTexture, uint32_t* _pSource, uint32_t* _pDest, int _iStride, int _iStartTile, int _iTileCount, DMAType _eDMAType)
 {
 	uint32_t*	pSourcePtr	= _pSource;
 	uint32_t*	pDestPtr	= _pDest;
@@ -309,6 +317,8 @@ void DMA::doDMATransfer(uint32_t* _pSource, uint32_t* _pDest, int _iStride, int 
 			pTile		+= _iStride;
 			pSourcePtr	+= iTileSize;
 		}
+
+		_pTexture->addUpdateRect(pVRAM->getTileY(iIndex), iTileSize);
 
 		iIndex++;
 	}

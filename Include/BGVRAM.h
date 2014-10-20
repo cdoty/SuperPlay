@@ -51,6 +51,12 @@ class BGVRAM : public IVRAM
 		// Get tile offset
 		virtual int getTileOffset(int _iIndex) const {return m_vecTiles[_iIndex].pOffset;}
 
+		// Get tile x
+		virtual int getTileX(int _iIndex) const;
+
+		// Get tile y
+		virtual int getTileY(int _iIndex) const;
+
 		// Get VRAM size
 		virtual int getVRAMWidth() const {return m_iVRAMWidth;}
 		virtual int getVRAMHeight() const {return m_iVRAMHeight;}

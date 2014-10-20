@@ -77,11 +77,11 @@ class DMA
 		tinystl::vector<DMATransfer>	m_vecDMATransfers[DMATypes];
 
 		// Do DMA transfer
-		void doDMATransfer(uint32_t* _pSource, uint32_t* _pDest, int _iStride, int _iStartTile, int _iWidth, int _iHeight, 
+		void doDMATransfer(ITexture* _pTexture, uint32_t* _pSource, uint32_t* _pDest, int _iStride, int _iStartTile, int _iWidth, int _iHeight, 
 			DMAType _eDMAType);
 
 		// Do DMA transfer
-		void doDMATransfer(uint32_t* _pSource, uint32_t* _pDest, int _iStride, int _iStartTile, int _iTileCount, DMAType _eDMAType);
+		void doDMATransfer(ITexture* _pTexture, uint32_t* _pSource, uint32_t* _pDest, int _iStride, int _iStartTile, int _iTileCount, DMAType _eDMAType);
 
 		// Do VRAM Clear
 		void doVRAMClear(uint32_t* _pDest, int _iStride, int _iStartTile, int _iWidth, int _iHeight, DMAType _eDMAType);

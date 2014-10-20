@@ -76,6 +76,9 @@ class Texture : public ITexture
 		// Release buffer
 		virtual void releaseBuffer();
 
+		// Add update rect
+		virtual void addUpdateRect(int _iStartY, int _iHeight);
+
 	private:
 		// OpenGL texture
 		GLuint		m_uTextureID;
@@ -93,6 +96,15 @@ class Texture : public ITexture
 
 		// Dynamic
 		bool		m_bDynamic;
+
+		// Update size
+		int			m_iUpdateSize;
+
+		// Update rects
+		int*		m_vecUpdateRects;
+
+		// Partial update
+		bool		m_bPartialUpdate;
 
 		// Create texture
 		bool createTexture(int _iWidth, int _iHeight, eFormat _eFormat, bool _bDynamic);

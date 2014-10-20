@@ -10,10 +10,10 @@
 #pragma once
 
 // Enable OUYA features
-#define OUYA
+//#define OUYA
 
 // Enable GAMESTICK features
-//#define GAMESTICK
+#define GAMESTICK
 
 // Sound frequency
 static const int	gsc_iSoundFrequency	= 22050;

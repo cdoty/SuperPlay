@@ -186,6 +186,22 @@ void BGVRAM::getPixelUV(int _iTileIndex, Flip _eFlip, int _iX, int _iY, float& _
 	_fV2	= _fV1;
 }
 
+int BGVRAM::getTileX(int _iIndex) const
+{
+	const int	iTilesPerRow	= m_iVRAMWidth / m_iTileSize;
+	int	iTileX					= _iIndex & (iTilesPerRow - 1);
+
+	return	iTileX * m_iTileSize;
+}
+
+int BGVRAM::getTileY(int _iIndex) const
+{
+	const int	iTilesPerRow	= m_iVRAMWidth / m_iTileSize;
+	int	iTileY					= _iIndex / iTilesPerRow;
+
+	return	iTileY * m_iTileSize;
+}
+
 bool BGVRAM::createTexture()
 {
 	IDisplay*	pDisplay	= System::getDisplay();
