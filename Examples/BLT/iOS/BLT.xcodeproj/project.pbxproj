@@ -40,6 +40,34 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		5242C5DC19F57A8F00FFD8DB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 524534C419F567C600B4C514 /* SuperPlay.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 04F4471E18759683003830E9;
+			remoteInfo = SuperPlay;
+		};
+		5242C5DE19F57A8F00FFD8DB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 524534BC19F567A000B4C514 /* Platform.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 04F446ED18758A6E003830E9;
+			remoteInfo = Platform;
+		};
+		5242C5E019F57A8F00FFD8DB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 524534B619F5677D00B4C514 /* Expansion.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 04F4478A1875A044003830E9;
+			remoteInfo = Expansion;
+		};
+		5242C5E219F57A8F00FFD8DB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 524534B019F5676600B4C514 /* Display.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 04F447B01875CD74003830E9;
+			remoteInfo = Display;
+		};
 		524534B419F5676600B4C514 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 524534B019F5676600B4C514 /* Display.xcodeproj */;
@@ -306,6 +334,10 @@
 			buildRules = (
 			);
 			dependencies = (
+				5242C5DD19F57A8F00FFD8DB /* PBXTargetDependency */,
+				5242C5DF19F57A8F00FFD8DB /* PBXTargetDependency */,
+				5242C5E119F57A8F00FFD8DB /* PBXTargetDependency */,
+				5242C5E319F57A8F00FFD8DB /* PBXTargetDependency */,
 				CE98F0C918AE1E1B003FBD9E /* PBXTargetDependency */,
 			);
 			name = BLT;
@@ -447,6 +479,26 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		5242C5DD19F57A8F00FFD8DB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SuperPlay;
+			targetProxy = 5242C5DC19F57A8F00FFD8DB /* PBXContainerItemProxy */;
+		};
+		5242C5DF19F57A8F00FFD8DB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Platform;
+			targetProxy = 5242C5DE19F57A8F00FFD8DB /* PBXContainerItemProxy */;
+		};
+		5242C5E119F57A8F00FFD8DB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Expansion;
+			targetProxy = 5242C5E019F57A8F00FFD8DB /* PBXContainerItemProxy */;
+		};
+		5242C5E319F57A8F00FFD8DB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Display;
+			targetProxy = 5242C5E219F57A8F00FFD8DB /* PBXContainerItemProxy */;
+		};
 		CE98F0C918AE1E1B003FBD9E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = BASS;
@@ -477,6 +529,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -492,6 +545,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "857ef27c-9e6f-4dd6-afba-419240f54178";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -507,6 +561,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -515,6 +570,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "857ef27c-9e6f-4dd6-afba-419240f54178";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -523,8 +579,8 @@
 		CECABFEE18A1B0CE00DE6A7F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Charles Doty (TSZJ5K4E3W)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Charles Doty (TSZJ5K4E3W)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BLT/BLT-Prefix.pch";
 				HEADER_SEARCH_PATHS = ../../../Include;
@@ -546,7 +602,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "c80b3d55-ec7d-4084-b7f4-a8ffa8fee2d4";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "857ef27c-9e6f-4dd6-afba-419240f54178";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -555,8 +611,8 @@
 		CECABFEF18A1B0CE00DE6A7F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Charles Doty (TSZJ5K4E3W)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Charles Doty (TSZJ5K4E3W)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BLT/BLT-Prefix.pch";
 				HEADER_SEARCH_PATHS = ../../../Include;
@@ -578,7 +634,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "c80b3d55-ec7d-4084-b7f4-a8ffa8fee2d4";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "857ef27c-9e6f-4dd6-afba-419240f54178";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
