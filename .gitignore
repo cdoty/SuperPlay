@@ -35,3 +35,9 @@ msadpcm/
 oafile/
 html5/
 .idea/
+*.hmap
+*.dep
+*.xcent
+*.d
+*.dia
+*.LinkFileList
