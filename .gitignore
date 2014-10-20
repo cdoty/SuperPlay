@@ -8,6 +8,7 @@
 *.so
 *.opensdf
 Log.html
+.DS-Store
 ipch/
 Build/
 Debug/
@@ -15,11 +16,13 @@ Debug2012/
 Debug2013/
 DebugAngle/
 DebugGL/
+Debug-*/
 Release/
 Release2012/
 Release2013/
 ReleaseAngle/
 ReleaseGL/
+Release-*/
 Hekkus/
 libmad/
 libzip/
@@ -31,3 +34,4 @@ source/
 msadpcm/
 oafile/
 html5/
+.idea/

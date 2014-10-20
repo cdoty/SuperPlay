@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "04CD3E42189599630080440C"
-               BuildableName = "libSound_d.a"
+               BuildableName = "libSound.a"
                BlueprintName = "Sound"
                ReferencedContainer = "container:Sound.xcodeproj">
             </BuildableReference>

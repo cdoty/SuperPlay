@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "04F4478A1875A044003830E9"
-               BuildableName = "libExpansion_d.a"
+               BuildableName = "libExpansion.a"
                BlueprintName = "Expansion"
                ReferencedContainer = "container:Expansion.xcodeproj">
             </BuildableReference>

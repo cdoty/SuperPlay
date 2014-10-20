@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "04F4471E18759683003830E9"
-               BuildableName = "libSuperPlay_d.a"
+               BuildableName = "libSuperPlay.a"
                BlueprintName = "SuperPlay"
                ReferencedContainer = "container:SuperPlay.xcodeproj">
             </BuildableReference>

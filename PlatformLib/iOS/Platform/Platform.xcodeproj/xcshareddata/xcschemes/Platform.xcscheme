@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "04F446ED18758A6E003830E9"
-               BuildableName = "libPlatform_d.a"
+               BuildableName = "libPlatform.a"
                BlueprintName = "Platform"
                ReferencedContainer = "container:Platform.xcodeproj">
             </BuildableReference>
