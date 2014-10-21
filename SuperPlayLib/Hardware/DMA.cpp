@@ -278,7 +278,6 @@ void DMA::doDMATransfer(ITexture* _pTexture, uint32_t* _pSource, uint32_t* _pDes
 	}
 
 	int	iStartY		= pVRAM->getTileY(_iStartTile);
-	int	iTileSize	= pVRAM->getTileSize();
 
 	_pTexture->addUpdateRect(iStartY, _iHeight);
 }

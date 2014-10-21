@@ -601,8 +601,8 @@
 					"-lbass",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "857ef27c-9e6f-4dd6-afba-419240f54178";
+				PROVISIONING_PROFILE = "5c5b915b-1839-40f7-9a4d-c1895db6bd20";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "5c5b915b-1839-40f7-9a4d-c1895db6bd20";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -633,8 +633,8 @@
 					"-lbass",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "857ef27c-9e6f-4dd6-afba-419240f54178";
+				PROVISIONING_PROFILE = "5c5b915b-1839-40f7-9a4d-c1895db6bd20";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "5c5b915b-1839-40f7-9a4d-c1895db6bd20";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};

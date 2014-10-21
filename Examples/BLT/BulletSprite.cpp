@@ -11,9 +11,6 @@
 #include "Game.h"
 #include "Hardware.h"
 
-// Sprite layer
-static const int	gsc_iSpriteBG	= 0;
-
 BulletSprite::BulletSprite(int _iTileIndex)	:
 	super(_iTileIndex)
 {

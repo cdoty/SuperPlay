@@ -31,7 +31,7 @@
 	return	NO;
 }
 
-- (NSInteger) supportedInterfaceOrientations
+- (NSUInteger) supportedInterfaceOrientations
 {
 #ifdef ARCADIE
 	return	UIInterfaceOrientationMaskPortrait;
