@@ -133,6 +133,10 @@ bool ObjVRAM::createTexture()
 		return	false;
 	}
 
+	ITexture*	pTexture	= System::getDisplay()->getTexture(m_iTextureIndex);
+
+	pTexture->setUpdateSize(gsc_iMinObjSize);
+
 	return	true;
 }
 

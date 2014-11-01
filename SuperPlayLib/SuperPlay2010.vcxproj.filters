@@ -114,9 +114,6 @@
     <ClInclude Include="Libraries\stb_image\stb_image.h">
       <Filter>Libraries\stb_image</Filter>
     </ClInclude>
-    <ClInclude Include="Hardware\BGManager.h">
-      <Filter>Hardware\Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\Include\BG.h">
       <Filter>Headers</Filter>
     </ClInclude>
@@ -219,9 +216,6 @@
     <ClInclude Include="..\Include\SRAM.h">
       <Filter>Headers</Filter>
     </ClInclude>
-    <ClInclude Include="Hardware\CRC32.h">
-      <Filter>Hardware\Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\Include\AssertLog.h">
       <Filter>Headers</Filter>
     </ClInclude>
@@ -243,9 +237,6 @@
     <ClInclude Include="..\Include\PathDefines.h">
       <Filter>Headers</Filter>
     </ClInclude>
-    <ClInclude Include="Hardware\ShadowOAM.h">
-      <Filter>Hardware\Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Include\System.h">
       <Filter>Include</Filter>
     </ClInclude>
@@ -254,6 +245,15 @@
     </ClInclude>
     <ClInclude Include="..\Include\TinyXML2\tinyxml2.h">
       <Filter>Headers\TinyXML2</Filter>
+    </ClInclude>
+    <ClInclude Include="Hardware\ShadowOAM.h">
+      <Filter>Hardware\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Hardware\BGManager.h">
+      <Filter>Hardware\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Hardware\CRC32.h">
+      <Filter>Hardware\Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

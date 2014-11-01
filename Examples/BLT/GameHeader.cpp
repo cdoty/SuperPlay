@@ -37,7 +37,7 @@ void getGameHeader(GameHeader& _gameHeader)
 	// Full screen
 	_gameHeader.bFullScreen		= false;
 
-#ifndef ANGLE
+#if !defined ANGLE && !defined GLWIN
 	// Framed window
 	_gameHeader.bFramedWindow	= true;
 #endif

@@ -220,6 +220,10 @@ bool BGVRAM::createTexture()
 
 			return	false;
 		}
+
+		ITexture*	pTexture	= System::getDisplay()->getTexture(m_iTextureIndex[iLoop]);
+
+		pTexture->setUpdateSize(m_iTileSize);
 	}
 
 	return	true;

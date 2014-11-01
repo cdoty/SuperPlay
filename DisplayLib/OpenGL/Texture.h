@@ -79,6 +79,9 @@ class Texture : public ITexture
 		// Add update rect
 		virtual void addUpdateRect(int _iStartY, int _iHeight);
 
+		// Set update size
+		virtual void setUpdateSize(int _iUpdateSize);
+
 	private:
 		// OpenGL texture
 		GLuint		m_uTextureID;

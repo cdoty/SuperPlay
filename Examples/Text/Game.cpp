@@ -17,7 +17,7 @@
 CREATE_GAME(Game)
 
 // Show FPS?
-#define	SHOW_FPS	1
+#define	SHOW_FPS	0
 
 Game::Game()	:
 	m_pFontLoader(NULL)
@@ -61,7 +61,7 @@ bool Game::initialize()
 
 	tinystl::string	strTopMessage	= "TOP  TEXT";
 
-	pText->drawText((gsc_iScreenWidth / gsc_iFontSize - (int)strTopMessage.length()) / 2, 0, strTopMessage.c_str());
+//	pText->drawText((gsc_iScreenWidth / gsc_iFontSize - (int)strTopMessage.length()) / 2, 0, strTopMessage.c_str());
 
 	tinystl::string	strBottomMessage	= "BOTTOM TEXT";
 

@@ -69,6 +69,18 @@ enum GamePads
 	AFTERGLOW_PS3_GAMEPAD		= 0x08361A34,
 	P3_PS3_WIRELESS_CONTROLLER	= 0x310D0E8F,
 
+	// PowerA 3 in 1 Remote Control/Game Pad
+	// Button A: O (3)
+	// Button B: X (2)
+	// Button X: Triangle (4)
+	// Button Y: Square (1)
+	// Button L1: L1 (5)
+	// Button R1: R1 (6)
+	// Select: Select (9)
+	// Start: Start (10)
+	POWERA_3IN1_GAMEPAD			= 0x0876062a,
+	POWERA_PS3_PRO_WIRELESS		= 0x576d20d6,
+
 	// Xbox 360 wired/wireless controllers
 	// Button A: B (2)
 	// Button B: A (1)
@@ -573,7 +585,9 @@ JoystickDefine	gsc_joysticks[]	=
 	{THRUSTMASTER_FIRESTORM_DUAL_2_GAMEPAD, 2, 0, 3, 1, 4, 6, 8, 9},
 	{THRUSTMASTER_DUAL_ANALOG_3_GAMEPAD, 2, 0, 3, 1, 4, 6, 8, 9},
 	{AFTERGLOW_PS3_GAMEPAD, 2, 1, 3, 0, 4, 5, 8, 9},
-	{P3_PS3_WIRELESS_CONTROLLER, 2, 1, 3, 0, 4, 5, 8, 9},
+	{P3_PS3_WIRELESS_CONTROLLER, 2, 1, 3, 0, 4, 5, 8, 9},	
+	{POWERA_3IN1_GAMEPAD, 2, 1, 3, 0, 4, 5, 8, 9},
+	{POWERA_PS3_PRO_WIRELESS, 2, 1, 3, 0, 4, 5, 8, 9},
 	{GRAVIS_GAMEPAD_PRO_GAMEPAD, 2, 1, 3, 0, 4, 5, 8, 9},
 	{LOGITECH_DUAL_ACTION_GAMEPAD, 2, 1, 3, 0, 4, 5, 8, 9},
 	{LOGITECH_PRECISION_GAMEPAD, 2, 1, 3, 0, 4, 5, 8, 9},

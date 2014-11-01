@@ -16,6 +16,8 @@
 #pragma comment(lib, "Platform_d.lib")
 #ifdef ANGLE
 #pragma comment(lib, "DisplayAngle_d.lib")
+#elif defined GLWIN
+#pragma comment(lib, "DisplayGL_d.lib")
 #else
 #pragma comment(lib, "Display_d.lib")
 #endif
@@ -36,6 +38,8 @@
 #pragma comment(lib, "Platform.lib")
 #ifdef ANGLE
 #pragma comment(lib, "DisplayAngle.lib")
+#elif defined GLWIN
+#pragma comment(lib, "DisplayGL.lib")
 #else
 #pragma comment(lib, "Display.lib")
 #endif

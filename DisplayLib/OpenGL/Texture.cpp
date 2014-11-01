@@ -29,7 +29,7 @@ Texture::Texture()	:
 	m_pTextureBuffer(NULL),
 	m_uTextureID(GL_INVALID_VALUE),
 	m_bDynamic(false),
-	m_iUpdateSize(0),
+	m_iUpdateSize(gsc_iMinObjSize < gsc_iMinTileSize ? gsc_iMinObjSize : gsc_iMinTileSize),
 	m_vecUpdateRects(NULL),
 	m_bPartialUpdate(false)
 {
@@ -97,6 +97,17 @@ void Texture::addUpdateRect(int _iStartY, int _iHeight)
 	m_bPartialUpdate	= true;
 }
 
+void Texture::setUpdateSize(int _iUpdateSize)
+{
+	m_iUpdateSize = _iUpdateSize;
+
+	delete[]	m_vecUpdateRects;
+
+	m_vecUpdateRects	= new int[m_iTextureHeight / m_iUpdateSize];
+
+	memset(m_vecUpdateRects, 0, m_iTextureHeight / m_iUpdateSize * sizeof(int));
+}
+
 bool Texture::createTexture(int _iWidth, int _iHeight, eFormat _eFormat, bool _bDynamic)
 {
 	m_iImageWidth	= _iWidth;
@@ -134,12 +145,6 @@ bool Texture::createTexture(int _iWidth, int _iHeight, eFormat _eFormat, bool _b
 	{
 		return	false;
 	}
-
-	m_iUpdateSize	= gsc_iMinObjSize < gsc_iMinTileSize ? gsc_iMinObjSize : gsc_iMinTileSize;
-
-	m_vecUpdateRects	= new int[m_iTextureHeight / m_iUpdateSize];
-
-	memset(m_vecUpdateRects, 0, m_iTextureHeight / m_iUpdateSize);
 
 	return	true;
 }
@@ -206,7 +211,7 @@ bool Texture::unlockTexture()
 				}
 			}
 
-			pCurrentOffset	+= m_iTextureWidth;
+			pCurrentOffset	+= m_iTextureWidth * m_iUpdateSize;
 			pUpdateRect++;
 		}
 	}
@@ -214,11 +219,11 @@ bool Texture::unlockTexture()
 	else
 	{
 #if defined __ANDROID__ || defined MARMALADE
-		glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, m_iImageWidth, m_iImageHeight, GL_RGBA, GL_UNSIGNED_BYTE, m_pTextureBuffer);
+		glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, m_iTextureWidth, m_iTextureHeight, GL_RGBA, GL_UNSIGNED_BYTE, m_pTextureBuffer);
 #elif defined __IOS__
-		glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, m_iImageWidth, m_iImageHeight, GL_BGRA_EXT, GL_UNSIGNED_BYTE, m_pTextureBuffer);
+		glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, m_iImageWidth, m_iTextureHeight, GL_BGRA_EXT, GL_UNSIGNED_BYTE, m_pTextureBuffer);
 #else
-		glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, m_iImageWidth, m_iImageHeight, GL_BGRA, GL_UNSIGNED_BYTE, m_pTextureBuffer);
+		glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, m_iImageWidth, m_iTextureHeight, GL_BGRA, GL_UNSIGNED_BYTE, m_pTextureBuffer);
 #endif
 	}
 

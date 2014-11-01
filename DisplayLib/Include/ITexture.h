@@ -50,7 +50,10 @@ class ITexture
 		virtual void releaseBuffer() = 0;
 
 		// Add update rect
-		virtual void addUpdateRect(int _iStartY, int _iHeight) {};
+		virtual void addUpdateRect(int _iStartY, int _iHeight) {}
+
+		// Set update size
+		virtual void setUpdateSize(int _iUpdateSize) {}
 };
 
 ENDNAMESPACE

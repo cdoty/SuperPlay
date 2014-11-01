@@ -23,6 +23,9 @@
 
 NAMESPACE(SPlay)
 
+// Size of a character, in pixels
+static const int	gsc_iCharacterSize	= 8;
+
 Text::Text()	:
 	m_pImageBuffer(NULL),
 	m_pPaletteBuffer(NULL),
@@ -133,6 +136,7 @@ bool Text::clear(int _iX, int _iY, int _iWidth, int _iHeight)
 
 	clearVRAM(_iX, _iY, _iWidth, _iHeight, pBuffer);
 
+	pTexture->addUpdateRect(_iY, _iHeight);
 	pTexture->releaseBuffer();
 
 	return	true;
@@ -250,6 +254,8 @@ bool Text::drawText(int _iX, int _iY, const char* _szString)
 		pMap++;
 	}
 
+	pTexture->addUpdateRect(iY, iHeight * gsc_iFontSize);
+
 	pTexture->releaseBuffer();
 
 	return	true;
@@ -265,8 +271,8 @@ bool Text::createTexture()
 	m_iVRAMWidth	= static_cast<int>(pow(2, ceil(Utilities::log2(m_iScreenWidth))));
 	m_iVRAMHeight	= static_cast<int>(pow(2, ceil(Utilities::log2(m_iScreenHeight))));
 
-	m_iCharWidth	= m_iVRAMWidth / 8;
-	m_iCharHeight	= m_iVRAMHeight / 8;
+	m_iCharWidth	= m_iVRAMWidth / gsc_iCharacterSize;
+	m_iCharHeight	= m_iVRAMHeight / gsc_iCharacterSize;
 
 	m_fU2	= static_cast<float>(m_iScreenWidth) / static_cast<float>(m_iVRAMWidth);
 	m_fV2	= static_cast<float>(m_iScreenHeight) / static_cast<float>(m_iVRAMHeight);
@@ -281,6 +287,10 @@ bool Text::createTexture()
 
 		return	false;
 	}
+
+	ITexture*	pTexture	= System::getDisplay()->getTexture(m_iTextureIndex);
+
+	pTexture->setUpdateSize(gsc_iCharacterSize);
 
 	return	true;
 }
@@ -376,6 +386,8 @@ bool Text::clearVRAM(int _iX, int _iY, int _iWidth, int _iHeight, uint32_t*& _pB
 		pStart	+= m_iVRAMWidth;
 	}
 
+	ITexture*	pTexture	= System::getDisplay()->getTexture(m_iTextureIndex);
+
 	return	true;
 }
 
@@ -395,7 +407,7 @@ bool Text::drawGrid()
 	{
 		for (int iXLoop = 0; iXLoop < m_iVRAMWidth; ++iXLoop)
 		{
-			if (0 == iYLoop % 8 || 0 == iXLoop % 8)
+			if (0 == iYLoop % gsc_iCharacterSize || 0 == iXLoop % gsc_iCharacterSize)
 			{
 				*pBuffer	= 0xFFFFFFFF;
 			}
@@ -409,6 +421,7 @@ bool Text::drawGrid()
 		}
 	}
 
+	pTexture->addUpdateRect(0, m_iVRAMHeight);
 	pTexture->releaseBuffer();
 
 	return	true;
