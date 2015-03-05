@@ -214,7 +214,7 @@ void SpriteBatch::drawBatch()
 	if (m_iSpriteIndex > 0)
 	{
 		// Draw the sprite batches
-		System::getDisplay()->drawTriangles(m_iTextureIndex, m_iVertexBufferIndex, m_iSpriteIndex * 4, m_iIndexBufferIndex, m_iSpriteIndex * 2);
+		System::getDisplay()->drawTriangles(m_iSpriteIndex * 4, m_iIndexBufferIndex, m_iSpriteIndex * 2);
 		
 		m_iSpriteIndex	= 0;
 	}
