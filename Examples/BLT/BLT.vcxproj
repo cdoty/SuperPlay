@@ -65,7 +65,6 @@
     <ResourceCompile Include="Application.rc" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram1.cd" />
     <None Include="Icon\Icon.ico" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

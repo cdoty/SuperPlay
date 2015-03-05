@@ -4,6 +4,10 @@
     <df root="." name="0">
       <df name="Debug">
       </df>
+      <df name="DebugAngle">
+      </df>
+      <df name="DebugGL">
+      </df>
       <df name="Environment">
         <df name="Maps">
         </df>
@@ -11,6 +15,10 @@
       <df name="Icon">
       </df>
       <df name="Release">
+      </df>
+      <df name="ReleaseAngle">
+      </df>
+      <df name="ReleaseGL">
       </df>
       <df name="Resources">
       </df>
@@ -70,7 +78,7 @@
     </conf>
     <conf name="Release" type="0">
       <toolsSet>
-        <developmentServer>pi@192.168.1.131:22</developmentServer>
+        <developmentServer>pi@192.168.0.26:22</developmentServer>
         <platform>2</platform>
       </toolsSet>
       <compile>

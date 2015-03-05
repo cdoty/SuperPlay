@@ -6,23 +6,23 @@
         <in>AudioLoader.cpp</in>
       </df>
       <df name="Debug">
-        <df name="AudioLoader">
-        </df>
-        <df name="FontLoader">
-          <df name="yspng">
-          </df>
-        </df>
-        <df name="HDMALoader">
-        </df>
-        <df name="MapLoader">
-        </df>
-        <df name="SpriteLoader">
-        </df>
+      </df>
+      <df name="Debug2012">
+      </df>
+      <df name="DebugAngle">
       </df>
       <df name="Expansion">
         <df name="Expansion.xcodeproj">
           <df name="xcuserdata">
+            <df name="cdoty.xcuserdatad">
+              <df name="xcschemes">
+              </df>
+            </df>
             <df name="mac.xcuserdatad">
+              <df name="xcschemes">
+              </df>
+            </df>
+            <df name="User.xcuserdatad">
               <df name="xcschemes">
               </df>
             </df>
@@ -39,25 +39,41 @@
       <df name="HDMALoader">
         <in>HDMALoader.cpp</in>
       </df>
+      <df name="iOS">
+        <df name="Expansion.xcodeproj">
+          <df name="xcshareddata">
+            <df name="xcschemes">
+            </df>
+          </df>
+          <df name="xcuserdata">
+            <df name="mac.xcuserdatad">
+              <df name="xcschemes">
+              </df>
+            </df>
+            <df name="User.xcuserdatad">
+              <df name="xcschemes">
+              </df>
+            </df>
+          </df>
+        </df>
+      </df>
       <df name="MapLoader">
         <in>MapLoader.cpp</in>
       </df>
       <df name="Release">
-        <df name="AudioLoader">
-        </df>
-        <df name="FontLoader">
-          <df name="yspng">
-          </df>
-        </df>
-        <df name="HDMALoader">
-        </df>
-        <df name="MapLoader">
-        </df>
-        <df name="SpriteLoader">
-        </df>
+      </df>
+      <df name="ReleaseAngle">
+      </df>
+      <df name="ReleaseGL">
       </df>
       <df name="SpriteLoader">
         <in>SpriteLoader.cpp</in>
+      </df>
+      <df name="Tegra-Android">
+        <df name="Debug">
+        </df>
+        <df name="Release">
+        </df>
       </df>
     </df>
   </logicalFolder>
@@ -110,7 +126,7 @@
     </conf>
     <conf name="Release" type="0">
       <toolsSet>
-        <developmentServer>pi@192.168.1.131:22</developmentServer>
+        <developmentServer>pi@192.168.0.26:22</developmentServer>
         <platform>2</platform>
       </toolsSet>
       <compile>

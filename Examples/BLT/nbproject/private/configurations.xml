@@ -49,7 +49,7 @@
     </conf>
     <conf name="Release" type="0">
       <toolsSet>
-        <developmentServer>pi@192.168.1.131:22</developmentServer>
+        <developmentServer>pi@192.168.0.26:22</developmentServer>
         <platform>2</platform>
       </toolsSet>
       <compile>

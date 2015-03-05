@@ -2,7 +2,22 @@
 <configurationDescriptor version="90">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
     <df root="." name="0">
+      <df name="Android">
+      </df>
+      <df name="assets">
+        <df name="Fonts">
+        </df>
+        <df name="Music">
+          <in>musix-pointless.mod</in>
+        </df>
+        <df name="Sounds">
+        </df>
+      </df>
       <df name="Debug">
+      </df>
+      <df name="DebugAngle">
+      </df>
+      <df name="DebugGL">
       </df>
       <df name="Environment">
         <df name="Fonts">
@@ -15,11 +30,20 @@
       </df>
       <df name="Icon">
       </df>
+      <df name="jni">
+        <in>NativeActivity.c</in>
+      </df>
       <df name="libs">
         <df name="armeabi">
         </df>
         <df name="armeabi-v7a">
         </df>
+      </df>
+      <df name="Release">
+      </df>
+      <df name="ReleaseAngle">
+      </df>
+      <df name="ReleaseGL">
       </df>
       <df name="res">
         <df name="drawable">
@@ -40,6 +64,112 @@
         </df>
       </df>
       <df name="Resources">
+      </df>
+      <df name="src">
+        <df name="com">
+          <df name="PixlGames">
+            <df name="SuperPlay">
+            </df>
+          </df>
+        </df>
+      </df>
+      <df name="Tegra-Android">
+        <df name="Debug">
+          <df name="bin">
+            <df name="classes">
+              <df name="com">
+                <df name="PixlGames">
+                  <df name="SuperPlay">
+                    <df name="Audio">
+                    </df>
+                  </df>
+                </df>
+              </df>
+            </df>
+            <df name="dexedLibs">
+            </df>
+            <df name="res">
+              <df name="drawable">
+              </df>
+              <df name="drawable-hdpi">
+              </df>
+              <df name="drawable-ldpi">
+              </df>
+              <df name="drawable-mdpi">
+              </df>
+              <df name="drawable-xhdpi">
+              </df>
+              <df name="drawable-xxhdpi">
+              </df>
+              <df name="drawable-xxxhdpi">
+              </df>
+            </df>
+            <df name="rsLibs">
+            </df>
+            <df name="rsObj">
+            </df>
+          </df>
+          <df name="gen">
+            <df name="com">
+              <df name="PixlGames">
+                <df name="SuperPlay">
+                  <df name="Audio">
+                  </df>
+                </df>
+              </df>
+            </df>
+          </df>
+          <df name="libs">
+            <df name="armeabi-v7a">
+            </df>
+          </df>
+        </df>
+        <df name="Release">
+          <df name="bin">
+            <df name="classes">
+              <df name="com">
+                <df name="PixlGames">
+                  <df name="SuperPlay">
+                    <df name="Audio">
+                    </df>
+                  </df>
+                </df>
+              </df>
+            </df>
+            <df name="dexedLibs">
+            </df>
+            <df name="res">
+              <df name="drawable">
+              </df>
+              <df name="drawable-hdpi">
+              </df>
+              <df name="drawable-ldpi">
+              </df>
+              <df name="drawable-mdpi">
+              </df>
+              <df name="drawable-xhdpi">
+              </df>
+              <df name="drawable-xxhdpi">
+              </df>
+              <df name="drawable-xxxhdpi">
+              </df>
+            </df>
+          </df>
+          <df name="gen">
+            <df name="com">
+              <df name="PixlGames">
+                <df name="SuperPlay">
+                  <df name="Audio">
+                  </df>
+                </df>
+              </df>
+            </df>
+          </df>
+          <df name="libs">
+            <df name="armeabi-v7a">
+            </df>
+          </df>
+        </df>
       </df>
       <in>Game.cpp</in>
       <in>Game.h</in>
@@ -97,7 +227,7 @@
     </conf>
     <conf name="Release" type="0">
       <toolsSet>
-        <developmentServer>pi@192.168.1.131:22</developmentServer>
+        <developmentServer>pi@192.168.0.26:22</developmentServer>
         <platform>2</platform>
       </toolsSet>
       <compile>

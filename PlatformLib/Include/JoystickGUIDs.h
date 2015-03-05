@@ -9,6 +9,7 @@
 
 #pragma once
 
+// USB PID/VID table
 enum GamePads
 {
 	// GameMon gamepad Model FT2E92
@@ -69,6 +70,9 @@ enum GamePads
 	AFTERGLOW_PS3_GAMEPAD		= 0x08361A34,
 	P3_PS3_WIRELESS_CONTROLLER	= 0x310D0E8F,
 
+	// Sony PS4 controller connected to USB
+	SONY_PS4_CONTROLLLER_USB	= 0x05c4054c,
+
 	// PowerA 3 in 1 Remote Control/Game Pad
 	// Button A: O (3)
 	// Button B: X (2)
@@ -99,7 +103,6 @@ enum GamePads
 	XBOX360_WIRELESS_ADAPTER			= 0x02A1045E,
 	SCP_DS3_DRIVER						= 0x028E045E,
 	CAPCOM_XBOX360_SF4_FIGHTPAD			= 0xF02E1BAD,
-	
 	XBOX_ONE_GAMEPAD					= 0x02d1045e,
 
 	// Microsoft SideWinder Freestyle Pro
@@ -268,8 +271,18 @@ enum GamePads
 	// Button R: R (6)
 	// Select: Select (7)
 	// Start: 'Start' (8)
-
 	MAYFLASH_MSSNF_CONTROLLER_ADAPTER	= 0x18040079,
+
+	// Mayflash MEGADRIVE Adapter
+	// Button A: A (2)
+	// Button B: B (1)
+	// Button X: X (5)
+	// Button Y: Y (4)
+	// Button L: Z (7)
+	// Button R: C (3)
+	// Select: 'Mode' (8)
+	// Start: 'Start' (10)
+	MAYFLASH_MEGADRIVE_CONTROLLER_ADAPTER	= 0x18240079,
 
 	// Nyko Playpad
 	// Button A: B (2)
@@ -381,7 +394,7 @@ enum GamePads
 	// Start: Start (4)
 	RETROBIT_NES_ADAPTER	= 0x46431292,
 
-	// Retro-bit Genesi Controller adapter
+	// Retro-bit Genesis Controller adapter
 	// Button A: C (3)
 	// Button B: B (2)
 	// Button X: X (4)
@@ -459,6 +472,17 @@ enum GamePads
 	// Start: 12 (12)
 	GF_G60406A_GAMEPAD	= 0x00030E8F,
 
+	// G910 Bluetooth Game Controller
+	// Button A: 2
+	// Button B: 1
+	// Button X: 5
+	// Button Y: 4
+	// Button L: 7
+	// Button R: 8
+	// Select: 11 (11)
+	// Start: 12 (12)
+	G910_BLUETOOTH_GAMEPAD	= 0x022c05ac,
+
 	// Thrustmaster Firestore Dual Analog 2
 	// Thrustmaster Dual Analog 3
 	// Button A: Right face button (3)
@@ -526,6 +550,18 @@ enum GamePads
 	// Select: Select (7)
 	// Start: Start (8)
 	MOGA_HERO_GAMEPAD	= 0x89e520d6,
+	MOGA_PRO_GAMEPAD	= 0x627120d6,
+
+	// Buffalo Famicom gamepad
+	// Button A: A (1)
+	// Button B: B (2)
+	// Button X: X (3)
+	// Button Y: Y (4)
+	// Button L: L (5)
+	// Button R: R (6)
+	// Select: Select (7)
+	// Start: Start (8)
+	BUFFALO_FAMICOM_GAMEPAD	= 0x00c60411,
 
 	// SF digital pad
 	// Button A: 5 (4)
@@ -586,6 +622,7 @@ JoystickDefine	gsc_joysticks[]	=
 	{THRUSTMASTER_DUAL_ANALOG_3_GAMEPAD, 2, 0, 3, 1, 4, 6, 8, 9},
 	{AFTERGLOW_PS3_GAMEPAD, 2, 1, 3, 0, 4, 5, 8, 9},
 	{P3_PS3_WIRELESS_CONTROLLER, 2, 1, 3, 0, 4, 5, 8, 9},	
+	{SONY_PS4_CONTROLLLER_USB, 2, 1, 3, 0, 4, 5, 8, 9},	
 	{POWERA_3IN1_GAMEPAD, 2, 1, 3, 0, 4, 5, 8, 9},
 	{POWERA_PS3_PRO_WIRELESS, 2, 1, 3, 0, 4, 5, 8, 9},
 	{GRAVIS_GAMEPAD_PRO_GAMEPAD, 2, 1, 3, 0, 4, 5, 8, 9},
@@ -605,6 +642,7 @@ JoystickDefine	gsc_joysticks[]	=
 	{MAYFLASH_WIRELESS_WIIU_ADAPTER, 2, 1, 3, 0, 4, 5, 8, 9},
 	{MAYFLASH_SS_CONTROLLER_ADAPTER, 0, 1, 2, 4, 5, 7, -1, 9},
 	{MAYFLASH_MSSNF_CONTROLLER_ADAPTER, 0, 1, 2, 3, 4, 5, 6, 7},
+	{MAYFLASH_MEGADRIVE_CONTROLLER_ADAPTER, 1, 0, 4, 3, 6, 2, 7, 9},
 	{MAYFLASH_SNES_CONTROLLER_ADAPTER, 1, 2, 0, 3, 6, 7, 8, 9},
 	{CLASSIC_SNES_CONTROLLER_ADAPTER, 1, 0, 3, 2, 4, 5, 6, 7},
 	{HYPERKIN_PIXEL_ART_CONTROLLER, 0, 1, 2, 3, 4, 5, 7, 6},
@@ -622,8 +660,11 @@ JoystickDefine	gsc_joysticks[]	=
 	{LOGIC_3_USB_INTRUDER_GAMEPAD, 3, 2, 1, 0, 4, 6, 5, 7},
 	{DRAGON_RISE_GAMEPAD, 3, 2, 1, 0, 4, 5, 8, 9},
 	{GF_G60406A_GAMEPAD, 4, 3, 1, 0, 6, 7, 10, 11},
+	{G910_BLUETOOTH_GAMEPAD, 1, 0, 4, 3, 6, 7, 10, 11},
 	{OUYA_GAMEPAD, 3, 0, 2, 1, 4, 5, 12, 13},
 	{GAMESTICK_GAMEPAD, 1, 0, 4, 3, 6, 7, -1, 11},
 	{MOGA_HERO_GAMEPAD, 1, 0, 3, 2, 4, 5, 6, 7},
+	{MOGA_PRO_GAMEPAD, 1, 0, 3, 2, 4, 5, 6, 7},
+	{BUFFALO_FAMICOM_GAMEPAD, 0, 1, 2, 3, 4, 5, 6, 7},
 	{SF_DIGITAL_PAD, 4, 3, 1, 0, 6, 7, 8, 9},
 };

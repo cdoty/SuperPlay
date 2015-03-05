@@ -137,46 +137,68 @@
         </makeTool>
       </makefileType>
       <item path="Background.cpp" ex="false" tool="1" flavor2="9">
+        <ccTool>
+        </ccTool>
       </item>
       <item path="Background.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="BaseSprite.cpp" ex="false" tool="1" flavor2="9">
+        <ccTool>
+        </ccTool>
       </item>
       <item path="BaseSprite.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="BulletManager.cpp" ex="false" tool="1" flavor2="9">
+        <ccTool>
+        </ccTool>
       </item>
       <item path="BulletManager.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="BulletSprite.cpp" ex="false" tool="1" flavor2="9">
+        <ccTool>
+        </ccTool>
       </item>
       <item path="BulletSprite.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="EnemyManager.cpp" ex="false" tool="1" flavor2="9">
+        <ccTool>
+        </ccTool>
       </item>
       <item path="EnemyManager.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="EnemySprite.cpp" ex="false" tool="1" flavor2="9">
+        <ccTool>
+        </ccTool>
       </item>
       <item path="EnemySprite.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Game.cpp" ex="false" tool="1" flavor2="9">
+        <ccTool>
+        </ccTool>
       </item>
       <item path="Game.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="GameDefines.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="GameHeader.cpp" ex="false" tool="1" flavor2="9">
+        <ccTool>
+        </ccTool>
       </item>
       <item path="PlayerSprite.cpp" ex="false" tool="1" flavor2="9">
+        <ccTool>
+        </ccTool>
       </item>
       <item path="PlayerSprite.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="ResourceManager.cpp" ex="false" tool="1" flavor2="9">
+        <ccTool>
+        </ccTool>
       </item>
       <item path="ResourceManager.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="ScoreBar.cpp" ex="false" tool="1" flavor2="9">
+        <ccTool>
+        </ccTool>
       </item>
       <item path="ScoreBar.h" ex="false" tool="3" flavor2="0">
       </item>
