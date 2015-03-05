@@ -329,13 +329,18 @@ void Display::removeTexture(int _iHash)
 	}
 }
 
-bool Display::drawTriangles(int _iTextureIndex, int _iVertexBufferIndex, int _iVertices, int _iIndexBufferIndex, int _iTriangles)
+void Display::bindTexture(int _iHash)
+{
+	glBindTexture(GL_TEXTURE_2D, m_mapTextures[_iHash].pTexture->getTexture());
+}
+
+bool Display::drawTriangles(int _iVertexBufferIndex, int _iVertices, int _iIndexBufferIndex, int _iTriangles)
 {
 	ASSERT_LOG(_iVertexBufferIndex >= 0 && _iVertexBufferIndex < static_cast<int>(m_vecVertexBuffers.size()),
-		"Vertex buffer index is invalid.Debug session ended");
+		"Vertex buffer index is invalid.Debug session ended\n");
 	
 	ASSERT_LOG(_iIndexBufferIndex >= 0 && _iIndexBufferIndex < static_cast<int>(m_vecIndexBuffers.size()),
-		"Index buffer index is invalid.");
+		"Index buffer index is invalid.\n");
 
 	VertexBuffer*	pVertexBuffer	= m_vecVertexBuffers[_iVertexBufferIndex];
 	
@@ -347,8 +352,6 @@ bool Display::drawTriangles(int _iTextureIndex, int _iVertexBufferIndex, int _iV
 
 	glVertexPointer(2, GL_FLOAT, iStride, &pBuffer[0].fX);
 	glTexCoordPointer(2, GL_FLOAT, iStride, &pBuffer[0].fU);
-
-	glBindTexture(GL_TEXTURE_2D, m_mapTextures[_iTextureIndex].pTexture->getTexture());
 
 	if (_iIndexBufferIndex != -1)
 	{

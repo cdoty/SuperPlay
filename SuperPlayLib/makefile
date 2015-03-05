@@ -34,7 +34,7 @@ OBJ	= $(addprefix $(OBJDIR)/,$(SRC:.cpp=.o))
 all: $(NAME)
 	
 $(NAME): $(OBJ)
-	mkdir -p ../../Lib/Linux/
+	mkdir -p ../Lib/Linux/
 	$(AR) rcus $(NAME) $(OBJ)
 	
 $(OBJDIR)/%.o: %.cpp

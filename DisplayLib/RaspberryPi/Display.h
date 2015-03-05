@@ -71,9 +71,11 @@ class Display : public IDisplay
 		// Remove texture
 		virtual void removeTexture(int _iHash);
 
+		// Bind texture
+		virtual void bindTexture(int _iHash);
+
 		// Draw triangles
-		virtual bool drawTriangles(int _iTextureIndex, int _iVertexBufferIndex, int _iVertices = 0, int _iIndexBufferIndex = -1, 
-			int _iTriangles = 0);
+		virtual bool drawTriangles(int _iVertexBufferIndex, int _iVertices = 0, int _iIndexBufferIndex = -1, int _iTriangles = 0);
 		
 		// Set clip rect
 		virtual void setClipRect(const Rect& _rctClip);
