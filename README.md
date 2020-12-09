@@ -12,5 +12,3 @@ Currently Super Play supports Windows, Linux, Android/GameStick/Ouya, iOS, Raspb
 Work is in progress for Google Native Client, Windows Phone, and Mac OSX.
 
 Visit the <a href='http://superplay.info/'>Super Play</a> website for all the details.
-
-<a href='https://pledgie.com/campaigns/24566'><img alt='Click here to lend your support to: Super Play game engine donations and make a donation at pledgie.com !' src='https://pledgie.com/campaigns/24566.png?skin_name=chrome' border='0' ></a>
