@@ -11,4 +11,4 @@ and Bitmap Font Editor.
 Currently Super Play supports Windows, Linux, Android/GameStick/Ouya, iOS, Raspberry Pi, Emscripten, and Marmalade.
 Work is in progress for Google Native Client, Windows Phone, and Mac OSX.
 
-Visit the <a href='http://superplay.info/'>Super Play</a> website for all the details.
+Visit the <a href='http://superplay.rastersoft.net/'>Super Play</a> website for all the details.
